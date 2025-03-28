@@ -40,14 +40,15 @@ feature/<prenom>_<fonction>
 
 📌 Les détails complets du workflow Git, des conventions de branche et de la gestion de la documentation sont disponibles ici :
 
-👉 [Guide de contribution – CONTRIBUTING.md](./CONTRIBUTING.md)
+👉 [Guide de contribution – CONTRIBUTING.md](https://github.com/Mate-bert/Rubik-s-cube-resolver/blob/docs/contributing/CONTRIBUTING.md)
 
 ---
 
 ## 📋 Documentation et suivi
 
-- ✅ [Suivi des tâches – TODO.md](./TODO.md) : tâches techniques à réaliser
-- 📄 [Guide de contribution – CONTRIBUTING.md](./CONTRIBUTING.md) : conventions Git, structure du projet, règles de contribution
+- ✅ [Suivi des tâches – TODO.md](https://github.com/Mate-bert/Rubik-s-cube-resolver/blob/docs/todo/TODO.md) : tâches techniques à réaliser
+- 📄 [Structure des branches – structure.md](https://github.com/Mate-bert/Rubik-s-cube-resolver/blob/docs/contributing/structure.md) : rôle des branches documentaires
+- 📘 [Guide de contribution – CONTRIBUTING.md](https://github.com/Mate-bert/Rubik-s-cube-resolver/blob/docs/contributing/CONTRIBUTING.md)
 
 ---
 
