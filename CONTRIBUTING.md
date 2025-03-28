@@ -32,7 +32,7 @@ Le projet est divisé en plusieurs sous-parties gérées par des équipes diffé
 ### Exemples :
 - `feature/gad_detection_couleur`
 - `docs/todo`
-- `docs/readme`
+- `docs/contributing`
 
 ---
 
@@ -83,6 +83,22 @@ Depuis GitHub :
 
 ---
 
+## 🧭 Travailler sur la bonne branche
+
+Avant de commencer à travailler, assure-toi de te placer dans la bonne branche :
+
+```bash
+git checkout <nom_de_la_branche>
+```
+
+Exemples :
+- `git checkout docs/contributing`
+- `git checkout feature/sarah_detection_face3`
+
+💡 Fais toujours un `git status` pour vérifier dans quelle branche tu es avant de faire un `git add` ou `git commit`.
+
+---
+
 ## ✔️ Bonnes pratiques
 
 - Des **commits clairs et atomiques**
@@ -91,6 +107,31 @@ Depuis GitHub :
 - Toujours pull avant de commencer une nouvelle branche
 - Ne pas mélanger code, doc et test dans une seule branche
 - Communiquer en cas de conflit ou de doute
+
+---
+
+## 🔗 Liens directs GitHub
+
+- [README.md – Branche `main`](https://github.com/Mate-bert/Rubik-s-cube-resolver/blob/main/README.md)
+- [TODO.md – Branche `docs/todo`](https://github.com/Mate-bert/Rubik-s-cube-resolver/blob/docs/todo/TODO.md)
+- [CONTRIBUTING.md – Branche `docs/contributing`](https://github.com/Mate-bert/Rubik-s-cube-resolver/blob/docs/contributing/CONTRIBUTING.md)
+- [Structure.md – Branche `docs/contributing`](https://github.com/Mate-bert/Rubik-s-cube-resolver/blob/docs/contributing/structure.md)
+
+---
+
+## 🧹 Nettoyer une branche locale ou distante
+
+Supprimer une branche locale :
+
+```bash
+git branch -d docs/readme
+```
+
+Supprimer une branche distante (sur GitHub) :
+
+```bash
+git push origin --delete docs/readme
+```
 
 ---
 
