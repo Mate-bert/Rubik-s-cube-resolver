@@ -40,13 +40,6 @@ Ce fichier décrit le rôle de chaque branche documentaire (`docs/*`) et les fic
 
 ---
 
-## 📁 docs/conduct (optionnelle)
-
-### ✅ Contenu :
-- `CODE_OF_CONDUCT.md` : Règles de respect, comportement, inclusion
-
----
-
 ## 📁 feature/<nom>
 
 ### ✅ Contenu :
