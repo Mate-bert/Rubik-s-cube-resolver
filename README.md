@@ -13,93 +13,42 @@ Projet collaboratif visant à développer un système capable de résoudre un Ru
 
 ---
 
-## 🌱 Organisation Git
+## 🧩 Organisation du projet
 
-### Branches principales
+Le projet est divisé en plusieurs sous-parties gérées par différentes équipes :
 
-- `main` : version **stable** du projet (aucun développement direct).
-- `dev` : branche **de développement** commune, où toutes les fonctionnalités sont fusionnées après validation.
+- 🎨 Détection des couleurs
+- 📷 Gestion des caméras
+- 🤖 Pilote des moteurs
+- 🧠 Algorithme de résolution
+- 🧰 Intégration FPGA (Zybo 7010)
+- 🖨️ Impression 3D du support
 
-### Branches de fonctionnalités
+---
 
-Chaque membre travaille sur une branche personnelle, dérivée de `dev`, nommée selon la convention :
+## 🧪 Contribution rapide
+
+Chaque membre travaille sur une branche personnelle à partir de `dev`, en suivant la convention :
 
 ```
-feature/<prenom>_<nom_de_la_fonctionnalite>
+feature/<prenom>_<fonction>
 ```
 
 **Exemples :**
 - `feature/gad_detection_couleur`
 - `feature/rayane_resolveur_cube`
 
----
+📌 Les détails complets du workflow Git, des conventions de branche et de la gestion de la documentation sont disponibles ici :
 
-## 🔁 Workflow de contribution
-
-### 1. Cloner le dépôt
-
-```bash
-git clone https://github.com/Mate-bert/Rubik-s-cube-resolver.git
-cd Rubik-s-cube-resolver
-```
-
-### 2. Basculer sur `dev` et créer sa branche personnelle
-
-```bash
-git checkout dev
-git pull
-git checkout -b feature/<prenom>_<fonction>
-git push -u origin feature/<prenom>_<fonction>
-```
-
-### 3. Commiter régulièrement
-
-```bash
-git add .
-git commit -m "Description claire de ce qui a été fait"
-git push
-```
-
-### 4. Créer une Pull Request
-
-Une fois ta fonctionnalité prête, crée une **Pull Request (PR)** vers `dev`.
-
-Discuter, relire, valider et merger ensemble !
+👉 [Guide de contribution – CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ---
 
-## 📌 Bonnes pratiques
+## 📋 Documentation et suivi
 
-- Ne jamais développer directement sur `main` ou `dev`.
-- Commits réguliers, clairs et compréhensibles.
-- Un seul objectif par branche.
-- Toujours faire un `git pull` de `dev` avant de créer une nouvelle branche.
-- Communiquer avec l’équipe si des conflits apparaissent.
+- ✅ [Suivi des tâches – TODO.md](./TODO.md) : tâches techniques à réaliser
+- 📄 [Guide de contribution – CONTRIBUTING.md](./CONTRIBUTING.md) : conventions Git, structure du projet, règles de contribution
 
 ---
 
----
-
-## 🧠 Astuce : Bonnes pratiques sur les branches
-
-🛠️ Pour garder un dépôt propre et facile à comprendre, il est conseillé de créer des branches **thématiques** et **ciblées** selon le type de modification.
-
-### 📁 Exemples de conventions de branches
-
-| Type de modification        | Branche recommandée         |
-|----------------------------|-----------------------------|
-| Fonction de détection       | `feature/<prenom>_<fonction>` |
-| Mise à jour du README       | `docs/readme`               |
-| Ajout/modification du TODO  | `docs/todo`                 |
-| Rédaction du CONTRIBUTING.md| `docs/contributing`         |
-
-📌 Même si Git permet de pousser n’importe quel fichier depuis n’importe quelle branche, **évitez de mélanger du code, de la doc et du debug dans une seule branche**.
-
-🎯 Objectif : une branche claire = une tâche/un thème bien identifié.
-
----
-
-## 🔗 Liens utiles
-
-- 📄 [Guide de contribution – CONTRIBUTING.md](./CONTRIBUTING.md)
-- ✅ [Suivi des tâches – TODO.md](./TODO.md)
+Merci à tous pour vos contributions ! 🚀
