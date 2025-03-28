@@ -29,23 +29,31 @@ Le projet est divisé en plusieurs sous-parties gérées par des équipes diffé
   docs/<type_doc>
   ```
 
+### Exemples :
+- `feature/gad_detection_couleur`
+- `docs/todo`
+- `docs/readme`
+
 ---
 
 ## 🧪 Workflow de contribution
 
-### 1. Créer une branche
+### 1. Cloner le dépôt
+
+```bash
+git clone https://github.com/Mate-bert/Rubik-s-cube-resolver.git
+cd Rubik-s-cube-resolver
+```
+
+### 2. Créer une branche
 
 ```bash
 git checkout dev
 git pull
-git checkout -b feature/prenom_tache
+git checkout -b feature/prenom_fonction
 ```
 
-Exemples :
-- `feature/gad_detection_couleur`
-- `docs/todo`
-
-### 2. Travailler, commit, push
+### 3. Travailler, commit, push
 
 ```bash
 git add .
@@ -53,23 +61,22 @@ git commit -m "Message clair sur ce qui a été fait"
 git push -u origin <nom_de_ta_branche>
 ```
 
-### 3. Créer une Pull Request
+### 4. Créer une Pull Request
 
 Depuis GitHub :
-- Base branch : `dev`
-- Compare : ta branche
-- Donne un titre clair et une description si besoin
+- **Base branch** : `dev`
+- **Compare** : ta branche
+- Rédige un titre clair et une description utile
+- Attendre la validation avant merge
 
 ---
 
-## 📝 Documentation
-
-### Fichier `TODO.md`
+## 📄 Fichier `TODO.md`
 
 - Localisé à la racine du projet
-- Utilisé pour suivre les tâches en cours dans chaque sous-système
+- Utilisé pour suivre les tâches techniques de chaque sous-système
 - Modifier depuis une branche dédiée (`docs/todo`)
-- N'oublie pas de **pull avant modification** :
+- N'oubliez pas de **pull avant modification** :
   ```bash
   git pull origin docs/todo
   ```
@@ -81,7 +88,9 @@ Depuis GitHub :
 - Des **commits clairs et atomiques**
 - Pas de push direct sur `main` ou `dev`
 - Une **PR = une fonctionnalité**
-- Communiquer en cas de conflit ou question
+- Toujours pull avant de commencer une nouvelle branche
+- Ne pas mélanger code, doc et test dans une seule branche
+- Communiquer en cas de conflit ou de doute
 
 ---
 
