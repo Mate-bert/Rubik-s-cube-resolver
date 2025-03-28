@@ -1,0 +1,6 @@
+3face_1.jpg, face_rectified_1.jpg: 165 323, 285 259, 398 324, 278 420
+3face_1.jpg, face_rectified_2.jpg: 164 328, 275 423, 278 520, 185 428
+3face_1.jpg, face_rectified_3.jpg: 276 423, 401 323, 389 437, 280 522
+3face_2.jpg, face_rectified_4.jpg: 268 217, 389 284, 406 438, 265 404
+3face_2.jpg, face_rectified_5.jpg: 144 444, 263 404, 401 442, 276 482
+3face_2.jpg, face_rectified_6.jpg: 161 288, 270 215, 263 407, 140 442
