@@ -78,3 +78,46 @@ Discuter, relire, valider et merger ensemble !
 
 ---
 
+## 📄 Fichier TODO.md
+
+Le fichier `TODO.md` se trouve à la **racine du projet**. Il est utilisé pour suivre l'avancement des différentes parties du projet, comme la détection des couleurs, la gestion des caméras, l'impression 3D, le FPGA, les moteurs, etc.
+
+### ➕ Ajouter ou modifier une tâche
+
+1. Ouvrir le fichier `TODO.md` et ajouter/modifier la section souhaitée.
+2. Ajouter le fichier à Git :
+   ```bash
+   git add TODO.md
+   git commit -m "Mise à jour du fichier TODO.md"
+   git push
+   ```
+
+### 🔁 Travailler sur une branche dédiée au TODO
+
+Pour centraliser les modifications du fichier `TODO.md`, une branche `docs/todo` a été créée.
+
+- Pour créer la branche localement et y travailler :
+  ```bash
+  git checkout -b docs/todo
+  ```
+
+- Ou pour la récupérer si elle existe déjà :
+  ```bash
+  git fetch origin
+  git checkout docs/todo
+  ```
+
+- Pour fusionner les mises à jour dans `dev` :
+  - Créez une **Pull Request** depuis `docs/todo` vers `dev`.
+
+### 📥 Comment pull depuis différentes branches
+
+Voici comment récupérer du contenu depuis une autre branche :
+
+```bash
+git pull origin main      # Met à jour depuis la branche main
+git pull origin dev       # Met à jour depuis la branche dev
+git pull origin docs/todo # Met à jour depuis la branche TODO
+```
+
+---
