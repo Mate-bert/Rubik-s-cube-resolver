@@ -1,90 +1,120 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
-#include <fstream>
-#include <sstream>
-#include <string>
+#include <filesystem>
 #include <map>
+#include <string>
+#include <vector>
 
-// Parse une ligne de type : 3face_1.jpg, face_rectified_1.jpg: x1 y1, x2 y2, x3 y3, x4 y4
-bool parseLine(const std::string& line,
-               std::string& image_name,
-               std::string& output_name,
-               std::vector<cv::Point2f>& points)
-{
-    size_t colon_pos = line.find(':');
-    if (colon_pos == std::string::npos) return false;
+namespace fs = std::filesystem;
 
-    std::string left = line.substr(0, colon_pos);
-    std::string coords = line.substr(colon_pos + 1);
+// Plages HSV personnalisées pour chaque couleur
+const std::map<std::string, std::pair<cv::Scalar, cv::Scalar>> color_ranges = {
+    {"red",    {cv::Scalar(0, 100, 100),   cv::Scalar(10, 255, 255)}},    // Rouge vif
+    {"orange", {cv::Scalar(11, 100, 100),  cv::Scalar(22, 255, 255)}},
+    {"yellow", {cv::Scalar(23, 100, 100),  cv::Scalar(34, 255, 255)}},
+    {"green",  {cv::Scalar(35, 80, 80),    cv::Scalar(85, 255, 255)}},
+    {"blue",   {cv::Scalar(86, 100, 100),  cv::Scalar(130, 255, 255)}},
+    {"white",  {cv::Scalar(0, 0, 200),     cv::Scalar(180, 40, 255)}}
+};
 
-    // split "image_name, output_name"
-    size_t comma_pos = left.find(',');
-    if (comma_pos == std::string::npos) return false;
+// Détecte la couleur dominante parmi les plages définies
+std::string getDominantColor(const cv::Mat& img) {
+    cv::Mat resized;
+    cv::resize(img, resized, cv::Size(50, 50));
+    cv::Mat hsv;
+    cv::cvtColor(resized, hsv, cv::COLOR_BGR2HSV);
 
-    image_name = left.substr(0, comma_pos);
-    output_name = left.substr(comma_pos + 1);
-    output_name.erase(0, output_name.find_first_not_of(" ")); // trim
+    std::map<std::string, int> pixel_counts;
 
-    std::stringstream ss(coords);
-    std::string token;
-    while (std::getline(ss, token, ',')) {
-        float x, y;
-        std::stringstream pair(token);
-        pair >> x >> y;
-        points.emplace_back(x, y);
+    for (const auto& [color_name, range] : color_ranges) {
+        cv::Mat mask;
+        cv::inRange(hsv, range.first, range.second, mask);
+        pixel_counts[color_name] = cv::countNonZero(mask);
     }
 
-    return points.size() == 4;
+    // Choix de la couleur dominante
+    std::string dominant = "unknown";
+    int max_pixels = 0;
+    for (const auto& [color, count] : pixel_counts) {
+        if (count > max_pixels) {
+            max_pixels = count;
+            dominant = color;
+        }
+    }
+
+    return dominant;
 }
 
 int main() {
-    std::ifstream file("faces_coords.txt");
-    if (!file.is_open()) {
-        std::cerr << "Erreur : impossible d'ouvrir faces_coords.txt" << std::endl;
-        return -1;
-    }
+    std::map<std::string, std::string> center_colors = {
+        {"up", "yellow"},
+        {"front", "red"},
+        {"right", "green"},
+        {"left", "blue"},
+        {"back", "orange"},
+        {"down", "white"}
+    };
 
-    // Cache des images redimensionnées pour ne pas les recharger plusieurs fois
-    std::map<std::string, cv::Mat> resized_images;
-    const int target_height = 800;
+    std::map<std::string, std::map<int, std::string>> detected_colors;
 
-    std::string line;
-    while (std::getline(file, line)) {
-        if (line.empty()) continue;
+    for (const auto& entry : fs::directory_iterator("stickers")) {
+        if (!entry.is_regular_file()) continue;
 
-        std::string image_name, output_name;
-        std::vector<cv::Point2f> input_points;
-
-        if (!parseLine(line, image_name, output_name, input_points)) {
-            std::cerr << "❌ Ligne mal formatée : " << line << std::endl;
+        std::string filename = entry.path().filename().string();
+        cv::Mat sticker = cv::imread(entry.path().string());
+        if (sticker.empty()) {
+            std::cerr << "❌ Impossible de lire " << filename << "\n";
             continue;
         }
 
-        // Charger et redimensionner si nécessaire
-        if (resized_images.find(image_name) == resized_images.end()) {
-            cv::Mat original = cv::imread(image_name);
-            if (original.empty()) {
-                std::cerr << "Erreur : image " << image_name << " non trouvée !" << std::endl;
-                continue;
-            }
+        size_t underscore_pos = filename.find('_');
+        size_t dot_pos = filename.find('.');
+        if (underscore_pos == std::string::npos || dot_pos == std::string::npos) continue;
 
-            double scale = static_cast<double>(target_height) / original.rows;
-            cv::Mat resized;
-            cv::resize(original, resized, cv::Size(), scale, scale);
-            resized_images[image_name] = resized;
+        std::string face = filename.substr(0, underscore_pos);
+        int index = std::stoi(filename.substr(underscore_pos + 1, dot_pos - underscore_pos - 1));
+
+        if (index == 5) {
+            detected_colors[face][5] = center_colors[face];
+        } else {
+            std::string color = getDominantColor(sticker);
+            detected_colors[face][index] = color;
         }
+    }
 
-        // Homographie et redressement
-        std::vector<cv::Point2f> dst_points = {
-            {0, 0}, {300, 0}, {300, 300}, {0, 300}
-        };
+    // Affichage des résultats
+    for (const auto& [face, colors] : detected_colors) {
+        std::cout << "Face: " << face << "\n";
+        for (int i = 1; i <= 9; ++i) {
+            std::string color = colors.count(i) ? colors.at(i) : "???";
+            std::cout << "  " << i << ": " << color << "\n";
+        }
+        std::cout << "\n";
+    }
 
-        cv::Mat transform = cv::getPerspectiveTransform(input_points, dst_points);
-        cv::Mat rectified;
-        cv::warpPerspective(resized_images[image_name], rectified, transform, cv::Size(300, 300));
-
-        cv::imwrite(output_name, rectified);
-        std::cout << "✅ " << output_name << " générée depuis " << image_name << std::endl;
+    std::map<std::string, char> color_to_letter = {
+        {"yellow", 'U'},
+        {"red",    'F'},
+        {"green",  'R'},
+        {"blue",   'L'},
+        {"orange", 'B'},
+        {"white",  'D'}
+    };
+    
+    std::vector<std::string> face_order = {"up", "right", "front", "down", "left", "back"};
+    
+    std::cout << "\n=== Chaîne Kociemba ===\n";
+    for (const std::string& face : face_order) {
+        std::string face_line(1, toupper(face[0]));
+        face_line += ":";
+    
+        for (int i = 1; i <= 9; ++i) {
+            std::string color = detected_colors[face][i];
+            char letter = color_to_letter.count(color) ? color_to_letter[color] : '?';
+            face_line += letter;
+        }
+    
+        std::cout << "  " << face_line << "\n";
     }
 
     return 0;

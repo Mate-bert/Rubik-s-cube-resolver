@@ -73,3 +73,52 @@ Mettre en place un pipeline semi-automatisé pour extraire les faces d'un Rubik'
 ---
 
 📅 Fin de journée productive, prêt à reprendre demain pour la détection couleur !
+---
+
+## Date : 29 mars 2025
+
+---
+
+## Nouveaux objectifs atteints
+
+### 4. **Refactorisation complète du projet**
+- Refonte complète de l’architecture : séparation en modules (`face_rectifieur_auto`, `split_stickers`, `ColorDetector`)
+- Ajout de fichiers `.hpp` et `.cpp` dédiés pour chaque composant
+- Centralisation de l’appel des fonctions dans `main.cpp`
+
+### 5. **Makefile multi-cibles**
+- Ajout d’un `Makefile` permettant de compiler :
+  - `rubiks_resolver` (binaire principal)
+  - `test` (binaire secondaire pour expérimentations)
+- Optimisation des flags (`CXXFLAGS`, `INCLUDE`, `LIBS`) avec répertoires configurables
+
+### 6. **Chaîne Kociemba générée automatiquement**
+- Détection complète des couleurs dominantes pour chaque face du Rubik's Cube
+- Attribution automatique des couleurs centrales prédéfinies
+- Génération de la chaîne Kociemba dans `kociemba.txt` sous le format attendu :
+
+```
+"U:DRLUUBFBR",
+"R:BLURRLRUB",
+"F:LRDDFDLFU",
+"D:FUFFDBRDU",
+"L:BRUFLLFDD",
+"B:BFLUBLRBD"
+```
+
+---
+
+## Amélioration potentielle identifiée
+
+🎯 **Intégration d’une IA pour la détection automatique des coins des faces**
+- Objectif : éliminer la sélection manuelle des coordonnées des 3 faces visibles
+- Entraînement envisagé en Python (YOLOv8 ou keypoint detection)
+- Inférence embarquée prévue dans la partie Linux de la Zybo 7010 (via TFLite ou ONNX)
+
+---
+
+## Bilan
+
+- ✅ Tous les modules du pipeline sont désormais appelables de façon centralisée
+- ✅ Processus complet de la photo à la chaîne Kociemba fonctionnel
+- 🔄 Dernière dépendance manuelle restante : la sélection des coins → à remplacer par IA
