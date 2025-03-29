@@ -1,0 +1,6 @@
+face_rectified_1 : up
+face_rectified_2 : front
+face_rectified_3 : right
+face_rectified_4 : left
+face_rectified_5 : back
+face_rectified_6 : down
