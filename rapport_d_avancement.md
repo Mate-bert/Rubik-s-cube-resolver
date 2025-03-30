@@ -122,3 +122,57 @@ Mettre en place un pipeline semi-automatisé pour extraire les faces d'un Rubik'
 - ✅ Tous les modules du pipeline sont désormais appelables de façon centralisée
 - ✅ Processus complet de la photo à la chaîne Kociemba fonctionnel
 - 🔄 Dernière dépendance manuelle restante : la sélection des coins → à remplacer par IA
+---
+
+## Date : 30 mars 2025
+
+---
+
+## Objectif du jour
+
+Commencer le développement d’une intelligence artificielle capable de détecter automatiquement les trois faces visibles d’un Rubik’s Cube sur une image, en vue d’automatiser la récupération des coordonnées des coins.
+
+---
+
+## Réalisations
+
+### 1. **Choix de la base IA**
+- Sélection du modèle **YOLOv8 Segmentation** pour détecter les 3 faces par image
+- Justification : exportable en ONNX/TFLite, inférable sur CPU ARM (Zybo 7010)
+
+### 2. **Création de dataset initial**
+- Constitution d’un dataset de 30 images comportant 3 faces visibles chacune
+- Annotations manuelles réalisées avec **Roboflow** : une seule classe `face`
+- Export des données au format **YOLOv8 Segmentation**, avec split train/val
+
+### 3. **Lancement de l’entraînement IA**
+- Entraînement d’un modèle `yolov8n-seg.pt` (nano) sur 30 images
+- Sauvegarde du modèle dans `runs/rubiks_faces_seg2/weights/best.pt`
+- Résultats : mAP50-95 correct (~0.6), bons débuts sur dataset minimal
+
+### 4. **Évaluation des performances**
+- Prédiction testée sur une image réelle du jeu de validation
+- Sauvegarde de l’image prédite avec masques pour inspection manuelle
+- Constats :
+  - Détection partielle ou imprécise sur certains cas
+  - Décision de capturer ultérieurement des images personnalisées plus représentatives
+
+---
+
+## Limites et axes d'amélioration
+
+- Dataset initial basé sur des images Internet non parfaitement alignées avec les futures caméras du projet
+- Amélioration prévue : capturer un **dataset maison** mieux adapté à la situation réelle (cadrage, éclairage, matériel)
+
+---
+
+## Prochaines étapes
+
+1. 📸 Prendre 30–50 nouvelles images avec la caméra réelle
+2. 🏷️ Ré-annoter ces images avec Roboflow (même format YOLOv8 Seg)
+3. 🔁 Réentraîner le modèle en partant de `best.pt` (fine-tuning)
+4. 🤖 Préparer une fonction C++ pour exploiter le modèle en ONNX et associer les 3 polygones aux faces `up/front/right`
+
+---
+
+📌 Une belle étape vers une IA embarquée et automatisée !

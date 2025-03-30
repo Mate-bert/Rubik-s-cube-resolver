@@ -1,0 +1,6 @@
+path: C:/Users/HP/Documents/cours_inge_3D/Rubik-s-cube-resolver/IA/dataset
+train: train/images
+val: valid/images
+
+names:
+  0: face
