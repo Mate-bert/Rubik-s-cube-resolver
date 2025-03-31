@@ -1,0 +1,267 @@
+.
+├── IA
+│   ├── dataset
+│   │   ├── train
+│   │   │   ├── images
+│   │   │   │   ├── 10_jpg.rf.4cf9336208bbe0800be09d68085f7cb1.jpg
+│   │   │   │   ├── 11_jpg.rf.635a242d1288115978243077d605a858.jpg
+│   │   │   │   ├── 12_jpg.rf.36bbab851ea2dd30dcdbf5e71be62c3c.jpg
+│   │   │   │   ├── 13_jpg.rf.1d5b73ef6b513e2c481c1a1dba41ee28.jpg
+│   │   │   │   ├── 14_jpg.rf.38d0a9cf0283d3975fcd1cb186ec78b6.jpg
+│   │   │   │   ├── 15_jpg.rf.6ce3c8937b244eebe60db80d17ad1a8d.jpg
+│   │   │   │   ├── 18_jpg.rf.675314cd1eb25fe6643269480c66ec9e.jpg
+│   │   │   │   ├── 19_jpg.rf.0faf11338c6e7db0acfad942a11387c2.jpg
+│   │   │   │   ├── 1_jpg.rf.8ffc2dd263f9ccc3054624a3cb84c63f.jpg
+│   │   │   │   ├── 20250328_135033_jpg.rf.5e291cdc9532b95df74fbb6109695088.jpg
+│   │   │   │   ├── 20250328_135057_jpg.rf.2adcace28f3280741ad0bafe8e7d6a08.jpg
+│   │   │   │   ├── 20_jpg.rf.d6f08e419aba5fbdb164063e50dd065b.jpg
+│   │   │   │   ├── 21_jpg.rf.f0738783043618ab09da994600d1f832.jpg
+│   │   │   │   ├── 22_jpg.rf.0f5747e9c0116ae3ca7a8f4517731d40.jpg
+│   │   │   │   ├── 23_jpg.rf.608d93c227b32b6e6a2994e2862605ca.jpg
+│   │   │   │   ├── 24_jpg.rf.1dda6b8590fcab3b45ca8c407e26d02e.jpg
+│   │   │   │   ├── 25_jpg.rf.d58148dea1f1d383bdf9c3e45b0a507f.jpg
+│   │   │   │   ├── 26_jpg.rf.9d56fd2be7955afeb7e094302a2182f6.jpg
+│   │   │   │   ├── 29_jpg.rf.6ea1d97f6d5b885d45ef3d5c651a9892.jpg
+│   │   │   │   ├── 2_jpg.rf.3efbbcd9612e1fb6016cab1757c7b211.jpg
+│   │   │   │   ├── 3_jpg.rf.eb2cff656fb7a06ca06ca3702681245c.jpg
+│   │   │   │   ├── 3face_1_jpg.rf.8cb67514ab63346cbabbaf0c6fe00760.jpg
+│   │   │   │   ├── 4_jpg.rf.fb3bd2993ae2d1e104b411a500f01aa0.jpg
+│   │   │   │   ├── 6_jpg.rf.94075a8d5e3eb3ac1d7f71c873618439.jpg
+│   │   │   │   ├── 7_jpg.rf.a9e164d415a0d17c975ebe478c7b37d9.jpg
+│   │   │   │   └── 9_jpg.rf.5da4e1371538102f94dd5a4ed5a8aef6.jpg
+│   │   │   ├── labels
+│   │   │   │   ├── 10_jpg.rf.4cf9336208bbe0800be09d68085f7cb1.txt
+│   │   │   │   ├── 11_jpg.rf.635a242d1288115978243077d605a858.txt
+│   │   │   │   ├── 12_jpg.rf.36bbab851ea2dd30dcdbf5e71be62c3c.txt
+│   │   │   │   ├── 13_jpg.rf.1d5b73ef6b513e2c481c1a1dba41ee28.txt
+│   │   │   │   ├── 14_jpg.rf.38d0a9cf0283d3975fcd1cb186ec78b6.txt
+│   │   │   │   ├── 15_jpg.rf.6ce3c8937b244eebe60db80d17ad1a8d.txt
+│   │   │   │   ├── 18_jpg.rf.675314cd1eb25fe6643269480c66ec9e.txt
+│   │   │   │   ├── 19_jpg.rf.0faf11338c6e7db0acfad942a11387c2.txt
+│   │   │   │   ├── 1_jpg.rf.8ffc2dd263f9ccc3054624a3cb84c63f.txt
+│   │   │   │   ├── 20250328_135033_jpg.rf.5e291cdc9532b95df74fbb6109695088.txt
+│   │   │   │   ├── 20250328_135057_jpg.rf.2adcace28f3280741ad0bafe8e7d6a08.txt
+│   │   │   │   ├── 20_jpg.rf.d6f08e419aba5fbdb164063e50dd065b.txt
+│   │   │   │   ├── 21_jpg.rf.f0738783043618ab09da994600d1f832.txt
+│   │   │   │   ├── 22_jpg.rf.0f5747e9c0116ae3ca7a8f4517731d40.txt
+│   │   │   │   ├── 23_jpg.rf.608d93c227b32b6e6a2994e2862605ca.txt
+│   │   │   │   ├── 24_jpg.rf.1dda6b8590fcab3b45ca8c407e26d02e.txt
+│   │   │   │   ├── 25_jpg.rf.d58148dea1f1d383bdf9c3e45b0a507f.txt
+│   │   │   │   ├── 26_jpg.rf.9d56fd2be7955afeb7e094302a2182f6.txt
+│   │   │   │   ├── 29_jpg.rf.6ea1d97f6d5b885d45ef3d5c651a9892.txt
+│   │   │   │   ├── 2_jpg.rf.3efbbcd9612e1fb6016cab1757c7b211.txt
+│   │   │   │   ├── 3_jpg.rf.eb2cff656fb7a06ca06ca3702681245c.txt
+│   │   │   │   ├── 3face_1_jpg.rf.8cb67514ab63346cbabbaf0c6fe00760.txt
+│   │   │   │   ├── 4_jpg.rf.fb3bd2993ae2d1e104b411a500f01aa0.txt
+│   │   │   │   ├── 6_jpg.rf.94075a8d5e3eb3ac1d7f71c873618439.txt
+│   │   │   │   ├── 7_jpg.rf.a9e164d415a0d17c975ebe478c7b37d9.txt
+│   │   │   │   └── 9_jpg.rf.5da4e1371538102f94dd5a4ed5a8aef6.txt
+│   │   │   └── labels.cache
+│   │   └── valid
+│   │       ├── images
+│   │       │   ├── 16_jpg.rf.0f4e67ef1c57047b5b594800132be306.jpg
+│   │       │   ├── 17_jpg.rf.c637030a2f90d574b4b2bfb195e523df.jpg
+│   │       │   ├── 27_jpg.rf.f55f2d7077b0fc87586d4222b2d528bf.jpg
+│   │       │   ├── 28_jpg.rf.f52f0e9cef50a0fc459d94026b98fb98.jpg
+│   │       │   ├── 30_jpg.rf.d3b4bdd50356a906b98f7b4506187ed9.jpg
+│   │       │   ├── 3face_2_jpg.rf.003d8ec5835803e1f9f41cc111fd3c3a.jpg
+│   │       │   └── 8_jpg.rf.1bcc0bff30d5ea19af0042080c568a4b.jpg
+│   │       ├── labels
+│   │       │   ├── 16_jpg.rf.0f4e67ef1c57047b5b594800132be306.txt
+│   │       │   ├── 17_jpg.rf.c637030a2f90d574b4b2bfb195e523df.txt
+│   │       │   ├── 27_jpg.rf.f55f2d7077b0fc87586d4222b2d528bf.txt
+│   │       │   ├── 28_jpg.rf.f52f0e9cef50a0fc459d94026b98fb98.txt
+│   │       │   ├── 30_jpg.rf.d3b4bdd50356a906b98f7b4506187ed9.txt
+│   │       │   ├── 3face_2_jpg.rf.003d8ec5835803e1f9f41cc111fd3c3a.txt
+│   │       │   └── 8_jpg.rf.1bcc0bff30d5ea19af0042080c568a4b.txt
+│   │       └── labels.cache
+│   ├── download_dataset.ipynb
+│   ├── notebook_demo.ipynb
+│   ├── predicted.jpg
+│   ├── predicted_3face_2.jpg
+│   ├── runs
+│   │   ├── rubiks_faces_seg
+│   │   │   └── args.yaml
+│   │   ├── rubiks_faces_seg2
+│   │   │   ├── BoxF1_curve.png
+│   │   │   ├── BoxPR_curve.png
+│   │   │   ├── BoxP_curve.png
+│   │   │   ├── BoxR_curve.png
+│   │   │   ├── MaskF1_curve.png
+│   │   │   ├── MaskPR_curve.png
+│   │   │   ├── MaskP_curve.png
+│   │   │   ├── MaskR_curve.png
+│   │   │   ├── args.yaml
+│   │   │   ├── confusion_matrix.png
+│   │   │   ├── confusion_matrix_normalized.png
+│   │   │   ├── labels.jpg
+│   │   │   ├── labels_correlogram.jpg
+│   │   │   ├── results.csv
+│   │   │   ├── results.png
+│   │   │   ├── train_batch0.jpg
+│   │   │   ├── train_batch1.jpg
+│   │   │   ├── train_batch2.jpg
+│   │   │   ├── train_batch280.jpg
+│   │   │   ├── train_batch281.jpg
+│   │   │   ├── train_batch282.jpg
+│   │   │   ├── val_batch0_labels.jpg
+│   │   │   ├── val_batch0_pred.jpg
+│   │   │   └── weights
+│   │   │       ├── best.pt
+│   │   │       └── last.pt
+│   │   └── rubiks_faces_seg3
+│   │       ├── BoxF1_curve.png
+│   │       ├── BoxPR_curve.png
+│   │       ├── BoxP_curve.png
+│   │       ├── BoxR_curve.png
+│   │       ├── MaskF1_curve.png
+│   │       ├── MaskPR_curve.png
+│   │       ├── MaskP_curve.png
+│   │       ├── MaskR_curve.png
+│   │       ├── args.yaml
+│   │       ├── confusion_matrix.png
+│   │       ├── confusion_matrix_normalized.png
+│   │       ├── events.out.tfevents.1743412768.L-RIT-O-SI0117.22776.1
+│   │       ├── labels.jpg
+│   │       ├── labels_correlogram.jpg
+│   │       ├── results.csv
+│   │       ├── results.png
+│   │       ├── train_batch0.jpg
+│   │       ├── train_batch1.jpg
+│   │       ├── train_batch2.jpg
+│   │       ├── val_batch0_labels.jpg
+│   │       ├── val_batch0_pred.jpg
+│   │       └── weights
+│   │           ├── best.pt
+│   │           └── last.pt
+│   ├── train.ipynb
+│   ├── train.py
+│   ├── yolo_config.yaml
+│   ├── yolo_config2.yaml
+│   └── yolov8n-seg.pt
+├── TODO_perso.md
+├── bin
+│   ├── analyse_kociemba.exe
+│   ├── analyse_kociemba_v2.exe
+│   ├── main.exe
+│   └── test.exe
+├── data
+│   ├── aide_mémoire
+│   │   ├── detect_test.txt
+│   │   └── faces.txt
+│   ├── config
+│   │   └── faces_coords.txt
+│   ├── groundtruth
+│   │   └── kociemba_verif.txt
+│   ├── output
+│   │   ├── face_decouper
+│   │   ├── kociemba.txt
+│   │   └── stickers
+│   └── raw
+│       ├── 3face_1.jpg
+│       └── 3face_2.jpg
+├── face_rectified_1.jpg
+├── face_rectified_2.jpg
+├── face_rectified_3.jpg
+├── face_rectified_4.jpg
+├── face_rectified_5.jpg
+├── face_rectified_6.jpg
+├── include
+│   ├── ColorDetector.hpp
+│   ├── face_rectifieur_auto.hpp
+│   └── split_stickers.hpp
+├── makefile
+├── obj
+│   ├── ColorDetector.o
+│   ├── face_rectifieur_auto.o
+│   ├── face_splitter.o
+│   ├── main.o
+│   ├── split_stickers.o
+│   └── test.o
+├── rapport_d_avancement.md
+├── ressources
+│   ├── 3face_1.jpg
+│   ├── 3face_2.jpg
+│   ├── detect_test.txt
+│   ├── erreurs.json
+│   ├── face_rectified_1.jpg
+│   ├── face_rectified_2.jpg
+│   ├── face_rectified_3.jpg
+│   ├── face_rectified_4.jpg
+│   ├── face_rectified_5.jpg
+│   ├── face_rectified_6.jpg
+│   ├── faces.txt
+│   ├── faces_coords.txt
+│   ├── kociemba.txt
+│   ├── kociemba_verif.txt
+│   ├── res.txt
+│   └── stickers
+│       ├── back_1.jpg
+│       ├── back_2.jpg
+│       ├── back_3.jpg
+│       ├── back_4.jpg
+│       ├── back_5.jpg
+│       ├── back_6.jpg
+│       ├── back_7.jpg
+│       ├── back_8.jpg
+│       ├── back_9.jpg
+│       ├── down_1.jpg
+│       ├── down_2.jpg
+│       ├── down_3.jpg
+│       ├── down_4.jpg
+│       ├── down_5.jpg
+│       ├── down_6.jpg
+│       ├── down_7.jpg
+│       ├── down_8.jpg
+│       ├── down_9.jpg
+│       ├── front_1.jpg
+│       ├── front_2.jpg
+│       ├── front_3.jpg
+│       ├── front_4.jpg
+│       ├── front_5.jpg
+│       ├── front_6.jpg
+│       ├── front_7.jpg
+│       ├── front_8.jpg
+│       ├── front_9.jpg
+│       ├── left_1.jpg
+│       ├── left_2.jpg
+│       ├── left_3.jpg
+│       ├── left_4.jpg
+│       ├── left_5.jpg
+│       ├── left_6.jpg
+│       ├── left_7.jpg
+│       ├── left_8.jpg
+│       ├── left_9.jpg
+│       ├── right_1.jpg
+│       ├── right_2.jpg
+│       ├── right_3.jpg
+│       ├── right_4.jpg
+│       ├── right_5.jpg
+│       ├── right_6.jpg
+│       ├── right_7.jpg
+│       ├── right_8.jpg
+│       ├── right_9.jpg
+│       ├── up_1.jpg
+│       ├── up_2.jpg
+│       ├── up_3.jpg
+│       ├── up_4.jpg
+│       ├── up_5.jpg
+│       ├── up_6.jpg
+│       ├── up_7.jpg
+│       ├── up_8.jpg
+│       └── up_9.jpg
+├── run.sh
+├── src
+│   ├── ColorDetector.cpp
+│   ├── analyse
+│   │   ├── analyse_erreurs.py
+│   │   ├── analyse_kociemba.cpp
+│   │   └── analyse_kociemba_v2.cpp
+│   ├── face_rectifieur.cpp
+│   ├── face_rectifieur_auto.cpp
+│   ├── main.cpp
+│   ├── split_stickers.cpp
+│   └── test.cpp
+└── tree.txt
+
+30 directories, 235 files

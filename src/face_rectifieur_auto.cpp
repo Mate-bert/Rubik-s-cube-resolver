@@ -73,8 +73,8 @@ std::vector<fs::path> getMostRecentImages(size_t count = 2) {
 }
 
 void rectifierFacesAutomatically() {
-    bool face1_exists = fs::exists("3face_1.jpg");
-    bool face2_exists = fs::exists("3face_2.jpg");
+    bool face1_exists = fs::exists("data/raw/3face_1.jpg");
+    bool face2_exists = fs::exists("data/raw/3face_2.jpg");
 
     std::vector<std::string> used_names;
     if (!face1_exists || !face2_exists) {
@@ -82,25 +82,26 @@ void rectifierFacesAutomatically() {
         if (images.size() < 2) return;
 
         if (!face1_exists) {
-            fs::rename(images[0], "3face_1.jpg");
-            used_names.push_back("3face_1.jpg");
+            fs::rename(images[0], "data/raw/3face_1.jpg");
+            used_names.push_back("data/raw/3face_1.jpg");
         }
         if (!face2_exists) {
-            fs::rename(images[1], "3face_2.jpg");
-            used_names.push_back("3face_2.jpg");
+            fs::rename(images[1], "data/raw/3face_2.jpg");
+            used_names.push_back("data/raw/3face_2.jpg");
         }
     }
 
     std::vector<std::tuple<std::string, std::string, std::vector<cv::Point2f>>> coord_entries;
-    if (!loadCoords("faces_coords.txt", coord_entries)) return;
+    if (!loadCoords("data/config/faces_coords.txt", coord_entries)) return;
     if (coord_entries.size() < 6) return;
 
     std::map<std::string, cv::Mat> resized_images;
     const int target_height = 800;
 
     for (int i = 0; i < 6; ++i) {
-        auto& [src_img, out_img, pts] = coord_entries[i];
-        std::string actual_img = (i < 3) ? "3face_1.jpg" : "3face_2.jpg";
+        auto& [src_img, out_img_raw, pts] = coord_entries[i];
+        std::string out_img = "data/output/face_decouper/" + out_img_raw;
+        std::string actual_img = (i < 3) ? "data/raw/3face_1.jpg" : "data/raw/3face_2.jpg";
 
         if (resized_images.find(actual_img) == resized_images.end()) {
             cv::Mat original = cv::imread(actual_img);
@@ -121,6 +122,11 @@ void rectifierFacesAutomatically() {
         cv::warpPerspective(resized_images[actual_img], rectified, transform, cv::Size(300, 300));
 
         cv::imwrite(out_img, rectified);
+
+        std::cout << "📤 Sauvegarde image vers : " << out_img << std::endl;
+if (!cv::imwrite(out_img, rectified)) {
+    std::cerr << "❌ Erreur d'écriture : " << out_img << std::endl;
+}
     }
 
     for (const auto& name : used_names) {

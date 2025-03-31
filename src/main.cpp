@@ -30,7 +30,7 @@ int main() {
 
     std::map<std::string, std::map<int, std::string>> detected_colors;
 
-    for (const auto& entry : std::filesystem::directory_iterator("stickers")) {
+    for (const auto& entry : std::filesystem::directory_iterator("data/output/stickers")) {
         if (!entry.is_regular_file()) continue;
 
         std::string filename = entry.path().filename().string();
@@ -63,7 +63,7 @@ int main() {
 
     std::vector<std::string> face_order = {"up", "right", "front", "down", "left", "back"};
 
-    std::ofstream out("kociemba.txt");
+    std::ofstream out("data/output/kociemba.txt");
     for (size_t i = 0; i < face_order.size(); ++i) {
         const std::string& face = face_order[i];
         std::string face_line(1, toupper(face[0]));

@@ -10,15 +10,15 @@ namespace fs = std::filesystem;
 
 void splitAllFacesIntoStickers() {
     std::map<std::string, std::string> face_mapping = {
-        {"face_rectified_1.jpg", "up"},
-        {"face_rectified_2.jpg", "front"},
-        {"face_rectified_3.jpg", "right"},
-        {"face_rectified_4.jpg", "left"},
-        {"face_rectified_5.jpg", "back"},
-        {"face_rectified_6.jpg", "down"}
+        {"data/output/face_decouper/face_rectified_1.jpg", "up"},
+        {"data/output/face_decouper/face_rectified_2.jpg", "front"},
+        {"data/output/face_decouper/face_rectified_3.jpg", "right"},
+        {"data/output/face_decouper/face_rectified_4.jpg", "left"},
+        {"data/output/face_decouper/face_rectified_5.jpg", "back"},
+        {"data/output/face_decouper/face_rectified_6.jpg", "down"}
     };
 
-    fs::create_directory("stickers");
+    fs::create_directory("data\\output\\stickers");
 
     for (const auto& [filename, face_name] : face_mapping) {
         cv::Mat face = cv::imread(filename);
@@ -37,7 +37,7 @@ void splitAllFacesIntoStickers() {
                 cv::Rect roi(x, y, sticker_size_x, sticker_size_y);
                 cv::Mat sticker = face(roi);
 
-                std::string out_name = "stickers/" + face_name + "_" + std::to_string(row * 3 + col + 1) + ".jpg";
+                std::string out_name = "data/output/stickers/" + face_name + "_" + std::to_string(row * 3 + col + 1) + ".jpg";
                 cv::imwrite(out_name, sticker);
             }
         }
