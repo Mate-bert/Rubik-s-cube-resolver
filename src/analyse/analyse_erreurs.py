@@ -1,6 +1,11 @@
 import json
 import pandas as pd
 import matplotlib.pyplot as plt
+#import matplotlib
+#matplotlib.use("TkAgg") 
+# marche avec TkAgg, mais pas avec Qt5Agg
+# Si ça ne marche pas, essayer de changer le backend de matplotlib
+# ou de mettre à jour matplotlib
 import seaborn as sns
 
 # Charger le fichier JSON
@@ -22,4 +27,5 @@ plt.xlabel("Face")
 plt.ylabel("Nombre d'erreurs")
 plt.tight_layout()
 plt.grid(axis="y")
+plt.savefig("data/output/analyse/histo_erreurs.png")
 plt.show()

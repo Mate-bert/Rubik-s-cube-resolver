@@ -19,7 +19,7 @@ std::string getColorName(char face) {
 }
 
 int main() {
-    std::ifstream infile("data/kociemba.txt");
+    std::ifstream infile("data/output/kociemba.txt");
     std::ifstream ref_file("data/groundtruth/kociemba_verif.txt");
 
     std::string line;

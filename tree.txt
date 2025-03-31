@@ -81,7 +81,8 @@
 │   ├── predicted_3face_2.jpg
 │   ├── runs
 │   │   ├── rubiks_faces_seg
-│   │   │   └── args.yaml
+│   │   │   ├── args.yaml
+│   │   │   └── weights
 │   │   ├── rubiks_faces_seg2
 │   │   │   ├── BoxF1_curve.png
 │   │   │   ├── BoxPR_curve.png
@@ -154,18 +155,76 @@
 │   ├── groundtruth
 │   │   └── kociemba_verif.txt
 │   ├── output
+│   │   ├── analyse
+│   │   │   ├── erreurs.json
+│   │   │   ├── histo_erreurs.png
+│   │   │   └── res.txt
 │   │   ├── face_decouper
+│   │   │   ├── face_rectified_1.jpg
+│   │   │   ├── face_rectified_2.jpg
+│   │   │   ├── face_rectified_3.jpg
+│   │   │   ├── face_rectified_4.jpg
+│   │   │   ├── face_rectified_5.jpg
+│   │   │   └── face_rectified_6.jpg
 │   │   ├── kociemba.txt
 │   │   └── stickers
+│   │       ├── back_1.jpg
+│   │       ├── back_2.jpg
+│   │       ├── back_3.jpg
+│   │       ├── back_4.jpg
+│   │       ├── back_5.jpg
+│   │       ├── back_6.jpg
+│   │       ├── back_7.jpg
+│   │       ├── back_8.jpg
+│   │       ├── back_9.jpg
+│   │       ├── down_1.jpg
+│   │       ├── down_2.jpg
+│   │       ├── down_3.jpg
+│   │       ├── down_4.jpg
+│   │       ├── down_5.jpg
+│   │       ├── down_6.jpg
+│   │       ├── down_7.jpg
+│   │       ├── down_8.jpg
+│   │       ├── down_9.jpg
+│   │       ├── front_1.jpg
+│   │       ├── front_2.jpg
+│   │       ├── front_3.jpg
+│   │       ├── front_4.jpg
+│   │       ├── front_5.jpg
+│   │       ├── front_6.jpg
+│   │       ├── front_7.jpg
+│   │       ├── front_8.jpg
+│   │       ├── front_9.jpg
+│   │       ├── left_1.jpg
+│   │       ├── left_2.jpg
+│   │       ├── left_3.jpg
+│   │       ├── left_4.jpg
+│   │       ├── left_5.jpg
+│   │       ├── left_6.jpg
+│   │       ├── left_7.jpg
+│   │       ├── left_8.jpg
+│   │       ├── left_9.jpg
+│   │       ├── right_1.jpg
+│   │       ├── right_2.jpg
+│   │       ├── right_3.jpg
+│   │       ├── right_4.jpg
+│   │       ├── right_5.jpg
+│   │       ├── right_6.jpg
+│   │       ├── right_7.jpg
+│   │       ├── right_8.jpg
+│   │       ├── right_9.jpg
+│   │       ├── up_1.jpg
+│   │       ├── up_2.jpg
+│   │       ├── up_3.jpg
+│   │       ├── up_4.jpg
+│   │       ├── up_5.jpg
+│   │       ├── up_6.jpg
+│   │       ├── up_7.jpg
+│   │       ├── up_8.jpg
+│   │       └── up_9.jpg
 │   └── raw
 │       ├── 3face_1.jpg
 │       └── 3face_2.jpg
-├── face_rectified_1.jpg
-├── face_rectified_2.jpg
-├── face_rectified_3.jpg
-├── face_rectified_4.jpg
-├── face_rectified_5.jpg
-├── face_rectified_6.jpg
 ├── include
 │   ├── ColorDetector.hpp
 │   ├── face_rectifieur_auto.hpp
@@ -179,77 +238,6 @@
 │   ├── split_stickers.o
 │   └── test.o
 ├── rapport_d_avancement.md
-├── ressources
-│   ├── 3face_1.jpg
-│   ├── 3face_2.jpg
-│   ├── detect_test.txt
-│   ├── erreurs.json
-│   ├── face_rectified_1.jpg
-│   ├── face_rectified_2.jpg
-│   ├── face_rectified_3.jpg
-│   ├── face_rectified_4.jpg
-│   ├── face_rectified_5.jpg
-│   ├── face_rectified_6.jpg
-│   ├── faces.txt
-│   ├── faces_coords.txt
-│   ├── kociemba.txt
-│   ├── kociemba_verif.txt
-│   ├── res.txt
-│   └── stickers
-│       ├── back_1.jpg
-│       ├── back_2.jpg
-│       ├── back_3.jpg
-│       ├── back_4.jpg
-│       ├── back_5.jpg
-│       ├── back_6.jpg
-│       ├── back_7.jpg
-│       ├── back_8.jpg
-│       ├── back_9.jpg
-│       ├── down_1.jpg
-│       ├── down_2.jpg
-│       ├── down_3.jpg
-│       ├── down_4.jpg
-│       ├── down_5.jpg
-│       ├── down_6.jpg
-│       ├── down_7.jpg
-│       ├── down_8.jpg
-│       ├── down_9.jpg
-│       ├── front_1.jpg
-│       ├── front_2.jpg
-│       ├── front_3.jpg
-│       ├── front_4.jpg
-│       ├── front_5.jpg
-│       ├── front_6.jpg
-│       ├── front_7.jpg
-│       ├── front_8.jpg
-│       ├── front_9.jpg
-│       ├── left_1.jpg
-│       ├── left_2.jpg
-│       ├── left_3.jpg
-│       ├── left_4.jpg
-│       ├── left_5.jpg
-│       ├── left_6.jpg
-│       ├── left_7.jpg
-│       ├── left_8.jpg
-│       ├── left_9.jpg
-│       ├── right_1.jpg
-│       ├── right_2.jpg
-│       ├── right_3.jpg
-│       ├── right_4.jpg
-│       ├── right_5.jpg
-│       ├── right_6.jpg
-│       ├── right_7.jpg
-│       ├── right_8.jpg
-│       ├── right_9.jpg
-│       ├── up_1.jpg
-│       ├── up_2.jpg
-│       ├── up_3.jpg
-│       ├── up_4.jpg
-│       ├── up_5.jpg
-│       ├── up_6.jpg
-│       ├── up_7.jpg
-│       ├── up_8.jpg
-│       └── up_9.jpg
 ├── run.sh
 ├── src
 │   ├── ColorDetector.cpp
@@ -264,4 +252,4 @@
 │   └── test.cpp
 └── tree.txt
 
-30 directories, 235 files
+30 directories, 223 files

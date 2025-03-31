@@ -3,6 +3,7 @@
 #include <map>
 #include <vector>
 #include <filesystem>
+#include <windows.h>
 #include <opencv2/opencv.hpp>
 
 #include "face_rectifieur_auto.hpp"
@@ -10,6 +11,8 @@
 #include "ColorDetector.hpp"
 
 int main() {
+    SetConsoleOutputCP(CP_UTF8);
+    
     std::cout << "🔧 Étape 1 : Redressement des faces...\n";
     rectifierFacesAutomatically();
 

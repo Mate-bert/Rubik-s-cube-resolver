@@ -1,6 +1,0 @@
-face_rectified_1 : up, yellow
-face_rectified_2 : front, red
-face_rectified_3 : right, green
-face_rectified_4 : left, blue
-face_rectified_5 : back, orange
-face_rectified_6 : down, white

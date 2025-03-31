@@ -176,3 +176,56 @@ Commencer le développement d’une intelligence artificielle capable de détect
 ---
 
 📌 Une belle étape vers une IA embarquée et automatisée !
+---
+
+## Date : 31 mars 2025
+
+---
+
+## Objectif du jour
+
+Finaliser l'automatisation du pipeline de traitement d’image, fiabiliser l’enchaînement des modules, et améliorer l’analyse des erreurs de reconnaissance des couleurs via un script Python.
+
+---
+
+## Réalisations
+
+### 1. **Fiabilisation du pipeline C++**
+- Ajout d’un mécanisme de copie temporaire des images d’entrée (`3face_1.jpg`, `3face_2.jpg`) à partir des deux fichiers les plus récents de `data/raw`
+- Suppression conditionnelle uniquement des fichiers temporaires générés, pour ne jamais supprimer un fichier manuel
+- Sécurisation de l’écriture des fichiers redressés (`face_rectified_X.jpg`) avec création automatique des dossiers parents
+
+### 2. **Création d’un analyseur d’erreurs**
+- Script Python `analyse_erreurs.py` capable de :
+  - Lire le fichier `erreurs.json` généré par `analyse_kociemba_v2.cpp`
+  - Afficher un aperçu tabulaire des erreurs (face, position, valeur réelle et attendue)
+  - Tracer un histogramme des erreurs par couleur ou par face
+- Mise en place d’un fallback automatique :
+  - Sauvegarde du graphe si `plt.show()` échoue (cas MSYS2/MINGW64)
+
+### 3. **Résolution d’un crash `matplotlib`**
+- Problème identifié : crash de `plt.show()` sous MINGW64 ou Git Bash
+- Solution : forçage du backend `TkAgg` avec vérification de la présence de `tkinter`
+- Vérification faite via `python -m tkinter` (test concluant)
+- Activation de l’affichage avec `plt.show()` à nouveau fonctionnel
+
+---
+
+## Bilan
+
+- ✅ Pipeline complet stabilisé, du chargement des images à la génération de `kociemba.txt`
+- ✅ Pipeline d’analyse d’erreurs visuelles en Python utilisable et maintenable
+- ✅ Confort d’utilisation grandement amélioré pour les tests et les répétitions de runs
+
+---
+
+## Prochaines étapes
+
+1. 📁 Ajouter un fichier `config.yaml` pour centraliser tous les chemins (optionnel)
+2. 📊 Ajouter une heatmap des positions d’erreurs fréquentes dans `analyse_erreurs.py`
+3. 🧠 Lancer un nouveau fine-tuning du modèle IA avec un dataset maison plus réaliste
+4. 📤 Envisager l’export automatique de stats JSON/CSV à chaque run
+
+---
+
+📅 Fin de session très productive, pipeline prêt à être réutilisé sereinement !

@@ -56,7 +56,7 @@ bool loadCoords(const std::string& filename,
 
 std::vector<fs::path> getMostRecentImages(size_t count = 2) {
     std::vector<fs::directory_entry> entries;
-    for (const auto& f : fs::directory_iterator(".")) {
+    for (const auto& f : fs::directory_iterator("data/raw")) {
         if (f.path().extension() == ".jpg") {
             entries.push_back(f);
         }
@@ -82,11 +82,19 @@ void rectifierFacesAutomatically() {
         if (images.size() < 2) return;
 
         if (!face1_exists) {
-            fs::rename(images[0], "data/raw/3face_1.jpg");
+            std::string temp1 = "data/raw/3face_1.jpg";
+if (!fs::exists(temp1)) {
+    fs::copy(images[0], temp1, fs::copy_options::overwrite_existing);
+    used_names.push_back(temp1);
+}
             used_names.push_back("data/raw/3face_1.jpg");
         }
         if (!face2_exists) {
-            fs::rename(images[1], "data/raw/3face_2.jpg");
+            std::string temp2 = "data/raw/3face_2.jpg";
+if (!fs::exists(temp2)) {
+    fs::copy(images[1], temp2, fs::copy_options::overwrite_existing);
+    used_names.push_back(temp2);
+}
             used_names.push_back("data/raw/3face_2.jpg");
         }
     }

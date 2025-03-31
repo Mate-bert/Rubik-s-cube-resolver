@@ -16,7 +16,7 @@ std::string getColorName(char face) {
 }
 
 int main() {
-    std::ifstream infile("ressources\\kociemba.txt");
+    std::ifstream infile("data/output/kociemba.txt");
     std::string line;
     std::map<char, int> counter;
     std::vector<std::string> question_positions;
@@ -59,7 +59,7 @@ int main() {
     }
 
     // Lecture du fichier de référence
-    std::ifstream ref_file("ressources\\kociemba_verif.txt");
+    std::ifstream ref_file("data/groundtruth/kociemba_verif.txt");
     std::vector<std::string> reference_lines;
     std::map<char, int> ref_counter;
 
