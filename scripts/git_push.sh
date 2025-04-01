@@ -1,72 +1,58 @@
 #!/bin/bash
 
-# Vérifie si whiptail est installé
-if ! command -v whiptail &> /dev/null; then
-    echo "❌ dialog n'est pas installé. Installe-le avec : pacman -S mingw-w64-x86_64-newt"
-    exit 1
-fi
+echo "🔍 Fichiers modifiés ou non suivis :"
+git status -s
 
 while true; do
-    # Affiche les fichiers modifiés
-    changed_files=$(git status -s | awk '{print $2}')
-    if [ -z "$changed_files" ]; then
-        whiptail --title "Aucun changement" --msgbox "Aucun fichier modifié à commiter." 8 50
+    echo ""
+    read -p "🗂️  Entrez les fichiers à ajouter (ou '.' pour tous, vide pour quitter) : " files
+
+    if [[ -z "$files" ]]; then
+        echo "🚫 Fin du script."
         break
     fi
 
-    # Crée une liste à passer à whiptail
-    file_list=()
-    for file in $changed_files; do
-        file_list+=("$file" "" OFF)
-    done
+    git add $files
 
-    selected_files=$(whiptail --title "🗂️ Sélection des fichiers" \
-        --checklist "Sélectionne les fichiers à ajouter au prochain commit :" 20 78 12 \
-        "${file_list[@]}" 3>&1 1>&2 2>&3)
+    echo ""
+    echo "📦 Types de commit possibles :"
+    echo "  1) feat      → ajout de fonctionnalité"
+    echo "  2) fix       → correction de bug"
+    echo "  3) docs      → documentation"
+    echo "  4) style     → mise en forme (indentation, etc.)"
+    echo "  5) refactor  → refactoring sans ajout de fonction"
+    echo "  6) test      → ajout/modif de tests"
+    echo "  7) chore     → tâches diverses (build, conf...)"
 
-    # Si annulation
-    if [ $? -ne 0 ]; then
-        break
-    fi
+    read -p "👉 Choisis un type (1-7) : " type_choice
 
-    # Nettoyage
-    selected_files=$(echo $selected_files | sed 's/"//g')
+    case $type_choice in
+        1) type="feat" ;;
+        2) type="fix" ;;
+        3) type="docs" ;;
+        4) type="style" ;;
+        5) type="refactor" ;;
+        6) type="test" ;;
+        7) type="chore" ;;
+        *) echo "❌ Choix invalide."; continue ;;
+    esac
 
-    # Ajout des fichiers
-    git add $selected_files
+    read -p "📝 Message du commit (pas de majuscule ni point final) : " msg
 
-    # Menu du type de commit
-    commit_type=$(whiptail --title "📦 Type de commit" --menu "Choisis le type de commit :" 20 60 10 \
-        "feat" "Ajout de fonctionnalité" \
-        "fix" "Correction de bug" \
-        "docs" "Documentation uniquement" \
-        "style" "Mise en forme (indentation, etc.)" \
-        "refactor" "Refactoring sans ajout de fonctionnalité" \
-        "test" "Ajout/modif de tests" \
-        "chore" "Tâches diverses (build, conf...)" \
-        3>&1 1>&2 2>&3)
-
-    [ $? -ne 0 ] && break
-
-    # Message
-    commit_msg=$(whiptail --title "📝 Message du commit" --inputbox "Entre ton message (pas de majuscule ni point final) :" 10 78 3>&1 1>&2 2>&3)
-    [ $? -ne 0 ] && break
-
-    full_msg="$commit_type: $commit_msg"
-
+    full_msg="$type: $msg"
+    echo "✅ Commit : $full_msg"
     git commit -m "$full_msg"
 
-    # Boucler ?
-    whiptail --yesno "Souhaites-tu faire un autre commit ?" 8 50
-    [ $? -ne 0 ] && break
+    read -p "🔁 Faire un autre commit ? (o/n) : " again
+    [[ "$again" != "o" && "$again" != "O" ]] && break
 done
 
-# Propose de push
-whiptail --yesno "Souhaites-tu pousser tes commits sur la branche actuelle ?" 8 50
-if [ $? -eq 0 ]; then
-    current_branch=$(git rev-parse --abbrev-ref HEAD)
-    git push -u origin "$current_branch"
-    whiptail --msgbox "✅ Commits poussés sur $current_branch !" 8 50
+# Push ?
+read -p "🚀 Pousser sur la branche actuelle ? (o/n) : " push_choice
+if [[ "$push_choice" == "o" || "$push_choice" == "O" ]]; then
+    branch=$(git rev-parse --abbrev-ref HEAD)
+    git push -u origin "$branch"
+    echo "✅ Poussé sur $branch"
 else
-    whiptail --msgbox "📌 Tu pourras pousser plus tard manuellement." 8 50
+    echo "📌 Tu pourras faire un git push plus tard."
 fi
