@@ -252,7 +252,7 @@ Poursuivre la consolidation du projet Rubik's Cube Resolver en renforçant les o
 - Affichage en 3 lignes de 9 cases, selon les conventions du Rubik’s Cube
 
 ### 2. **Optimisation du pipeline d’analyse**
-- Conservation du fichier `res.txt` généré par `analyse_kociemba_v2.cpp`
+- Conservation du fichier `res.txt` généré par `analyse_kociemba.cpp`
 - Décision de le garder pour des raisons de traçabilité (log brut)
 - Ajout possible d'une analyse en Python via JSON par la suite
 
