@@ -229,3 +229,76 @@ Finaliser l'automatisation du pipeline de traitement d’image, fiabiliser l’e
 ---
 
 📅 Fin de session très productive, pipeline prêt à être réutilisé sereinement !
+---
+
+## Date : 1ᵉʳ avril 2025
+
+---
+
+## Objectif du jour
+
+Poursuivre la consolidation du projet Rubik's Cube Resolver en renforçant les outils d’analyse, de visualisation et d’automatisation via Git et Python.
+
+---
+
+## Réalisations
+
+### 1. **Visualisation des résultats de détection**
+- Création d’un script `visu_cube.py` utilisant `matplotlib` pour afficher :
+  - Le cube attendu (`kociemba_verif.txt`)
+  - Le cube détecté (`kociemba.txt`)
+  - Un visuel des erreurs (matchs et mismatches par couleur et position)
+- Conversion intelligente des lettres (U, F, R, etc.) en couleurs (`yellow`, `red`, etc.)
+- Affichage en 3 lignes de 9 cases, selon les conventions du Rubik’s Cube
+
+### 2. **Optimisation du pipeline d’analyse**
+- Conservation du fichier `res.txt` généré par `analyse_kociemba_v2.cpp`
+- Décision de le garder pour des raisons de traçabilité (log brut)
+- Ajout possible d'une analyse en Python via JSON par la suite
+
+### 3. **Intégration Git améliorée**
+- Création d’un script `git_push.sh` sans TUI :
+  - Sélection des fichiers à ajouter
+  - Choix du type de commit (`feat`, `fix`, `docs`, etc.)
+  - Message de commit personnalisé
+  - Boucle interactive pour plusieurs commits
+  - Push en fin de session
+- Ajout d’une version TUI testée mais abandonnée (problèmes de compatibilité avec `dialog`)
+- Utilisation finale : simple, robuste, multi-environnement (Git Bash, MSYS2, WSL)
+
+### 4. **Makefile unifié et multi-cibles**
+- Ajout des targets :
+  - `build` : compilation des binaires (`main`, `analyse_kociemba`, `analyse_kociemba_v2`)
+  - `run-main`, `run-analyse1`, `run-analyse2` : exécutions automatisées
+  - `clean` : suppression des exécutables et objets
+- Intégration des chemins nécessaires à OpenCV compilé manuellement (via MSYS2)
+- Résolution des problèmes d’accès temporaire sous Git Bash via MSYS2
+
+---
+
+## Problèmes rencontrés
+
+- ❌ Crash `plt.show()` sous Git Bash → résolu par `TkAgg`
+- ❌ Compilation impossible dans Git Bash (erreur TMPDIR) → contournement : build dans MSYS2
+- ❌ `dialog` non disponible ou instable sur Git Bash/MSYS2 → TUI abandonné
+- ❌ Problème de détection de fichiers modifiés (`git status`) entre WSL et Git Bash → investigation menée
+
+---
+
+## Bilan
+
+- ✅ Outils d’analyse visuelle très utiles pour la validation des résultats
+- ✅ Pipeline d’utilisation Git plus propre, moins de commits désorganisés
+- ✅ Base de code propre avec centralisation progressive dans `config.yaml`
+- ✅ Utilisation multi-plateforme clarifiée (Git Bash : exécution, MSYS2 : compilation)
+
+---
+
+## Prochaines étapes
+
+1. 🧩 Débuter le lien entre détection IA des faces et génération automatique des coordonnées
+
+---
+
+📌 Journée très dense, axée sur l’outillage du projet pour aller plus vite ensuite.  
+Prochaine étape : automatiser la fin du pipeline et relancer l’IA !
