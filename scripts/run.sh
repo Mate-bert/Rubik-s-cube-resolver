@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "🔧 Compilation..."
-g++ -o bin/analyse_kociemba src/analyse/analyse_kociemba.cpp
+g++ -o bin/analyse_kociemba src/analyse/analyse_kociemba.cpp src/config.cpp -Iinclude
 
 if [ $? -eq 0 ]; then
     echo "🚀 Exécution..."

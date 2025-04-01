@@ -5,6 +5,7 @@
 #include <vector>
 #include <sstream>
 #include <iomanip>
+#include "config.hpp"
 
 std::string getColorName(char face) {
     switch (face) {
@@ -19,8 +20,9 @@ std::string getColorName(char face) {
 }
 
 int main() {
-    std::ifstream infile("data/output/kociemba.txt");
-    std::ifstream ref_file("data/groundtruth/kociemba_verif.txt");
+    auto cfg = loadYamlConfig("data/config/config.yaml");
+    std::ifstream infile(cfg["kociemba_txt"]);
+    std::ifstream ref_file(cfg["kociemba_ref"]);
 
     std::string line;
     std::map<char, int> counter;
@@ -54,7 +56,7 @@ int main() {
         }
     }
 
-    std::ofstream json_out("data/output/analyse/erreurs.json");
+    std::ofstream json_out(cfg["error_json"]);
     json_out << "[\n";
 
     infile.clear();
@@ -91,7 +93,7 @@ int main() {
 
     json_out << "\n]\n";
     json_out.close();
-    std::cout << "\n💾 Fichier JSON d'erreurs généré : data/output/analyse/erreurs.json\n";
+    std::cout << "\n💾 Fichier JSON d'erreurs généré : cfg[error_json]\n";
 
     return 0;
 }

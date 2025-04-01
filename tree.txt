@@ -81,8 +81,7 @@
 │   ├── predicted_3face_2.jpg
 │   ├── runs
 │   │   ├── rubiks_faces_seg
-│   │   │   ├── args.yaml
-│   │   │   └── weights
+│   │   │   └── args.yaml
 │   │   ├── rubiks_faces_seg2
 │   │   │   ├── BoxF1_curve.png
 │   │   │   ├── BoxPR_curve.png
@@ -140,25 +139,25 @@
 │   ├── yolo_config.yaml
 │   ├── yolo_config2.yaml
 │   └── yolov8n-seg.pt
+├── README.md
 ├── TODO_perso.md
 ├── bin
 │   ├── analyse_kociemba.exe
 │   ├── analyse_kociemba_v2.exe
-│   ├── main.exe
-│   └── test.exe
+│   └── main.exe
+├── compile_analyse_v2.txt
 ├── data
 │   ├── aide_mémoire
 │   │   ├── detect_test.txt
 │   │   └── faces.txt
 │   ├── config
+│   │   ├── config.yaml
 │   │   └── faces_coords.txt
 │   ├── groundtruth
 │   │   └── kociemba_verif.txt
 │   ├── output
 │   │   ├── analyse
-│   │   │   ├── erreurs.json
-│   │   │   ├── histo_erreurs.png
-│   │   │   └── res.txt
+│   │   │   └── histo_erreurs.png
 │   │   ├── face_decouper
 │   │   │   ├── face_rectified_1.jpg
 │   │   │   ├── face_rectified_2.jpg
@@ -227,16 +226,16 @@
 │       └── 3face_2.jpg
 ├── include
 │   ├── ColorDetector.hpp
+│   ├── config.hpp
 │   ├── face_rectifieur_auto.hpp
 │   └── split_stickers.hpp
 ├── makefile
 ├── obj
 │   ├── ColorDetector.o
+│   ├── config.o
 │   ├── face_rectifieur_auto.o
-│   ├── face_splitter.o
 │   ├── main.o
-│   ├── split_stickers.o
-│   └── test.o
+│   └── split_stickers.o
 ├── rapport_d_avancement.md
 ├── run.sh
 ├── src
@@ -245,11 +244,17 @@
 │   │   ├── analyse_erreurs.py
 │   │   ├── analyse_kociemba.cpp
 │   │   └── analyse_kociemba_v2.cpp
-│   ├── face_rectifieur.cpp
+│   ├── config.cpp
 │   ├── face_rectifieur_auto.cpp
+│   ├── face_rectifieur_manuel.cpp
 │   ├── main.cpp
-│   ├── split_stickers.cpp
-│   └── test.cpp
-└── tree.txt
+│   └── split_stickers.cpp
+├── tree.txt
+└── utils
+    ├── __init__.py
+    ├── __pycache__
+    │   ├── __init__.cpython-312.pyc
+    │   └── config_loader.cpython-312.pyc
+    └── config_loader.py
 
-30 directories, 223 files
+31 directories, 227 files

@@ -3,6 +3,8 @@
 #include <string>
 #include <map>
 #include <vector>
+#include "config.hpp"
+
 std::string getColorName(char face) {
     switch (face) {
         case 'U': return "yellow";
@@ -16,7 +18,8 @@ std::string getColorName(char face) {
 }
 
 int main() {
-    std::ifstream infile("data/output/kociemba.txt");
+    auto cfg = loadYamlConfig("data/config/config.yaml");
+    std::ifstream infile(cfg["kociemba_txt"]);
     std::string line;
     std::map<char, int> counter;
     std::vector<std::string> question_positions;
@@ -59,7 +62,7 @@ int main() {
     }
 
     // Lecture du fichier de référence
-    std::ifstream ref_file("data/groundtruth/kociemba_verif.txt");
+    std::ifstream ref_file(cfg["kociemba_ref"]);
     std::vector<std::string> reference_lines;
     std::map<char, int> ref_counter;
 

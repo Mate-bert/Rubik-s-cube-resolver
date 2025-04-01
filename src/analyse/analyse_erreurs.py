@@ -7,9 +7,15 @@ import matplotlib.pyplot as plt
 # Si ça ne marche pas, essayer de changer le backend de matplotlib
 # ou de mettre à jour matplotlib
 import seaborn as sns
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parents[2]))
+from utils.config_loader import load_config
+
+cfg = load_config()
 
 # Charger le fichier JSON
-with open("data/output/analyse/erreurs.json", "r", encoding="utf-8") as f:
+with open(cfg["paths"]["error_json"], "r", encoding="utf-8") as f:
     data = json.load(f)
 
 # Convertir en DataFrame
@@ -27,5 +33,5 @@ plt.xlabel("Face")
 plt.ylabel("Nombre d'erreurs")
 plt.tight_layout()
 plt.grid(axis="y")
-plt.savefig("data/output/analyse/histo_erreurs.png")
+plt.savefig(cfg["paths"]["error_img"])
 plt.show()

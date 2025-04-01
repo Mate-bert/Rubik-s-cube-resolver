@@ -1,0 +1,1 @@
+g++ -o bin/analyse_kociemba_v2 src/analyse/analyse_kociemba_v2.cpp src/config.cpp -Iinclude

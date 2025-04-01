@@ -1,0 +1,10 @@
+paths:
+  raw_dir: data/raw/
+  coords_file: data/config/faces_coords.txt
+  rectified_dir: data/output/face_decouper/
+  stickers_dir: data/output/stickers/
+  kociemba_txt: data/output/kociemba.txt
+  kociemba_ref: data/groundtruth/kociemba_verif.txt
+  error_json: data/output/analyse/erreurs.json
+  error_img: data/output/analyse/histo_erreurs.png
+  visu_cube: data/output/analyse/visu_cube.png
