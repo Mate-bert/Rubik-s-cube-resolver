@@ -63,9 +63,8 @@ done
 echo ""
 echo "🌿 Branches disponibles pour push :"
 mapfile -t branches < <(
-    git branch -r |
-    grep -vE 'HEAD|->' |
-    sed -E 's/\*?\s*//; s|remotes/||' |
+    git for-each-ref --format='%(refname:short)' refs/heads refs/remotes |
+    grep -vE 'HEAD|^origin$' |
     sort -u
 )
 select branch in "${branches[@]}"; do
