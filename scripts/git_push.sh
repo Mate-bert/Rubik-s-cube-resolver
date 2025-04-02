@@ -1,58 +1,65 @@
 #!/bin/bash
 
+# Liste les fichiers modifiés ou non suivis
+mapfile -t files < <(git status -s | awk '{print $2}')
+
+if [ ${#files[@]} -eq 0 ]; then
+    echo "✅ Aucun changement détecté. Rien à committer."
+    exit 0
+fi
+
 echo "🔍 Fichiers modifiés ou non suivis :"
-git status -s
-
-while true; do
-    echo ""
-    read -p "🗂️  Entrez les fichiers à ajouter (ou '.' pour tous, vide pour quitter) : " files
-
-    if [[ -z "$files" ]]; then
-        echo "🚫 Fin du script."
-        break
-    fi
-
-    git add $files
-
-    echo ""
-    echo "📦 Types de commit possibles :"
-    echo "  1) feat      → ajout de fonctionnalité"
-    echo "  2) fix       → correction de bug"
-    echo "  3) docs      → documentation"
-    echo "  4) style     → mise en forme (indentation, etc.)"
-    echo "  5) refactor  → refactoring sans ajout de fonction"
-    echo "  6) test      → ajout/modif de tests"
-    echo "  7) chore     → tâches diverses (build, conf...)"
-
-    read -p "👉 Choisis un type (1-7) : " type_choice
-
-    case $type_choice in
-        1) type="feat" ;;
-        2) type="fix" ;;
-        3) type="docs" ;;
-        4) type="style" ;;
-        5) type="refactor" ;;
-        6) type="test" ;;
-        7) type="chore" ;;
-        *) echo "❌ Choix invalide."; continue ;;
-    esac
-
-    read -p "📝 Message du commit (pas de majuscule ni point final) : " msg
-
-    full_msg="$type: $msg"
-    echo "✅ Commit : $full_msg"
-    git commit -m "$full_msg"
-
-    read -p "🔁 Faire un autre commit ? (o/n) : " again
-    [[ "$again" != "o" && "$again" != "O" ]] && break
+for i in "${!files[@]}"; do
+    printf "  [%d] %s\n" $((i+1)) "${files[$i]}"
 done
 
-# Push ?
-read -p "🚀 Pousser sur la branche actuelle ? (o/n) : " push_choice
-if [[ "$push_choice" == "o" || "$push_choice" == "O" ]]; then
-    branch=$(git rev-parse --abbrev-ref HEAD)
-    git push -u origin "$branch"
-    echo "✅ Poussé sur $branch"
+echo ""
+read -p "🗂️  Entrez les numéros à ajouter (ex: 1 3 4), ou 'a' pour tous : " selection
+
+# Construction de la commande git add
+to_add=()
+if [[ "$selection" == "a" ]]; then
+    to_add=("${files[@]}")
 else
-    echo "📌 Tu pourras faire un git push plus tard."
+    for index in $selection; do
+        if [[ "$index" =~ ^[0-9]+$ && $index -ge 1 && $index -le ${#files[@]} ]]; then
+            to_add+=("${files[$((index-1))]}")
+        fi
+    done
 fi
+
+if [ ${#to_add[@]} -eq 0 ]; then
+    echo "❌ Aucun fichier ajouté. Opération annulée."
+    exit 1
+fi
+
+echo ""
+echo "➕ Fichiers ajoutés :"
+for file in "${to_add[@]}"; do
+    echo "  ➤ $file"
+    git add "$file"
+done
+
+# Choix du type de commit
+echo ""
+echo "📦 Choisissez un type de commit :"
+options=("feat" "fix" "docs" "refactor" "style" "test" "chore" "autre")
+select type in "${options[@]}"; do
+    if [[ -n "$type" ]]; then
+        break
+    fi
+done
+
+# Message personnalisé
+read -p "📝 Message de commit : " msg
+commit_msg="$type: $msg"
+
+echo ""
+echo "🟩 git commit -m \"$commit_msg\""
+git commit -m "$commit_msg"
+
+# Récupération de la branche courante
+branch=$(git rev-parse --abbrev-ref HEAD)
+
+echo "🚀 git push -u origin $branch"
+git push -u origin "$branch"
