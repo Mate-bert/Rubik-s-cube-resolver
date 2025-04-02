@@ -62,6 +62,9 @@ done
 # Pousser les changements
 echo ""
 echo "🌿 Branches disponibles pour push :"
+# ℹ️ On affiche les branches locales + distantes (connues via fetch)
+# ⚠️ Certaines branches distantes peuvent ne pas être suivies localement (ex: origin/foo)
+#    -> pour les pousser, il faut les avoir déjà trackées localement (git checkout -t origin/foo)
 mapfile -t branches < <(
     git for-each-ref --format='%(refname:short)' refs/heads refs/remotes |
     grep -vE 'HEAD|^origin$' |
