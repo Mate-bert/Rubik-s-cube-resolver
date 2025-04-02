@@ -302,3 +302,65 @@ Poursuivre la consolidation du projet Rubik's Cube Resolver en renforçant les o
 
 📌 Journée très dense, axée sur l’outillage du projet pour aller plus vite ensuite.  
 Prochaine étape : automatiser la fin du pipeline et relancer l’IA !
+---
+## Date : 2 avril 2025
+
+---
+
+## Objectifs de la journée
+
+- ✅ Fiabiliser le système de validation de la chaîne Kociemba
+- ✅ Créer un outil Python pour vérifier la **validité structurelle** du cube
+- ✅ Améliorer les **scripts de gestion Git** (`git_push.sh`)
+
+---
+
+## Réalisations
+
+### 1. 🔍 Vérification structurelle de la chaîne Kociemba
+- Abandon de la vérification via le solveur `kociemba` Python (erreurs et dépendances)
+- Création d’un script Python `check_cube_structure.py` capable de :
+  - Lire `kociemba_verif.txt` (groundtruth)
+  - Vérifier la **présence et orientation correcte des coins et arêtes**
+  - Détecter les permutations invalides
+  - Afficher un rapport clair sur les erreurs (manquants, orientation, parité)
+
+### 2. 🧠 Intégration du fichier `config.yaml`
+- Utilisation systématique du `config.yaml` dans les scripts Python
+- Lecture via `utils/config_loader.py` pour centraliser les chemins
+- Structure facilitant l’évolution future (ajout de chemins, paramètres IA, etc.)
+
+### 3. 🧰 Amélioration du script `git_push.sh`
+- Ajout de la **possibilité de faire plusieurs commits** avant le `push`
+- Meilleure détection des fichiers modifiés
+- Sélection **interactive** de la branche à pousser via `git branch -a`
+- Nettoyage du TUI (abandonné) et recentrage sur une version robuste sans dépendance externe
+
+---
+
+## Limitations et points notables
+
+- ❗ Problème d’encodage sous Windows pour les emojis dans le terminal (résolu avec `PYTHONIOENCODING=utf-8`)
+- ⚠️ Les branches distantes sont affichées avec `origin/...` ce qui peut porter à confusion
+- ℹ️ Le script `git_push.sh` fonctionne de manière optimale sous **Git Bash**, les builds sous **MSYS2 MINGW64**
+
+---
+
+## Bilan
+
+- ✅ Le système de validation du cube est fiable sans dépendance externe
+- ✅ L’intégration de `config.yaml` simplifie la maintenance
+- ✅ La gestion Git est beaucoup plus fluide et adaptée à un usage quotidien
+
+---
+
+## Prochaines étapes
+
+1. 🧩 Ajouter une **vérification automatique** de la structure après chaque détection
+2. 🛠️ Intégrer la visualisation des erreurs (`visu_cube.py`) à une suite automatisée
+3. 🧪 Enrichir le dataset IA et relancer un entraînement plus robuste
+4. 📊 Éventuellement exporter un rapport HTML ou Markdown après chaque session complète
+
+---
+
+📅 Journée de stabilisation très utile pour fiabiliser la suite du développement.
