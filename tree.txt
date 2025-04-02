@@ -145,7 +145,6 @@
 │   ├── analyse_kociemba.exe
 │   ├── analyse_kociemba_v2.exe
 │   └── main.exe
-├── compile_analyse_v2.txt
 ├── data
 │   ├── aide_mémoire
 │   │   ├── detect_test.txt
@@ -157,7 +156,10 @@
 │   │   └── kociemba_verif.txt
 │   ├── output
 │   │   ├── analyse
-│   │   │   └── histo_erreurs.png
+│   │   │   ├── erreurs.json
+│   │   │   ├── histo_erreurs.png
+│   │   │   ├── res.txt
+│   │   │   └── visu_cube.png
 │   │   ├── face_decouper
 │   │   │   ├── face_rectified_1.jpg
 │   │   │   ├── face_rectified_2.jpg
@@ -237,18 +239,23 @@
 │   ├── main.o
 │   └── split_stickers.o
 ├── rapport_d_avancement.md
-├── run.sh
+├── scripts
+│   ├── git_push.sh
+│   └── run.sh
 ├── src
 │   ├── ColorDetector.cpp
 │   ├── analyse
 │   │   ├── analyse_erreurs.py
 │   │   ├── analyse_kociemba.cpp
-│   │   └── analyse_kociemba_v2.cpp
+│   │   ├── analyse_kociemba_v2.cpp
+│   │   └── visu_cube.py
 │   ├── config.cpp
 │   ├── face_rectifieur_auto.cpp
 │   ├── face_rectifieur_manuel.cpp
 │   ├── main.cpp
 │   └── split_stickers.cpp
+├── test_script.txt
+├── test_script_2.txt
 ├── tree.txt
 └── utils
     ├── __init__.py
@@ -257,4 +264,4 @@
     │   └── config_loader.cpython-312.pyc
     └── config_loader.py
 
-31 directories, 227 files
+32 directories, 233 files
