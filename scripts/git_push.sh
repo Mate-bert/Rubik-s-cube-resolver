@@ -62,12 +62,7 @@ done
 # Pousser les changements
 echo ""
 echo "🌿 Branches disponibles pour push :"
-mapfile -t branches < <(
-    git branch -a |
-    grep -vE 'HEAD|->' |
-    sed -E 's/\*?\s*//; s|remotes/||' |
-    sort -u
-)
+mapfile -t branches < <(git branch -a | grep -vE 'HEAD|->' | sed 's/remotes\///' | sort -u)
 select branch in "${branches[@]}"; do
     if [[ -n "$branch" ]]; then
         echo "🚀 git push -u origin $branch"
