@@ -58,6 +58,8 @@ def extract_edges(f):
     ]
 
 def check_cube_structure(cube_str):
+    errors = []
+
     faces = extract_faces(cube_str)
     corners = extract_corners(faces)
     edges = extract_edges(faces)
@@ -73,15 +75,14 @@ def check_cube_structure(cube_str):
             if normalize(sticker) == normalize(ref):
                 orient = get_corner_orientation(sticker, ref)
                 if orient == -1:
-                    print(f"❌ Coin invalide (orientation inconnue) : {sticker}")
-                else:
+                    errors.append(f"❌ Coin invalide (orientation inconnue) : {sticker}")
                     corner_orient_sum += orient
                 found = True
                 break
         if not found:
-            print(f"❌ Coin non reconnu : {sticker}")
+            errors.append(f"❌ Coin non reconnu : {sticker}")
     if corner_orient_sum % 3 != 0:
-        print(f"🔃 Orientation des coins invalide (somme = {corner_orient_sum})")
+        errors.append(f"🔃 Orientation des coins invalide (somme = {corner_orient_sum})")
     
     # Vérification des arêtes
     edge_orient_sum = 0
@@ -91,27 +92,33 @@ def check_cube_structure(cube_str):
             if normalize(sticker) == normalize(ref):
                 orient = get_edge_orientation(sticker, ref)
                 if orient == -1:
-                    print(f"❌ Arête invalide (orientation inconnue) : {sticker}")
-                else:
+                    errors.append(f"❌ Arête invalide (orientation inconnue) : {sticker}")
                     edge_orient_sum += orient
                 found = True
                 break
         if not found:
-            print(f"❌ Arête non reconnue : {sticker}")
+            errors.append(f"❌ Arête non reconnue : {sticker}")
     if edge_orient_sum % 2 != 0:
-        print(f"↔ Orientation des arêtes invalide (somme = {edge_orient_sum})")
+        errors.append(f"↔ Orientation des arêtes invalide (somme = {edge_orient_sum})")
 
     # Vérification de permutation (parité)
     if Counter(map(normalize, corners)) != Counter(map(normalize, corner_positions)):
-        print("🔁 Permutation invalide des coins.")
+        errors.append("🔁 Permutation invalide des coins.")
     if Counter(map(normalize, edges)) != Counter(map(normalize, edge_positions)):
-        print("🔀 Permutation invalide des arêtes.")
+        errors.append("🔀 Permutation invalide des arêtes.")
 
     if (corner_orient_sum % 3 == 0 and edge_orient_sum % 2 == 0
         and Counter(map(normalize, corners)) == Counter(map(normalize, corner_positions))
         and Counter(map(normalize, edges)) == Counter(map(normalize, edge_positions))):
         print("✅ Le cube est structurellement valide.")
 
+
+
+
+    if errors:
+        raise ValueError("\n".join(errors))
+    else:
+        print("✅ Le cube est structurellement valide.")
 if __name__ == "__main__":
     config = load_config()
     path = config["paths"]["kociemba_ref"]
@@ -131,6 +138,9 @@ if __name__ == "__main__":
 
     full_str = ''.join(cube_map[face] for face in "URFDLB")
     print(f"[🔢] Chaîne : {full_str}")
-    check_cube_structure(full_str)
+    try:
+        check_cube_structure(full_str)
+    except ValueError as e:
+        print(e)
 
 #PYTHONIOENCODING=utf-8 py src/analyse/check_cube_structure.py
