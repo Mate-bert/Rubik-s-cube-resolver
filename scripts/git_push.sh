@@ -62,7 +62,7 @@ done
 # Pousser les changements
 echo ""
 echo "🌿 Branches disponibles pour push :"
-mapfile -t branches < <(git branch --format="%(refname:short)")
+mapfile -t branches < <(git branch -a --format="%(refname:short)")
 select branch in "${branches[@]}"; do
     if [[ -n "$branch" ]]; then
         echo "🚀 git push -u origin $branch"
