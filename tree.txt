@@ -81,7 +81,8 @@
 │   ├── predicted_3face_2.jpg
 │   ├── runs
 │   │   ├── rubiks_faces_seg
-│   │   │   └── args.yaml
+│   │   │   ├── args.yaml
+│   │   │   └── weights
 │   │   ├── rubiks_faces_seg2
 │   │   │   ├── BoxF1_curve.png
 │   │   │   ├── BoxPR_curve.png
@@ -248,6 +249,7 @@
 │   │   ├── analyse_erreurs.py
 │   │   ├── analyse_kociemba.cpp
 │   │   ├── analyse_kociemba_v2.cpp
+│   │   ├── check_cube_structure.py
 │   │   └── visu_cube.py
 │   ├── config.cpp
 │   ├── face_rectifieur_auto.cpp
@@ -264,4 +266,4 @@
     │   └── config_loader.cpython-312.pyc
     └── config_loader.py
 
-32 directories, 233 files
+33 directories, 234 files

@@ -8,3 +8,4 @@ paths:
   error_json: data/output/analyse/erreurs.json
   error_img: data/output/analyse/histo_erreurs.png
   visu_cube: data/output/analyse/visu_cube.png
+  cube_manual: data/groundtruth/etat_cube.txt
