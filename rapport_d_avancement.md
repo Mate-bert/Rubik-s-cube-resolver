@@ -307,60 +307,66 @@ Prochaine étape : automatiser la fin du pipeline et relancer l’IA !
 
 ---
 
-## Objectifs de la journée
+## 🎯 Objectifs de la journée
 
-- ✅ Fiabiliser le système de validation de la chaîne Kociemba
-- ✅ Créer un outil Python pour vérifier la **validité structurelle** du cube
-- ✅ Améliorer les **scripts de gestion Git** (`git_push.sh`)
-
----
-
-## Réalisations
-
-### 1. 🔍 Vérification structurelle de la chaîne Kociemba
-- Abandon de la vérification via le solveur `kociemba` Python (erreurs et dépendances)
-- Création d’un script Python `check_cube_structure.py` capable de :
-  - Lire `kociemba_verif.txt` (groundtruth)
-  - Vérifier la **présence et orientation correcte des coins et arêtes**
-  - Détecter les permutations invalides
-  - Afficher un rapport clair sur les erreurs (manquants, orientation, parité)
-
-### 2. 🧠 Intégration du fichier `config.yaml`
-- Utilisation systématique du `config.yaml` dans les scripts Python
-- Lecture via `utils/config_loader.py` pour centraliser les chemins
-- Structure facilitant l’évolution future (ajout de chemins, paramètres IA, etc.)
-
-### 3. 🧰 Amélioration du script `git_push.sh`
-- Ajout de la **possibilité de faire plusieurs commits** avant le `push`
-- Meilleure détection des fichiers modifiés
-- Sélection **interactive** de la branche à pousser via `git branch -a`
-- Nettoyage du TUI (abandonné) et recentrage sur une version robuste sans dépendance externe
+- Créer une interface interactive pour saisir manuellement un cube
+- Valider la structure du cube (coins, arêtes, permutations) automatiquement
+- Exporter l'état du cube dans différents formats (`etat_cube.txt`, `kociemba_verif.txt`)
+- Centraliser les fonctions de visualisation dans un module réutilisable
 
 ---
 
-## Limitations et points notables
+## ✅ Réalisations
 
-- ❗ Problème d’encodage sous Windows pour les emojis dans le terminal (résolu avec `PYTHONIOENCODING=utf-8`)
-- ⚠️ Les branches distantes sont affichées avec `origin/...` ce qui peut porter à confusion
-- ℹ️ Le script `git_push.sh` fonctionne de manière optimale sous **Git Bash**, les builds sous **MSYS2 MINGW64**
+### 1. **Interface interactive de saisie du cube**
+- Développement d’un outil en `Tkinter` (`edition_cube_interactif.py`) permettant :
+  - La saisie des 6 faces du Rubik’s Cube via une grille visuelle
+  - La limitation d’une seule lettre parmi les 6 (`U`, `F`, `R`, `D`, `L`, `B`) par case
+  - L’ajout de presets rapides : cube résolu, cube tout U
+
+### 2. **Vérification structurelle automatique**
+- Intégration du script `check_cube_structure.py`
+- Affichage d’un message clair dans une pop-up en cas d’erreur (et non plus dans le terminal)
+- Réorganisation complète du script pour :
+  - Lever une erreur si la structure est invalide
+  - Laisser passer uniquement les configurations valides
+
+### 3. **Export et import depuis les fichiers Kociemba**
+- Boutons ajoutés dans l’interface pour :
+  - 💾 Sauvegarder l’état dans `etat_cube.txt`
+  - 📤 Exporter dans `kociemba_verif.txt`
+  - 📥 Importer depuis `kociemba_verif.txt` pour recharger un cube précédemment détecté
+
+### 4. **Modularisation du code**
+- Extraction de la fonction `draw_basic_face` et des coordonnées `face_positions` dans `utils/affichage_cube.py`
+- Réutilisation dans :
+  - `edition_cube_interactif.py` pour visualiser l’état saisi
+  - `visu_cube.py` pour afficher la comparaison prédiction/référence
+
+### 5. **Amélioration de `visu_cube.py`**
+- Nettoyage du fichier pour éviter l’exécution automatique à l’import
+- Ajout d’une protection `if __name__ == "__main__"` pour que la figure complète (réf/prédiction/résultat) ne s’affiche que lors d’une exécution directe
 
 ---
 
-## Bilan
+## 🐞 Problèmes rencontrés et corrigés
 
-- ✅ Le système de validation du cube est fiable sans dépendance externe
-- ✅ L’intégration de `config.yaml` simplifie la maintenance
-- ✅ La gestion Git est beaucoup plus fluide et adaptée à un usage quotidien
-
----
-
-## Prochaines étapes
-
-1. 🧩 Ajouter une **vérification automatique** de la structure après chaque détection
-2. 🛠️ Intégrer la visualisation des erreurs (`visu_cube.py`) à une suite automatisée
-3. 🧪 Enrichir le dataset IA et relancer un entraînement plus robuste
-4. 📊 Éventuellement exporter un rapport HTML ou Markdown après chaque session complète
+- ❌ La visualisation se lançait toute seule à l’import → corrigé avec un bloc `__main__`
+- ❌ Les erreurs de structure ne bloquaient pas l’interface → corrigé en levant une `ValueError`
+- ❌ Les lettres n’étaient plus affichées dans la visualisation → réintégrées dans `draw_basic_face()`
+- ❌ Inversion des couleurs (F = green, R = red, etc.) → corrigée selon convention U=yellow, F=red, R=green, etc.
+- ❌ Décalage visuel sur la figure de comparaison → alignement vertical corrigé
 
 ---
 
-📅 Journée de stabilisation très utile pour fiabiliser la suite du développement.
+## 🔄 Prochaines étapes
+
+1. 🖼️ Ajouter la possibilité de sauvegarder une visualisation du cube saisi
+2. 🔎 Lier cette interface avec les résultats de détection couleur
+3. 📊 Exporter un résumé Markdown ou HTML des tests réalisés
+4. 🤖 Continuer l’entraînement de l’IA sur un dataset maison pour détecter automatiquement les faces
+
+---
+
+📌 Interface fonctionnelle, validation structurelle fiable, et outils bien modulés.  
+Le projet est prêt pour l’intégration complète des étapes d’analyse !
