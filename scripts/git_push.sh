@@ -63,7 +63,7 @@ done
 echo ""
 echo "🌿 Branches disponibles pour push :"
 mapfile -t branches < <(
-    git branch -a |
+    git branch -r |
     grep -vE 'HEAD|->' |
     sed -E 's/\*?\s*//; s|remotes/||' |
     sort -u
