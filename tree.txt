@@ -145,6 +145,7 @@
 ├── bin
 │   ├── analyse_kociemba.exe
 │   ├── analyse_kociemba_v2.exe
+│   ├── face.exe
 │   └── main.exe
 ├── data
 │   ├── aide_mémoire
@@ -152,8 +153,10 @@
 │   │   └── faces.txt
 │   ├── config
 │   │   ├── config.yaml
-│   │   └── faces_coords.txt
+│   │   ├── faces_coords.txt
+│   │   └── faces_coords_v1.txt
 │   ├── groundtruth
+│   │   ├── etat_cube.txt
 │   │   └── kociemba_verif.txt
 │   ├── output
 │   │   ├── analyse
@@ -162,12 +165,6 @@
 │   │   │   ├── res.txt
 │   │   │   └── visu_cube.png
 │   │   ├── face_decouper
-│   │   │   ├── face_rectified_1.jpg
-│   │   │   ├── face_rectified_2.jpg
-│   │   │   ├── face_rectified_3.jpg
-│   │   │   ├── face_rectified_4.jpg
-│   │   │   ├── face_rectified_5.jpg
-│   │   │   └── face_rectified_6.jpg
 │   │   ├── kociemba.txt
 │   │   └── stickers
 │   │       ├── back_1.jpg
@@ -246,10 +243,14 @@
 ├── src
 │   ├── ColorDetector.cpp
 │   ├── analyse
+│   │   ├── __pycache__
+│   │   │   ├── check_cube_structure.cpython-313.pyc
+│   │   │   └── visu_cube.cpython-313.pyc
 │   │   ├── analyse_erreurs.py
 │   │   ├── analyse_kociemba.cpp
 │   │   ├── analyse_kociemba_v2.cpp
 │   │   ├── check_cube_structure.py
+│   │   ├── edition_cube_interactif.py
 │   │   └── visu_cube.py
 │   ├── config.cpp
 │   ├── face_rectifieur_auto.cpp
@@ -263,7 +264,11 @@
     ├── __init__.py
     ├── __pycache__
     │   ├── __init__.cpython-312.pyc
-    │   └── config_loader.cpython-312.pyc
+    │   ├── __init__.cpython-313.pyc
+    │   ├── affichage_cube.cpython-313.pyc
+    │   ├── config_loader.cpython-312.pyc
+    │   └── config_loader.cpython-313.pyc
+    ├── affichage_cube.py
     └── config_loader.py
 
-33 directories, 234 files
+34 directories, 238 files
