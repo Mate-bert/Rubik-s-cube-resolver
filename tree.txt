@@ -1,0 +1,51 @@
+.
+├── Choice.mtb
+├── CrnrPerm.mtb
+├── CrnrSlic.ptb
+├── EdgePerm.mtb
+├── EdgeSlic.ptb
+├── Flip.mtb
+├── FlipChce.ptb
+├── Makefile
+├── SlicPerm.mtb
+├── Twist.mtb
+├── TwstChce.ptb
+├── TwstFlip.ptb
+├── bin
+│   ├── Choice.mtb
+│   ├── CrnrPerm.mtb
+│   ├── CrnrSlic.ptb
+│   ├── EdgePerm.mtb
+│   ├── EdgeSlic.ptb
+│   ├── Flip.mtb
+│   ├── FlipChce.ptb
+│   ├── SlicPerm.mtb
+│   ├── Twist.mtb
+│   ├── TwstChce.ptb
+│   ├── TwstFlip.ptb
+│   └── solver.exe
+├── include
+│   ├── Combinatorics.hpp
+│   ├── Cube.hpp
+│   ├── CubeParser.hpp
+│   ├── FaceletCube.hpp
+│   ├── KociMoveTables.hpp
+│   ├── MoveTable.hpp
+│   ├── PruningTable.hpp
+│   ├── RubiksCube.hpp
+│   ├── Solver.hpp
+│   └── Vector.hpp
+├── src
+│   ├── Combinatorics.cpp
+│   ├── Cube.cpp
+│   ├── CubeParser.cpp
+│   ├── FaceletCube.cpp
+│   ├── MoveTable.cpp
+│   ├── PruningTable.cpp
+│   ├── RubiksCube.cpp
+│   ├── Solver.cpp
+│   ├── Vector.cpp
+│   └── main.cpp
+└── tree.txt
+
+4 directories, 45 files
