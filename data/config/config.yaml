@@ -1,3 +1,4 @@
+image_size: 640
 paths:
   raw_dir: data/raw/
   coords_file: data/config/faces_coords.txt

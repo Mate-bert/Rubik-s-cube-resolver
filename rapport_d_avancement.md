@@ -370,3 +370,65 @@ Prochaine étape : automatiser la fin du pipeline et relancer l’IA !
 
 📌 Interface fonctionnelle, validation structurelle fiable, et outils bien modulés.  
 Le projet est prêt pour l’intégration complète des étapes d’analyse !
+---
+## Date : 3 April 2025
+
+---
+
+## 🎯 Objectif du jour
+
+- Capturer automatiquement des images 640×640 du Rubik’s Cube via webcam sur un PC Linux
+- Enrichir le dataset pour l’IA à partir d’images réelles et faciliter leur annotation
+- Finaliser le redressement automatique des faces via `face_rectifieur_auto.cpp` et `faces_coords.txt`
+
+---
+
+## ✅ Réalisations
+
+### 1. **Capture d'images depuis la webcam (PC Linux)**  
+- Mise en place d’un script C++ (`main.cpp`) utilisant OpenCV pour :
+  - Capturer une image en 640×480
+  - La transformer automatiquement en format 640×640 (padding noir)
+  - L’afficher en temps réel avec OpenCV
+  - La sauvegarder à la pression de la touche `ESPACE`
+- Compilation sous Linux avec :
+  ```bash
+  g++ main.cpp -o capture_cube `pkg-config --cflags --libs opencv4`
+  ```
+
+### 2. **Logique d’annotation simplifiée pour l’IA**
+- Le Rubik's Cube physique et la webcam étant désormais disponibles, un dataset réel peut être constitué pour améliorer les performances du modèle IA.
+
+- Choix stratégique : n’utiliser qu’une **seule classe `face`** pour toutes les faces visibles
+- Attribution des identités (`up`, `front`, `right`) des faces basée sur :
+  - Le **nom de l’image** (`3face_X.jpg`)
+  - La **position relative** du polygone détecté
+- Cela permet d’entraîner plus rapidement le modèle IA sans avoir à distinguer manuellement les 6 faces dans les labels
+
+### 3. **Adaptation complète du pipeline à la nouvelle taille 640×640**
+- Suppression de tout redimensionnement intermédiaire à 800px
+- Adaptation de `face_rectifieur_manuel.cpp` et `face_rectifieur_auto.cpp` :
+  - Les coordonnées sont désormais définies dans l’espace 640×640 directement
+  - Tous les fichiers de traitement ont été mis à jour en conséquence (`split_stickers`, `ColorDetector`, etc.)
+- Centralisation de la taille des images dans `config.yaml` (paramètre `image_size` ajouté)
+
+---
+
+## 🔍 Problèmes rencontrés et corrigés
+
+- ❌ Image noire lors du redressement automatique → résolu en corrigeant l’échelle des coordonnées
+- ❌ Mauvais nom d’output dans `face_rectifieur_auto.cpp` → ajusté avec le nom réel attendu
+
+---
+
+## 🧠 Prochaines étapes
+
+1. ✨ Automatiser la génération du fichier `faces_coords.txt` à partir des prédictions de l’IA
+2. 🏷️ Annoter les images capturées avec Roboflow (polygones pour chaque face visible)
+3. 🧠 Réentraîner un modèle YOLOv8 plus adapté (ex : `yolov8s-seg.pt`) avec ce nouveau dataset
+4. 🤖 Intégrer l’inférence IA sur la Zybo 7010 en C++ (via ONNX et OpenCV DNN)
+
+---
+
+📸 Capture d’images fonctionnelle, annotations pensées pour l’embarqué, et pipeline homogénéisé sur 640×640.
+Le projet est maintenant prêt pour un entraînement IA efficace !

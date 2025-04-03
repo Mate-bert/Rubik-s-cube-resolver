@@ -50,6 +50,7 @@ void rectifierFacesAutomatically() {
     string facesDir = cfg["raw_dir"];
     string outputDir = cfg["rectified_dir"];
     string coordsPath = cfg["coords_file"];
+    int imageSize = stoi(cfg["image_size"]);
 
     vector<FaceCoords> all_faces = loadCoords(coordsPath);
 
@@ -62,13 +63,13 @@ void rectifierFacesAutomatically() {
         }
 
         vector<Point2f> dstPts = {
-            Point2f(0, 0), Point2f(639, 0),
-            Point2f(639, 639), Point2f(0, 639)
+            Point2f(0, 0), Point2f(imageSize - 1, 0),
+            Point2f(imageSize - 1, imageSize - 1), Point2f(0, imageSize - 1)
         };
 
         Mat H = getPerspectiveTransform(face.points, dstPts);
         Mat rectified;
-        warpPerspective(src, rectified, H, Size(640, 640));
+        warpPerspective(src, rectified, H, Size(imageSize, imageSize));
 
         string savePath = (fs::path(outputDir) / face.outputName).string();
         imwrite(savePath, rectified);

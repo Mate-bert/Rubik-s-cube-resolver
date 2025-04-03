@@ -146,6 +146,7 @@
 │   ├── analyse_kociemba.exe
 │   ├── analyse_kociemba_v2.exe
 │   ├── face.exe
+│   ├── face_2.exe
 │   └── main.exe
 ├── data
 │   ├── aide_mémoire
@@ -165,6 +166,12 @@
 │   │   │   ├── res.txt
 │   │   │   └── visu_cube.png
 │   │   ├── face_decouper
+│   │   │   ├── face_rectified_1.jpg
+│   │   │   ├── face_rectified_2.jpg
+│   │   │   ├── face_rectified_3.jpg
+│   │   │   ├── face_rectified_4.jpg
+│   │   │   ├── face_rectified_5.jpg
+│   │   │   └── face_rectified_6.jpg
 │   │   ├── kociemba.txt
 │   │   └── stickers
 │   │       ├── back_1.jpg
@@ -271,4 +278,4 @@
     ├── affichage_cube.py
     └── config_loader.py
 
-34 directories, 238 files
+34 directories, 245 files
