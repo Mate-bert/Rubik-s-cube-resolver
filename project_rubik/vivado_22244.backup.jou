@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Apr  3 09:33:29 2025
+# Process ID: 22244
+# Current directory: C:/workspace/rubik/project_rubik
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15276 C:\workspace\rubik\project_rubik\project_rubik.xpr
+# Log file: C:/workspace/rubik/project_rubik/vivado.log
+# Journal file: C:/workspace/rubik/project_rubik\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/workspace/rubik/project_rubik/project_rubik.xpr
+update_compile_order -fileset sources_1
+set_property BOARD_PART_REPO_PATHS {C:/Users/mateo/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store} [current_project]
+set_param board.repoPaths {C:/Users/mateo/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store}
+set_property BOARD_PART_REPO_PATHS {C:/Users/mateo/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store} [current_project]
+set_param board.repoPaths {C:/Users/mateo/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store}
+set_property board_part digilentinc.com:zybo-z7-10:part0:1.2 [current_project]
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+file copy -force C:/workspace/rubik/project_rubik/project_rubik.runs/impl_1/design1_wrapper.sysdef D://design1_wrapper.hdf
+
