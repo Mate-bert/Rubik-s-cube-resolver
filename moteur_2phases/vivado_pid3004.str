@@ -1445,3 +1445,4 @@ dismissDialog("Resetting Runs"); // by (cl)
 // TclEventType: RUN_STEP_COMPLETED
 // TclEventType: RUN_COMPLETED
 // TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 2,004 MB. GUI used memory: 68 MB. Current time: 4/4/25, 10:54:18 AM CEST
