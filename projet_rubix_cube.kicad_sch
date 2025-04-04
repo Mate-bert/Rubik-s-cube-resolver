@@ -2737,7 +2737,7 @@
 	)
 	(global_label "alim_bobine2"
 		(shape input)
-		(at 96.52 66.04 0)
+		(at 96.52 63.5 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2747,7 +2747,7 @@
 		)
 		(uuid "33ff8045-d142-41bb-a6c5-c735125d9007")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 112.084 66.04 0)
+			(at 112.084 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2759,7 +2759,7 @@
 	)
 	(global_label "alim_bobine1"
 		(shape input)
-		(at 96.52 63.5 0)
+		(at 96.52 66.04 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2769,7 +2769,7 @@
 		)
 		(uuid "7630278d-b801-429b-bde8-d3a59ac41ffb")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 112.084 63.5 0)
+			(at 112.084 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4238,7 +4238,7 @@
 				)
 			)
 		)
-		(property "Value" ""
+		(property "Value" "~"
 			(at 152.781 35.56 90)
 			(effects
 				(font
