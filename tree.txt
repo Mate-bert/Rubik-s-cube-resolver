@@ -173,6 +173,8 @@
 │   │   │   ├── face_rectified_5.jpg
 │   │   │   └── face_rectified_6.jpg
 │   │   ├── kociemba.txt
+│   │   ├── kociemba_test.txt
+│   │   ├── resolution.txt
 │   │   └── stickers
 │   │       ├── back_1.jpg
 │   │       ├── back_2.jpg
@@ -228,21 +230,58 @@
 │   │       ├── up_7.jpg
 │   │       ├── up_8.jpg
 │   │       └── up_9.jpg
-│   └── raw
-│       ├── 3face_1.jpg
-│       └── 3face_2.jpg
+│   ├── raw
+│   │   ├── 3face_1.jpg
+│   │   └── 3face_2.jpg
+│   └── tables
+│       ├── Choice.mtb
+│       ├── CrnrPerm.mtb
+│       ├── CrnrSlic.ptb
+│       ├── EdgePerm.mtb
+│       ├── EdgeSlic.ptb
+│       ├── Flip.mtb
+│       ├── FlipChce.ptb
+│       ├── SlicPerm.mtb
+│       ├── Twist.mtb
+│       ├── TwstChce.ptb
+│       └── TwstFlip.ptb
 ├── include
 │   ├── ColorDetector.hpp
 │   ├── config.hpp
 │   ├── face_rectifieur_auto.hpp
-│   └── split_stickers.hpp
+│   ├── kociemba
+│   │   ├── Combinatorics.hpp
+│   │   ├── Cube.hpp
+│   │   ├── CubeParser.hpp
+│   │   ├── FaceletCube.hpp
+│   │   ├── KociMoveTables.hpp
+│   │   ├── MoveTable.hpp
+│   │   ├── PruningTable.hpp
+│   │   ├── RubiksCube.hpp
+│   │   ├── Solver.hpp
+│   │   └── Vector.hpp
+│   ├── kociemba_solver.hpp
+│   ├── split_stickers.hpp
+│   └── traduction.hpp
 ├── makefile
 ├── obj
 │   ├── ColorDetector.o
 │   ├── config.o
 │   ├── face_rectifieur_auto.o
+│   ├── kociemba
+│   │   ├── Combinatorics.o
+│   │   ├── Cube.o
+│   │   ├── CubeParser.o
+│   │   ├── FaceletCube.o
+│   │   ├── MoveTable.o
+│   │   ├── PruningTable.o
+│   │   ├── RubiksCube.o
+│   │   ├── Solver.o
+│   │   └── Vector.o
+│   ├── kociemba_solver.o
 │   ├── main.o
-│   └── split_stickers.o
+│   ├── split_stickers.o
+│   └── traduction.o
 ├── rapport_d_avancement.md
 ├── scripts
 │   ├── git_push.sh
@@ -262,10 +301,21 @@
 │   ├── config.cpp
 │   ├── face_rectifieur_auto.cpp
 │   ├── face_rectifieur_manuel.cpp
+│   ├── kociemba
+│   │   ├── Combinatorics.cpp
+│   │   ├── Cube.cpp
+│   │   ├── CubeParser.cpp
+│   │   ├── FaceletCube.cpp
+│   │   ├── MoveTable.cpp
+│   │   ├── PruningTable.cpp
+│   │   ├── RubiksCube.cpp
+│   │   ├── Solver.cpp
+│   │   ├── Vector.cpp
+│   │   └── main.cpp
+│   ├── kociemba_solver.cpp
 │   ├── main.cpp
-│   └── split_stickers.cpp
-├── test_script.txt
-├── test_script_2.txt
+│   ├── split_stickers.cpp
+│   └── traduction.cpp
 ├── tree.txt
 └── utils
     ├── __init__.py
@@ -278,4 +328,4 @@
     ├── affichage_cube.py
     └── config_loader.py
 
-34 directories, 245 files
+38 directories, 291 files
