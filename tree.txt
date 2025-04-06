@@ -264,8 +264,6 @@
 │   ├── face_rectifieur_manuel.cpp
 │   ├── main.cpp
 │   └── split_stickers.cpp
-├── test_script.txt
-├── test_script_2.txt
 ├── tree.txt
 └── utils
     ├── __init__.py
@@ -278,4 +276,4 @@
     ├── affichage_cube.py
     └── config_loader.py
 
-34 directories, 245 files
+34 directories, 243 files

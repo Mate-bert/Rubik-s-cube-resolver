@@ -1,0 +1,18 @@
+{
+    "configurations": [
+      {
+        "name": "Win64",
+        "includePath": [
+          "${workspaceFolder}/include",
+          "${workspaceFolder}/src",
+          "C:/opencv/install/include"
+        ],
+        "defines": [],
+        "compilerPath": "C:/msys64/mingw64/bin/g++",
+        "cStandard": "c11",
+        "cppStandard": "c++17",
+        "intelliSenseMode": "windows-gcc-x64"
+      }
+    ],
+    "version": 4
+  }  
