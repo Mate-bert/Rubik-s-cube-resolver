@@ -1,12 +1,17 @@
 image_size: 640
+solver_timeout: 5
 paths:
   raw_dir: data/raw/
   coords_file: data/config/faces_coords.txt
   rectified_dir: data/output/face_decouper/
   stickers_dir: data/output/stickers/
   kociemba_txt: data/output/kociemba.txt
+  kociemba_test: data/output/kociemba_test.txt
   kociemba_ref: data/groundtruth/kociemba_verif.txt
   error_json: data/output/analyse/erreurs.json
   error_img: data/output/analyse/histo_erreurs.png
   visu_cube: data/output/analyse/visu_cube.png
   cube_manual: data/groundtruth/etat_cube.txt
+  solver_tables_dir: data/tables/
+  solver_output: data/output/resolution.txt
+  solver_encoded_output: data/output/output_encoded.txt
