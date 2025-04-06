@@ -6,10 +6,11 @@
 #include <windows.h>
 #include <opencv2/opencv.hpp>
 #include "config.hpp"
-
 #include "face_rectifieur_auto.hpp"
 #include "split_stickers.hpp"
 #include "ColorDetector.hpp"
+#include "kociemba_solver.hpp"
+#include "traduction.hpp"
 
 int main() {
     // Configure la console pour afficher les caractères UTF-8
@@ -17,7 +18,7 @@ int main() {
 
     // Charge la configuration depuis un fichier YAML
     auto cfg = loadYamlConfig("data/config/config.yaml");
-    
+
     // Étape 1 : Redressement automatique des faces du Rubik's Cube
     std::cout << "🔧 Étape 1 : Redressement des faces...\n";
     rectifierFacesAutomatically();
@@ -108,5 +109,15 @@ int main() {
 
     // Affiche un message de succès
     std::cout << "✅ Chaîne Kociemba générée dans le fichier kociemba.txt\n";
+    
+    std::cout << "🧩 Étape 4 : Résolution du cube...\n";
+    solveWithKociembaFile(cfg["kociemba_test"]);
+    std::cout << "✅ solveWithKociembaFile exécutée avec succès !\n";
+    
+    std::cout << "📦 Étape 5 : Encodage de la solution...\n";
+    encodeResolution();
+    std::cout << "✅ Encodage terminé ! 🎉\n";
+    
+
     return 0;
 }
