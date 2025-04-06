@@ -1,3 +1,4 @@
+
 # 🚀 Guide d'installation et de configuration PetaLinux
 
 ## 🧰 Prérequis
@@ -64,46 +65,54 @@ petalinux-config --get-hw-description=../votre_fichier.xsa
 
 ## 📚 Ajout de bibliothèques (OpenCV, FFmpeg, v4l-utils)
 
-### 1. Ajouter les recettes manquantes :
+### ⚙️ Configuration du système rootfs
 
-Téléchargez les fichiers `.bb` nécessaires depuis :
+Pour configurer les bibliothèques à inclure dans le système Linux généré, on utilise deux fichiers :
 
-🔗 https://github.com/Xilinx/meta-petalinux/tree/master/recipes-core/packagegroups
+1. `project-spec/configs/rootfs_config`  
+   Ce fichier est **généré automatiquement** lors de la configuration avec `petalinux-config -c rootfs`.
 
-Copiez-les dans :
-```
-project-spec/meta-user/recipes-core/packagegroups/
-```
+2. `project-spec/meta-user/conf/user-rootfsconfig`  
+   Ce fichier est **à éditer manuellement** pour gagner du temps.
 
-### 2. Ajouter les groupes dans `user-rootfsconfig`
-
-Fichier : `project-spec/meta-user/conf/user-rootfsconfig`
+Par exemple, voici le contenu final de notre `user-rootfsconfig` :
 
 ```text
-CONFIG_packagegroup-petalinux-v4lutils
-CONFIG_packagegroup-petalinux-multimedia
+CONFIG_opencv
+CONFIG_ffmpeg
+CONFIG_v4l-utils
+CONFIG_libv4l
+CONFIG_zlib
+CONFIG_libjpeg-turbo
+CONFIG_libpng
+CONFIG_libstdc++
 ```
 
-### 3. Ajouter les layers si nécessaire dans `bblayers.conf`
+Ensuite, exécutez simplement :
 
-Fichier : `build/conf/bblayers.conf`
-Ajoutez par exemple :
 ```bash
-${SDKBASEMETAPATH}/layers/meta-petalinux \
-${SDKBASEMETAPATH}/layers/meta-qt5 \
+petalinux-config -c rootfs
 ```
+
+> ✅ Les entrées du `user-rootfsconfig` apparaîtront déjà dans le menu **user packages**, il est inutile de les cocher à nouveau manuellement.
+
+> ❗ Cela évite aussi d’oublier une bibliothèque et **accélère considérablement la configuration**.
 
 ---
 
-## 🧩 Sélection des paquets avec menuconfig
+## 🧩 Sélection manuelle des paquets (optionnelle)
 
 ```bash
 petalinux-config -c rootfs
 ```
 
 Dans l’interface :
-- Allez dans **Filesystem Packages** puis **libs** pour cocher `ffmpeg`, `opencv`, etc.
-- Puis dans **PetaLinux Package Groups** pour activer `packagegroup-petalinux-v4lutils`, `packagegroup-petalinux-multimedia`, etc.
+
+- Allez dans **Filesystem Packages → libs** pour cocher des bibliothèques non listées.
+- Dans **misc** pour `v4l-utils`, `libv4l`, etc.
+- Dans **user packages** si vous avez utilisé `user-rootfsconfig` (ils y seront déjà listés).
+
+> ❌ Inutile d’ajouter `media-ctl` pour des webcams USB UVC (standard). Gardez uniquement `v4l-utils` et `libv4l`.
 
 ---
 
@@ -114,12 +123,12 @@ petalinux-build
 ```
 
 > 💡 Si vous manquez d’espace disque pendant le build, faites :
->
+
 ```bash
 du -h --max-depth=1 ~/Documents/mon_projet/ | sort -hr | head -n 20
 ```
 
-Et supprimez le dossier `build/downloads` si nécessaire.
+Et supprimez le dossier `build/downloads` si nécessaire (pas indispensable pour `--sdk`).
 
 ---
 
@@ -129,21 +138,34 @@ Et supprimez le dossier `build/downloads` si nécessaire.
 petalinux-build --sdk
 ```
 
+> ✅ Les librairies nécessaires pour cross compiler vos applications C++/OpenCV :
+>
+> - `gcc-runtime`
+> - `libc`
+> - `libstdc++`
+> - `opencv`
+> - `ffmpeg`, `libavcodec`, `libavformat`
+> - `zlib`, `libjpeg-turbo`, `libpng`
+> - `v4l-utils`, `libv4l`
+
 ---
 
 ## 💾 Préparer la carte SD
 
 1. **Créer deux partitions avec GParted** :
+
    - `boot` : FAT32 (environ 100 Mo)
    - `rootfs` : ext4 (le reste)
 
 2. **Formater les partitions et monter-les** :
+
 ```bash
 sudo mount /dev/mmcblk0p1 /mnt/sd_boot
 sudo mount /dev/mmcblk0p2 /mnt/sd_root
 ```
 
 3. **Copier les fichiers** :
+
 ```bash
 # Pour le boot
 cp BOOT.BIN image.ub /mnt/sd_boot
