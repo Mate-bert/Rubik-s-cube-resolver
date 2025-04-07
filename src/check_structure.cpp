@@ -1,4 +1,3 @@
-// check_structure.cpp corrigé
 #include "check_structure.hpp"
 #include "config.hpp"
 #include "kociemba/CubeParser.hpp"

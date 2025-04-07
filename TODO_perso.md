@@ -1,30 +1,50 @@
-# 🧩 TODO – Détection des couleurs (Branche: feature/gad_detection_couleur)
+# ✅ TODO pour `check_structure.cpp`
 
-Ce fichier est personnel à la branche `feature/gad_detection_couleur` et permet de suivre les étapes détaillées liées à l’implémentation de la détection des couleurs sur les faces du Rubik's Cube.
+Ce fichier contient des suggestions d'amélioration inspirées des bonnes pratiques exposées dans :
 
----
+- Clean Code – Robert C. Martin
+- The Pragmatic Programmer – Hunt & Thomas
+- Pragmatic Thinking and Learning – Andy Hunt
 
-## 🔧 Objectifs spécifiques
+## 🧠 Refactoring suggéré
 
-- [ ] Lire une image contenant 3 faces du cube
-- [ ] Découper chaque face en 9 cases
-- [ ] Moyenniser les couleurs de chaque case (en HSV)
-- [ ] Associer chaque moyenne à une couleur standard du cube (`R`, `G`, `B`, etc.)
-- [ ] Générer une chaîne de 9 lettres par face
-- [ ] Fusionner les 6 chaînes pour obtenir l’état complet du cube
+**Objectif :** Diviser `check_structure.cpp` en plusieurs fichiers pour clarifier les responsabilités de chaque fonction.
 
 ---
 
-## 🧪 Tests prévus
+### 📦 À séparer dans des fichiers dédiés
 
-- [ ] Comparaison des chaînes générées avec des exemples réels
-- [ ] Vérification de la stabilité des seuils HSV
-- [ ] Affichage console ou fichier de debug des moyennes HSV et des lettres associées
+- **`reader.hpp/cpp`**
+  - `readKociembaLines(path)`
+  - `saveLines(path, lines)`
+  - Objectif : gérer les I/O sur les fichiers Kociemba
+
+- **`structure_checker.hpp/cpp`**
+  - `isStructureValid(lines)`
+  - Objectif : valider si une structure est correcte
+
+- **`missing_letters.hpp/cpp`**
+  - `getMissingColors(stickers)`
+  - Objectif : déterminer quelles couleurs manquent
+
+- **`permute_filler.hpp/cpp`**
+  - `tryPermutations(...)`
+  - Objectif : essayer des combinaisons de correction
+
+- **`check_structure.cpp` (conserve)**
+  - `checkAndFixKociembaStructure(path)`
+  - Rôle : orchestre les appels précédents
 
 ---
 
-## 🧠 Idées / améliorations
+### 🛠️ Tâches associées
 
-- [ ] Créer une fonction `detect_face(image)` générique
-- [ ] Détecter dynamiquement les seuils HSV par calibration
-- [ ] Générer un aperçu graphique des 6 faces reconstituées
+- [ ] Créer les nouveaux fichiers `.hpp` et `.cpp` dans `src/`
+- [ ] Inclure les headers appropriés
+- [ ] Adapter le `makefile`
+- [ ] Ajouter un test unitaire pour chaque module (si possible)
+
+---
+
+🔗 Code actuel concerné :  
+https://github.com/Mate-bert/Rubik-s-cube-resolver/blob/feature/detection_resolution/src/check_structure.cpp
