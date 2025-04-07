@@ -47,4 +47,46 @@ Ce fichier contient des suggestions d'amélioration inspirées des bonnes pratiq
 ---
 
 🔗 Code actuel concerné :  
-https://github.com/Mate-bert/Rubik-s-cube-resolver/blob/feature/detection_resolution/src/check_structure.cpp
+[check_structure.cpp – Branche `feature/detection_resolution`](https://github.com/Mate-bert/Rubik-s-cube-resolver/blob/feature/detection_resolution/src/check_structure.cpp)
+
+---
+
+# ✅ TODO pour `ColorDetector.cpp`
+
+Ce fichier contient des suggestions d'amélioration inspirées des bonnes pratiques exposées dans :
+
+- Clean Code – Robert C. Martin
+- The Pragmatic Programmer – Hunt & Thomas
+- Pragmatic Thinking and Learning – Andy Hunt
+
+## 🧠 Refactoring suggéré
+
+**Objectif :** Améliorer la clarté, testabilité et maintenabilité du fichier.
+
+---
+
+### 📌 Remarques principales
+
+- ✅ **Responsabilité unique :** La classe semble bien concentrée sur la détection de couleur.
+- ⚠️ **Mélange responsabilité / affichage :**
+  - Les `std::cout` de debug pourraient être désactivables (flag `verbose` ou logger).
+- 🔁 **Code dupliqué :**
+  - Vérifier s’il y a des blocs similaires dans d’autres fichiers (ex. configuration HSV par couleur).
+- 🔤 **Nom des méthodes :**
+  - `detectDominantColor(...)` est clair, mais la classe `ColorDetector` pourrait bénéficier d’un nom plus précis (ex: `HSVColorClassifier`) si elle est strictement liée à HSV.
+- 🎨 **Couleurs en dur :**
+  - Les plages HSV sont codées en dur : possibilité de les extraire dans un fichier de config ou une `ColorProfile` map.
+- 🧪 **Tests unitaires :**
+  - Ajouter des tests automatisés pour des patchs d’images ou couleurs connues simulées.
+
+---
+
+### 🔧 Tâches associées
+
+- [ ] Ajouter un flag `verbose` dans la classe pour désactiver les `std::cout`
+- [ ] Extraire les plages HSV dans un fichier ou structure dédiée
+- [ ] Ajouter une fonction d’initialisation des seuils pour séparer la config du comportement
+- [ ] Ajouter des tests avec patchs BGR pour valider les résultats
+
+🔗 Code actuel concerné :  
+[ColorDetector.cpp – Branche `feature/detection_resolution`](https://github.com/Mate-bert/Rubik-s-cube-resolver/blob/feature/detection_resolution/src/ColorDetector.cpp)
