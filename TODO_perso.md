@@ -196,3 +196,117 @@ Ce fichier contient des suggestions d'amélioration inspirées des bonnes pratiq
 
 🔗 Code actuel concerné :  
 [kociemba_solver.cpp – Branche `feature/detection_resolution`](https://github.com/Mate-bert/Rubik-s-cube-resolver/blob/feature/detection_resolution/src/kociemba_solver.cpp)
+
+---
+
+# ✅ TODO pour `main.cpp`
+
+### 🧠 Refactoring suggéré
+
+- Trop de logique de traitement dans le `main`
+- Convertir les blocs en fonctions réutilisables (pipeline)
+- Charger `cfg` une fois et le passer par référence
+
+#### 🛠️ À faire
+
+- [ ] Extraire chaque étape dans une fonction dédiée :
+  - [ ] `loadStickers()`
+  - [ ] `detectColors()`
+  - [ ] `generateKociembaString()`
+  - [ ] `verifyStructure()`
+  - [ ] `solveCube()`
+  - [ ] `encodeSolution()`
+
+🔗 [main.cpp](https://github.com/Mate-bert/Rubik-s-cube-resolver/blob/feature/detection_resolution/src/main.cpp)
+
+---
+
+# ✅ TODO pour `split_stickers.cpp`
+
+## 🧠 Refactoring suggéré
+
+**Objectif :** Améliorer la clarté, la testabilité et la maintenabilité du fichier.
+
+---
+
+### 📌 Remarques principales
+
+- ✅ **Responsabilité unique :** Le code gère actuellement plusieurs étapes dans une seule fonction, ce qui peut rendre le code difficile à maintenir et tester. Il serait préférable de séparer les différentes étapes en fonctions distinctes.
+- ⚠️ **Gestion des erreurs :** La gestion des erreurs est basique et pourrait être améliorée. Par exemple, plutôt que de simplement afficher un message d'erreur avec `std::cerr`, il serait judicieux de lever des exceptions ou d'adopter une gestion des erreurs plus robuste.
+- 🔄 **Modularité :** Le code pourrait être mieux organisé en séparant le processus de découpe des stickers et le processus de gestion des fichiers. Cela rendrait le code plus réutilisable.
+- 🔤 **Nommage des fonctions et variables :** Le nommage pourrait être amélioré pour mieux refléter l'intention des fonctions. Par exemple, `splitFaceIntoStickers` peut être renommée en quelque chose de plus précis comme `decoupeStickersDepuisImage`.
+
+---
+
+### 🛠️ Tâches associées
+
+- [ ] **Extraire les étapes suivantes dans des fonctions dédiées :**
+  - [ ] Chargement des images (fonction `loadFaceImage()`)
+  - [ ] Découpage des images en stickers (fonction `splitFaceIntoStickers()`)
+  - [ ] Sauvegarde des stickers dans des fichiers (fonction `saveStickers()`)
+  
+- [ ] **Améliorer la gestion des erreurs :**
+  - Lever des exceptions ou retourner des valeurs d'erreur appropriées au lieu d'utiliser uniquement `std::cerr`.
+
+- [ ] **Tests unitaires :**
+  - Ajouter des tests unitaires pour valider que la découpe des stickers fonctionne correctement pour différents types d'images.
+
+- [ ] **Optimiser les logs :**
+  - Utiliser un logger dédié ou uniformiser les messages avec des emojis pour les rendre plus lisibles pendant le débogage.
+
+🔗 Code actuel concerné :  
+[split_stickers.cpp – Branche `feature/detection_resolution`](https://github.com/Mate-bert/Rubik-s-cube-resolver/blob/feature/detection_resolution/src/split_stickers.cpp)
+
+---
+
+# ✅ TODO pour `traduction.cpp`
+
+## 🧠 Refactoring suggéré
+
+**Objectif :** Améliorer la clarté, la testabilité et la maintenabilité du fichier.
+
+---
+
+### 📌 Remarques principales
+
+- ✅ **Responsabilité unique :**  
+  La fonction `encodeResolution` effectue plusieurs tâches : lecture de fichiers, traitement des mouvements et encodage.  
+  - **Amélioration :** Extraire ces différentes tâches dans des fonctions dédiées :
+    - Une fonction pour charger la configuration (`loadConfig`).
+    - Une autre pour ouvrir les fichiers (`openFiles`).
+    - Une pour traiter les mouvements et une pour écrire le fichier encodé (`encodeMoves`).
+
+- ⚠️ **Lisibilité et tests unitaires :**  
+  Le code est assez dense et pourrait être difficile à tester, surtout avec l'utilisation de `std::ifstream` et `std::ofstream`.  
+  - **Amélioration :** Séparer la logique en petites fonctions pour faciliter la lecture et les tests.
+    - Exemple : une fonction dédiée pour chaque type de mouvement (double, simple, et non reconnu).
+    - Envisager d'utiliser un système de **logger** pour mieux gérer l'affichage des erreurs.
+
+- 🔤 **Nom des variables et clarté :**  
+  Le nom de certaines variables, comme `move_codes`, pourrait être plus explicite.  
+  - **Amélioration :** Privilégier des noms comme `moveToBinaryCode` ou `moveCodeMap` pour clarifier le rôle de la variable.
+
+- 🚨 **Vérification des erreurs :**  
+  Le programme continue même en cas d'erreur, ce qui peut entraîner des résultats incorrects sans alerter l'utilisateur.  
+  - **Amélioration :** Ajoutez des vérifications plus robustes pour chaque étape. Par exemple, vérifiez si le fichier de résolution contient bien des mouvements avant de tenter de les encoder.
+
+- 💻 **Utilisation de constantes et de configuration dynamique :**  
+  Les valeurs de `move_codes` sont codées en dur dans le code. Cela peut être facilement modifié en les chargeant depuis un fichier de configuration ou en utilisant des constantes bien définies dans un fichier `config.hpp`.  
+  - **Amélioration :** Charger les codes de mouvement depuis une configuration externe.
+
+- 🧪 **Tests unitaires :**  
+  Le fichier manque de tests unitaires pour les différentes fonctions.  
+  - **Amélioration :** Ajouter des tests unitaires pour vérifier que les mouvements sont correctement encodés, et que les fichiers sont bien lus et écrits.
+
+---
+
+### 🔧 Tâches associées
+
+- [ ] Extraire les différentes tâches en fonctions dédiées : chargement, traitement des mouvements, écriture du fichier.
+- [ ] Ajouter un logger pour les messages d'erreur.
+- [ ] Renommer certaines variables pour plus de clarté.
+- [ ] Ajouter des tests unitaires pour chaque étape.
+- [ ] Envisager de charger `move_codes` depuis un fichier de configuration externe.
+
+🔗 Code actuel concerné :  
+[traduction.cpp – Branche `feature/detection_resolution`](https://github.com/Mate-bert/Rubik-s-cube-resolver/blob/feature/detection_resolution/src/traduction.cpp)
