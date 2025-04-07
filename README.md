@@ -5,6 +5,53 @@ Projet de traitement d'image et de résolution de Rubik's Cube en C++ avec OpenC
 
 ---
 
+## 📁 Structure du projet
+
+```
+rubiks-cube-resolver/
+│
+├── .vscode/                     # Configuration de l’environnement de développement sous VSCode
+│   ├── settings.json            # Chemins personnalisés, formatage, terminal
+│   ├── c_cpp_properties.json    # Chemins d’inclusion pour MinGW
+│   └── tasks.json               # Tâches de build (make, exécution…)
+│
+├── src/                         # Code source principal du projet
+│   ├── main.cpp                 # Point d’entrée du programme
+│   ├── config.cpp               # Chargement de la configuration depuis le fichier YAML
+│   ├── ColorDetector.cpp        # Détection des couleurs dominantes sur chaque sticker
+│   ├── face_rectifieur_*.cpp    # Rectification des images de faces (auto ou manuel)
+│   ├── split_stickers.cpp       # Découpe des faces en 9 stickers
+│   ├── traduction.cpp           # Encodage binaire des mouvements de résolution (4 bits)
+│   ├── check_structure.cpp      # Vérification et correction automatique de la structure du cube
+│   └── kociemba_solver.cpp      # Résolution avec la lib Kociemba (bibliothèque tierce C++)
+│
+├── src/analyse/                 # Scripts d’analyse (Python et C++)
+│   ├── analyse_kociemba*.cpp    # Comparaison de chaînes Kociemba
+│   ├── analyse_erreurs.py       # Statistiques sur les erreurs de détection/correction
+│   ├── check_cube_structure.py  # Ancienne version de validation de structure (Python)
+│   ├── edition_cube_interactif.py # Modification manuelle d’un cube depuis l’interface
+│   └── visu_cube.py             # Visualisation graphique d’un cube à partir de sa chaîne
+│
+├── src/kociemba/                # Bibliothèque tierce C++ (https://github.com/blitzingeagle/rubiks3-solve)
+│   ├── *.cpp                    # Fichiers sources de la résolution
+│   └── *.hpp                    # Fichiers headers
+│
+├── data/
+│   ├── config/                  # Fichiers YAML (notamment `config.yaml`)
+│   ├── output/                  # Données générées (résolution.txt, images, encodage binaire…)
+│   ├── tables/                  # Tables de mouvements et de pruning du solveur
+│   └── groundtruth/             # Données de référence ou de test (états valides)
+│
+├── include/                     # Headers associés aux modules maison (config, traduction, structure…)
+├── obj/                         # Objets compilés (par dossier)
+├── bin/                         # Binaire compilé (`main.exe`)
+├── scripts/                     # Outils et scripts (ex: `git_push.sh`)
+├── makefile                     # Compilation via `make`
+└── README.md                    # Documentation principale du projet
+```
+
+---
+
 ## 📦 Compilation
 
 Utilise **MSYS2 MinGW64** pour compiler sans erreur et sans privilèges admin.
@@ -55,53 +102,6 @@ make run-analyse2
   ```
 - OpenCV doit être compilé avec **le même compilateur `g++`** que celui utilisé pour ton projet.
 - Ne pas oublier d’**ajouter `msys2` et `git` dans les variables d’environnement système** (PATH).
-
----
-
-## 📁 Structure du projet
-
-```
-rubiks-cube-resolver/
-│
-├── .vscode/                     # Configuration de l’environnement de développement sous VSCode
-│   ├── settings.json            # Chemins personnalisés, formatage, terminal
-│   ├── c_cpp_properties.json    # Chemins d’inclusion pour MinGW
-│   └── tasks.json               # Tâches de build (make, exécution…)
-│
-├── src/                         # Code source principal du projet
-│   ├── main.cpp                 # Point d’entrée du programme
-│   ├── config.cpp               # Chargement de la configuration depuis le fichier YAML
-│   ├── ColorDetector.cpp        # Détection des couleurs dominantes sur chaque sticker
-│   ├── face_rectifieur_*.cpp    # Rectification des images de faces (auto ou manuel)
-│   ├── split_stickers.cpp       # Découpe des faces en 9 stickers
-│   ├── traduction.cpp           # Encodage binaire des mouvements de résolution (4 bits)
-│   ├── check_structure.cpp      # Vérification et correction automatique de la structure du cube
-│   └── kociemba_solver.cpp      # Résolution avec la lib Kociemba (bibliothèque tierce C++)
-│
-├── src/analyse/                 # Scripts d’analyse (Python et C++)
-│   ├── analyse_kociemba*.cpp    # Comparaison de chaînes Kociemba
-│   ├── analyse_erreurs.py       # Statistiques sur les erreurs de détection/correction
-│   ├── check_cube_structure.py  # Ancienne version de validation de structure (Python)
-│   ├── edition_cube_interactif.py # Modification manuelle d’un cube depuis l’interface
-│   └── visu_cube.py             # Visualisation graphique d’un cube à partir de sa chaîne
-│
-├── src/kociemba/                # Bibliothèque tierce C++ (https://github.com/blitzingeagle/rubiks3-solve)
-│   ├── *.cpp                    # Fichiers sources de la résolution
-│   └── *.hpp                    # Fichiers headers
-│
-├── data/
-│   ├── config/                  # Fichiers YAML (notamment `config.yaml`)
-│   ├── output/                  # Données générées (résolution.txt, images, encodage binaire…)
-│   ├── tables/                  # Tables de mouvements et de pruning du solveur
-│   └── groundtruth/             # Données de référence ou de test (états valides)
-│
-├── include/                     # Headers associés aux modules maison (config, traduction, structure…)
-├── obj/                         # Objets compilés (par dossier)
-├── bin/                         # Binaire compilé (`main.exe`)
-├── scripts/                     # Outils et scripts (ex: `git_push.sh`)
-├── makefile                     # Compilation via `make`
-└── README.md                    # Documentation principale du projet
-```
 
 ---
 
