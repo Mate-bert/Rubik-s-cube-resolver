@@ -17,53 +17,49 @@ using namespace std;
 
 class MoveTable {
 public:
-    // The constructor must be provided with a cube to be
-    //   manipulated during table generation, the size
-    //   of the table (number of entries), and whether
-    //   or not the table is a phase 2 table.  If the
-    //   table is a phase 2 table, then only quarter
-    //   turn moves are allowed for F,B,L, and R.
+    // Le constructeur prend un cube à manipuler pour générer la table,
+    // la taille de la table (nombre d'entrées), et un indicateur pour
+    // savoir si la table est une table de phase 2. Si c'est une table
+    // de phase 2, seuls les quarts de tour sont autorisés pour F, B, L et R.
     MoveTable(Cube &cube, int tableSize, int phase2=0);
     
+    // Destructeur virtuel
     virtual ~MoveTable();
     
-    // Initialize the pruning table by either generating it
-    //   or loading it from an existing file
+    // Initialise la table de mouvements en la générant ou en la chargeant
+    // depuis un fichier existant
     virtual void Initialize(char* fileName);
     
-    // Overloaded subscript operator allows standard C++ indexing
-    //   (i.e. MoveTable[i][j]) for accessing table values.
+    // Surcharge de l'opérateur de sous-indice pour permettre un accès
+    // standard en C++ (par exemple, MoveTable[i][j]) aux valeurs de la table.
     virtual int* operator[](int index);
     
-    // Obtain the size of the table (number of logical entries)
+    // Retourne la taille de la table (nombre d'entrées logiques)
     virtual int SizeOf() { return TableSize; }
     
-    // Dump table contents
+    // Affiche le contenu de la table
     virtual void Dump();
     
 protected:
-    // These functions must be overloaded in the derived
-    //   class in order to provide the appropriate mapping
-    //   between ordinal and cube state.
-    virtual int OrdinalFromCubeState() = 0;
-    virtual void OrdinalToCubeState(int ordinal) = 0;
+    // Ces fonctions doivent être surchargées dans une classe dérivée
+    // pour fournir le mappage approprié entre un ordinal et l'état du cube.
+    virtual int OrdinalFromCubeState() = 0; // Convertit l'état du cube en un ordinal
+    virtual void OrdinalToCubeState(int ordinal) = 0; // Convertit un ordinal en état du cube
     
 private:
-    // Generate the table
+    // Génère la table de mouvements
     void Generate();
-    // Save the table to a file
+    // Sauvegarde la table dans un fichier
     void Save(char* fileName);
-    // Load the table from a file
+    // Charge la table depuis un fichier
     void Load(ifstream& infile);
     
-    // Copies of important variables
-    Cube& TheCube;
-    // Number of entries in the pruning table
-    int TableSize;
-    int Phase2;
-    // The table pointer
+    // Copie des variables importantes
+    Cube& TheCube; // Référence au cube manipulé
+    int TableSize; // Nombre d'entrées dans la table de mouvements
+    int Phase2; // Indicateur pour la phase 2
+    // Pointeur vers la table de mouvements
     int (*Table)[Cube::Move::NumberOfClockwiseQuarterTurnMoves];
 };
-
 
 #endif /* MoveTable_hpp */

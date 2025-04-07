@@ -11,85 +11,91 @@
 
 #include "Cube.hpp"
 
-#define KOCIEMBA	// Selects either Kociemba's or Winter's approach
-                    //   to the choice algorithm (comment out to choose
-                    //   the latter).  If this is changed, be sure to
-                    //   regenerate the tables involving "choice".
+// Définition de la macro KOCIEMBA pour choisir l'approche de Kociemba
+// Si cette macro est commentée, l'approche de Dik Winter sera utilisée.
+// Si vous changez cette macro, assurez-vous de régénérer les tables impliquant "choice".
+#define KOCIEMBA
 
+// Classe RubiksCube héritant de Cube
 class RubiksCube : public Cube {
 public:
-    // Number of possiblities for each axis of the two triples
+    // Enumération pour définir le nombre de possibilités pour chaque axe des deux triplets
     enum {
-        Twists = (3*3*3*3*3*3*3), // 3^7 = 2187
-        Flips = (2*2*2*2*2*2*2*2*2*2*2), // 2^11 = 2048
-        Choices = 495, // 12 choose 4 = 495
-        CornerPermutations = (8*7*6*5*4*3*2*1), // 8! = 40320
-        NonMiddleSliceEdgePermutations = (8*7*6*5*4*3*2*1), // 8! = 40320
-        MiddleSliceEdgePermutations = (4*3*2*1) // 4! = 24
+        Twists = (3*3*3*3*3*3*3), // 3^7 = 2187 (orientations des coins)
+        Flips = (2*2*2*2*2*2*2*2*2*2*2), // 2^11 = 2048 (orientations des arêtes)
+        Choices = 495, // 12 parmi 4 = 495 (positions des arêtes de la tranche médiane)
+        CornerPermutations = (8*7*6*5*4*3*2*1), // 8! = 40320 (permutations des coins)
+        NonMiddleSliceEdgePermutations = (8*7*6*5*4*3*2*1), // 8! = 40320 (permutations des arêtes hors tranche médiane)
+        MiddleSliceEdgePermutations = (4*3*2*1) // 4! = 24 (permutations des arêtes de la tranche médiane)
     };
     
+    // Constructeur et destructeur
     RubiksCube();
     ~RubiksCube();
     
-    // Phase 1 triple
+    // Phase 1 : Triplet pour les orientations et choix
     
-    // Corner orientations (3^7 = 2187)
-    int Twist();
-    void Twist(int twist);
-    // Edge orientations (2^11 = 2048)
-    int Flip();
-    void Flip(int flip);
-    // Four middle slice edge positions (12 choose 4 = 495)
-    int Choice();
-    void Choice(int choice);
+    // Orientation des coins (3^7 = 2187)
+    int Twist(); // Récupère l'orientation des coins
+    void Twist(int twist); // Définit l'orientation des coins
     
-    // Phase 2 triple
+    // Orientation des arêtes (2^11 = 2048)
+    int Flip(); // Récupère l'orientation des arêtes
+    void Flip(int flip); // Définit l'orientation des arêtes
     
-    // Permutation of the 8 corners (8! = 40320)
-    int CornerPermutation();
-    void CornerPermutation(int ordinal);
-    // Permutation of the 8 non-middle slice edges (8! = 40320)
-    int NonMiddleSliceEdgePermutation();
-    void NonMiddleSliceEdgePermutation(int ordinal);
-    // Permutation of the 4 middle slice edges (4! = 24)
-    int MiddleSliceEdgePermutation();
-    void MiddleSliceEdgePermutation(int ordinal);
+    // Positions des 4 arêtes de la tranche médiane (12 parmi 4 = 495)
+    int Choice(); // Récupère le choix des arêtes
+    void Choice(int choice); // Définit le choix des arêtes
+    
+    // Phase 2 : Triplet pour les permutations
+    
+    // Permutation des 8 coins (8! = 40320)
+    int CornerPermutation(); // Récupère la permutation des coins
+    void CornerPermutation(int ordinal); // Définit la permutation des coins
+    
+    // Permutation des 8 arêtes hors tranche médiane (8! = 40320)
+    int NonMiddleSliceEdgePermutation(); // Récupère la permutation des arêtes hors tranche médiane
+    void NonMiddleSliceEdgePermutation(int ordinal); // Définit la permutation des arêtes hors tranche médiane
+    
+    // Permutation des 4 arêtes de la tranche médiane (4! = 24)
+    int MiddleSliceEdgePermutation(); // Récupère la permutation des arêtes de la tranche médiane
+    void MiddleSliceEdgePermutation(int ordinal); // Définit la permutation des arêtes de la tranche médiane
     
 private:
+    // Enumération pour des constantes internes
     enum {
-        // A 12 bit number, 1 bit for each edge
+        // Nombre encodé sur 12 bits, 1 bit pour chaque arête
         NumberOfEncodedChoicePermutations = 4096,
-        // 12 choose 4 edges
+        // 12 parmi 4 arêtes
         NumberOfChoiceOrdinals = 495
     };
     
-    // Predicate to determine if a cubie is a middle slice edge cubie
+    // Détermine si un cubie est une arête de la tranche médiane
     static int IsMiddleSliceEdgeCubie(int cubie);
     
 #ifdef KOCIEMBA
-    // Compute the choice ordinal from the choice permutation
+    // Méthodes pour calculer l'ordinal du choix à partir de la permutation
     static int ChoiceOrdinal(int* choicePermutation);
     
-    // Compute the choice permutation from the choice ordinal
+    // Méthodes pour calculer la permutation du choix à partir de l'ordinal
     static void ChoicePermutation(int choiceOrdinal, int* choicePermutation);
     
-#else // Dik Winter's method
-    // Alternate approach to the above
+#else // Méthode de Dik Winter
+    // Approche alternative pour les méthodes ci-dessus
     static int ChoiceOrdinal(int* choicePermutation);
     static void ChoicePermutation(int choiceOrdinal, int* choicePermutation);
     
+    // Initialisation des données pour la méthode de Dik Winter
     static void InitializeChoice();
-    static int CountBits(int value);
+    static int CountBits(int value); // Compte le nombre de bits à 1 dans une valeur
     static void DecodeChoicePermutation(int encodedChoicePermutation, int* decodedChoicePermutation);
     
+    // Tableaux pour mapper les permutations encodées et les ordinals
     static int EncodedChoicePermutationToChoiceOrdinal[NumberOfEncodedChoicePermutations];
-    // Maps the ordinal back to the edge permutation
     static int ChoiceOrdinalToEncodedChoicePermutation[NumberOfChoiceOrdinals];
-    // Maps a bit number in the range (0...12) to a bit mask
-    static unsigned int BitNumberToBitMask[12];
+    static unsigned int BitNumberToBitMask[12]; // Mappe un numéro de bit à un masque de bit
 #endif // KOCIEMBA
     
 };
 
 #endif /* RubiksCube_hpp */
-

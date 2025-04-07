@@ -10,64 +10,65 @@
 #define FaceletCube_hpp
 
 //
-// FaceletCube uses the 54 individual facelets to represent the cube.
-// The FaceletCube can then be asked to validate the cube to determine if
-// it is in a legal, and thus solvable, configuration.
+// FaceletCube utilise les 54 facettes individuelles pour représenter le cube.
+// FaceletCube peut ensuite être utilisé pour valider le cube afin de déterminer
+// s'il est dans une configuration légale et donc solvable.
 //
 
 #include "Cube.hpp"
 
 #include <string>
 
-#define FACELETS_PER_FACE 9
-#define NUM_FACELETS (NUM_FACES * FACELETS_PER_FACE)
+#define FACELETS_PER_FACE 9 // Nombre de facettes par face
+#define NUM_FACELETS (NUM_FACES * FACELETS_PER_FACE) // Nombre total de facettes
 
-// The following macros are used to construct a unique number
-// for each corner and edge cubie from its facelets.
+// Les macros suivantes sont utilisées pour construire un numéro unique
+// pour chaque coin et chaque arête à partir de leurs facettes.
 
-#define FacesToCorner(face1, face2, face3) (((face1*6)+face2)*6+face3)
-#define FacesToEdge(face1, face2) (face1*6+face2)
+#define FacesToCorner(face1, face2, face3) (((face1*6)+face2)*6+face3) // Génère un identifiant unique pour un coin
+#define FacesToEdge(face1, face2) (face1*6+face2) // Génère un identifiant unique pour une arête
 
 using namespace std;
 
 class FaceletCube {
 public:
-    // Face names
-    enum Face { U, D, L, R, F, B };
+    // Noms des faces
+    enum Face { U, D, L, R, F, B }; // U = Haut, D = Bas, L = Gauche, R = Droite, F = Avant, B = Arrière
     
-    // Validation return codes
+    // Codes de retour pour la validation
     enum {
-        VALID,
-        INVALID_MARKER,
-        INVALID_FACELETCOUNT,
-        DUPLICATE_CENTER_MARKING,
-        INVALID_CORNER_MARKINGS,
-        INVALID_CORNER_PARITY,
-        INVALID_EDGE_MARKINGS,
-        INVALID_EDGE_PARITY,
-        INVALID_TOTAL_PARITY,
-        NumberOfErrors };
+        VALID, // Configuration valide
+        INVALID_MARKER, // Marqueur invalide
+        INVALID_FACELETCOUNT, // Nombre de facettes invalide
+        DUPLICATE_CENTER_MARKING, // Marquage du centre dupliqué
+        INVALID_CORNER_MARKINGS, // Marquages des coins invalides
+        INVALID_CORNER_PARITY, // Parité des coins invalide
+        INVALID_EDGE_MARKINGS, // Marquages des arêtes invalides
+        INVALID_EDGE_PARITY, // Parité des arêtes invalide
+        INVALID_TOTAL_PARITY, // Parité totale invalide
+        NumberOfErrors // Nombre total d'erreurs possibles
+    };
     
-    FaceletCube();
-    ~FaceletCube();
+    FaceletCube(); // Constructeur
+    ~FaceletCube(); // Destructeur
     
-    // Set the cube markings for a given face
+    // Définit les marquages pour une face donnée
     void SetFaceMarkings(int face, string faceMarkings);
     
-    // Validate markings, permutation, and parity
+    // Valide les marquages, la permutation et la parité
     int Validate(Cube &cube);
     
-    // Convert face name to enumeration offset
+    // Convertit un nom de face en un décalage d'énumération
     int FaceNameToOffset(char faceName);
     
-    // Return the text associated with an error return code
+    // Retourne le texte associé à un code d'erreur
     string ErrorText(unsigned int error);
     
-    // Dump cube state
+    // Affiche l'état du cube
     void Dump();
     
 private:
-    // Map each corner facelet to a unique corner number
+    // Associe chaque facette de coin à un numéro unique de coin
     enum Corner {
         URF = FacesToCorner(U,R,F),
         RFU = FacesToCorner(R,F,U),
@@ -99,9 +100,10 @@ private:
         
         DRB = FacesToCorner(D,R,B),
         RBD = FacesToCorner(R,B,D),
-        BDR = FacesToCorner(B,D,R) };
+        BDR = FacesToCorner(B,D,R)
+    };
     
-    // Map each edge facelet to a unique edge number
+    // Associe chaque facette d'arête à un numéro unique d'arête
     enum Edge {
         UF = FacesToEdge(U,F),
         FU = FacesToEdge(F,U),
@@ -137,38 +139,40 @@ private:
         BL = FacesToEdge(B,L),
         
         RB = FacesToEdge(R,B),
-        BR = FacesToEdge(B,R) };
+        BR = FacesToEdge(B,R)
+    };
     
-    // Validation sub functions
-    int ValidateCenters();
-    int ValidateFacelets();
-    int ValidateCorners();
-    int ValidateEdges();
-    int EdgePermutationParity();
-    int CornerPermutationParity();
-    int PermutationParity(int* permutations, int numberOfCubies);
-    int FaceletOffsetToMarking(int offset);
+    // Sous-fonctions de validation
+    int ValidateCenters(); // Valide les centres
+    int ValidateFacelets(); // Valide les facettes
+    int ValidateCorners(); // Valide les coins
+    int ValidateEdges(); // Valide les arêtes
+    int EdgePermutationParity(); // Vérifie la parité des permutations des arêtes
+    int CornerPermutationParity(); // Vérifie la parité des permutations des coins
+    int PermutationParity(int* permutations, int numberOfCubies); // Vérifie la parité des permutations
+    int FaceletOffsetToMarking(int offset); // Convertit un décalage de facette en marquage
     
-    // The 9 markings for each of the 6 faces
+    // Les 9 marquages pour chacune des 6 faces
     char faceletMarkings[NUM_FACELETS];
-    // Markings mapped to each face
+    // Marquages associés à chaque face
     char faceMarkings[NUM_FACES+1];
     
+    // Données statiques pour les facettes des coins et des arêtes
     static int cornerFacelets[Cube::NumberOfCornerCubies][3];
     static Corner cornerMap[Cube::NumberOfCornerCubies*3];
     
     static int edgeFacelets[Cube::NumberOfEdgeCubies][2];
     static Edge edgeMap[Cube::NumberOfEdgeCubies*2];
     
-    // The resulting cubie permutation and orientations
+    // Permutations et orientations des cubies résultants
     int cornerCubiePermutations[Cube::NumberOfCornerCubies];
     int cornerCubieOrientations[Cube::NumberOfCornerCubies];
     
     int edgeCubiePermutations[Cube::NumberOfEdgeCubies];
     int edgeCubieOrientations[Cube::NumberOfEdgeCubies];
     
+    // Texte associé aux erreurs
     static string errorText[NumberOfErrors];
 };
-
 
 #endif /* FaceletCube_hpp */

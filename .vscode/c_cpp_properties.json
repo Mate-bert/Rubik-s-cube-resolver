@@ -1,20 +1,35 @@
 {
-    "configurations": [
-      {
-        "name": "Win32",
-        "includePath": [
-          "${workspaceFolder}/include",
-          "${workspaceFolder}/include/kociemba",
-          "${workspaceFolder}/src",
-          "${workspaceFolder}/src/kociemba",
-          "C:/opencv/install/include"
-        ],
-        "defines": [],
-        "compilerPath": "C:/msys64/mingw64/bin/g++.exe",
-        "cStandard": "c11",
-        "cppStandard": "c++17",
-        "intelliSenseMode": "windows-gcc-x64"
-      }
-    ],
-    "version": 4
-}  
+  "configurations": [
+    {
+      // Nom de la configuration
+      "name": "Win32",
+
+      // Chemins d'inclusion pour les fichiers d'en-tête
+      "includePath": [
+        "${workspaceFolder}/include", // Dossier include principal
+        "${workspaceFolder}/include/kociemba", // Dossier pour les fichiers liés à kociemba
+        "${workspaceFolder}/src", // Dossier source principal
+        "${workspaceFolder}/src/kociemba", // Dossier source pour kociemba
+        "C:/opencv/install/include" // Dossier include pour OpenCV
+      ],
+
+      // Définitions de macros (vide ici)
+      "defines": [],
+
+      // Chemin vers le compilateur utilisé
+      "compilerPath": "C:/msys64/mingw64/bin/g++.exe",
+
+      // Standard C utilisé
+      "cStandard": "c11",
+
+      // Standard C++ utilisé
+      "cppStandard": "c++17",
+
+      // Mode IntelliSense (adapté pour GCC sous Windows)
+      "intelliSenseMode": "windows-gcc-x64"
+    }
+  ],
+
+  // Version du fichier de configuration
+  "version": 4
+}
