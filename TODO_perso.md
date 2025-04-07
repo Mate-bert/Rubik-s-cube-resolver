@@ -53,12 +53,6 @@ Ce fichier contient des suggestions d'amélioration inspirées des bonnes pratiq
 
 # ✅ TODO pour `ColorDetector.cpp`
 
-Ce fichier contient des suggestions d'amélioration inspirées des bonnes pratiques exposées dans :
-
-- Clean Code – Robert C. Martin
-- The Pragmatic Programmer – Hunt & Thomas
-- Pragmatic Thinking and Learning – Andy Hunt
-
 ## 🧠 Refactoring suggéré
 
 **Objectif :** Améliorer la clarté, testabilité et maintenabilité du fichier.
@@ -90,3 +84,115 @@ Ce fichier contient des suggestions d'amélioration inspirées des bonnes pratiq
 
 🔗 Code actuel concerné :  
 [ColorDetector.cpp – Branche `feature/detection_resolution`](https://github.com/Mate-bert/Rubik-s-cube-resolver/blob/feature/detection_resolution/src/ColorDetector.cpp)
+
+---
+
+## ✅ TODO pour `config.cpp`
+
+### 🧠 Refactoring suggéré
+
+**Objectif :** Clarifier la structure du module de configuration et en améliorer la testabilité.
+
+---
+
+### 📌 Remarques principales
+
+- ✅ **Responsabilité unique :** Le module charge bien la configuration depuis un fichier YAML.
+- 📦 **Code couplé à `yaml-cpp` :**  
+  → Envisager une interface (`IConfigProvider`) pour permettre le test ou le remplacement de backends YAML plus tard.
+- 🔁 **Chargement statique / répétitif :**  
+  → La fonction `loadYamlConfig()` recharge le fichier à chaque appel. Si la config ne change pas dynamiquement, on pourrait la charger une seule fois et la partager (singleton ou objet global injecté).
+- ⚠️ **Validation implicite :**  
+  → Il manque des vérifications sur les clés obligatoires. Ajouter une fonction `validateConfig()` pour alerter si des champs sont manquants.
+
+---
+
+### 🔧 Tâches associées
+
+- [ ] Ajouter une interface virtuelle `IConfigProvider` (facultatif)
+- [ ] Ajouter une fonction `validateConfig(const YAML::Node&)`
+- [ ] Factoriser un chargement unique (éventuellement dans `main.cpp`)
+- [ ] Ajouter des tests unitaires pour simuler des fichiers YAML partiels ou erronés
+
+🔗 Code actuel concerné :  
+[config.cpp – Branche `feature/detection_resolution`](https://github.com/Mate-bert/Rubik-s-cube-resolver/blob/feature/detection_resolution/src/config.cpp) 
+
+---
+
+# ✅ TODO pour `face_rectifieur_auto.cpp`
+
+## 🧠 Refactoring suggéré
+
+**Objectif :** Isoler les responsabilités de détection de contours, de transformation de perspective, et de validation dans des fonctions ou modules dédiés.
+
+---
+
+### 📌 Remarques principales
+
+- ⚠️ **Trop de responsabilités dans une même fonction**  
+  → La fonction principale semble effectuer plusieurs étapes critiques : binarisation, détection de contours, tri, transformation. Il serait plus clair de les séparer.
+
+- 🔁 **Redondance de code possible**  
+  → Le tri des points (`std::sort`) et les vérifications géométriques (angles, proportions) peuvent être factorisés.
+
+- 📐 **Nom des fonctions**  
+  → Privilégier des noms précis comme `findLargestSquareContour()`, `applyPerspectiveTransform()`, etc.
+
+- 🧪 **Testabilité**  
+  → Beaucoup de traitements sont liés à OpenCV, il serait utile de rendre testables les étapes unitaires avec des images simulées.
+
+- 🔍 **Messages de log**  
+  → Uniformiser les logs avec des emojis ou un logger central pour aider au debug.
+
+---
+
+### 🔧 Tâches associées
+
+- [ ] Extraire les étapes suivantes dans des fonctions dédiées :
+  - [ ] Détection de contours valides
+  - [ ] Tri des points
+  - [ ] Transformation de perspective
+- [ ] Ajouter des vérifications supplémentaires pour s’assurer de la validité du quadrilatère détecté
+- [ ] Créer une fonction d’aide pour afficher les quadrilatères détectés en debug
+- [ ] Ajouter des tests avec des images binaires simulées
+
+🔗 Code actuel concerné :  
+[face_rectifieur_auto.cpp – Branche `feature/detection_resolution`](https://github.com/Mate-bert/Rubik-s-cube-resolver/blob/feature/detection_resolution/src/face_rectifieur_auto.cpp)
+
+---
+
+# ✅ TODO pour `kociemba_solver.cpp`
+
+## 🧠 Refactoring suggéré
+
+**Objectif :** Isoler la logique de parsing, de validation et de résolution dans des fonctions ou classes dédiées pour améliorer la clarté et la testabilité.
+
+---
+
+### 📌 Remarques principales
+
+- ⚠️ **Fonction trop longue (`solveWithKociembaFile`)**
+  - Actuellement, cette fonction effectue plusieurs tâches : ouverture du fichier, parsing, validation, initialisation et résolution.
+  - Elle enfreint le principe de responsabilité unique (Clean Code).
+
+- 🧱 **Pas de séparation I/O / logique**
+  - La lecture du fichier et l’analyse sont directement imbriquées. On pourrait extraire le parsing dans une fonction `parseKociembaFile(...)`.
+
+- 🧪 **Pas de testabilité unitaire**
+  - Les étapes intermédiaires (validation du cube, parsing, résolution) ne peuvent pas être testées séparément.
+
+- 🗃️ **Hardcoded :**
+  - Le chemin de sortie, les logs et messages sont en dur. Prévoir une structure de paramétrage ou de logging.
+
+---
+
+### 🔧 Tâches associées
+
+- [ ] Extraire la lecture du fichier dans une fonction `readKociembaFile(...)`
+- [ ] Créer une fonction `validateParsedCube(...)`
+- [ ] Créer une fonction `runSolver(...)` ou `solveCube(RubiksCube&)`
+- [ ] Ajouter un `verbose` ou `logger` optionnel
+- [ ] Ajouter des tests simulés de chaque étape
+
+🔗 Code actuel concerné :  
+[kociemba_solver.cpp – Branche `feature/detection_resolution`](https://github.com/Mate-bert/Rubik-s-cube-resolver/blob/feature/detection_resolution/src/kociemba_solver.cpp)
