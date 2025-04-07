@@ -11,6 +11,7 @@
 #include "ColorDetector.hpp"
 #include "kociemba_solver.hpp"
 #include "traduction.hpp"
+#include "check_structure.hpp"
 
 int main() {
     // Configure la console pour afficher les caractères UTF-8
@@ -110,10 +111,20 @@ int main() {
     // Affiche un message de succès
     std::cout << "✅ Chaîne Kociemba générée dans le fichier kociemba.txt\n";
     
+    // Vérification de la structure du cube
+    std::cout << "🔎 Vérification de la structure du cube...\n";
+    if (!checkAndFixKociembaStructure(cfg["kociemba_test"])) {
+        std::cerr << "❌ Structure invalide, correction impossible.\n";
+        return 1;  // Stoppe le programme
+    }
+    std::cout << "✅ Structure du cube vérifiée et corrigée si besoin.\n";
+
+    // Étape 4 : Résolution du cube
     std::cout << "🧩 Étape 4 : Résolution du cube...\n";
     solveWithKociembaFile(cfg["kociemba_test"]);
     std::cout << "✅ solveWithKociembaFile exécutée avec succès !\n";
     
+    // Étape 5 : Encodage de la solution
     std::cout << "📦 Étape 5 : Encodage de la solution...\n";
     encodeResolution();
     std::cout << "✅ Encodage terminé ! 🎉\n";

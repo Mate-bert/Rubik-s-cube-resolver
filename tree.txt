@@ -81,8 +81,7 @@
 │   ├── predicted_3face_2.jpg
 │   ├── runs
 │   │   ├── rubiks_faces_seg
-│   │   │   ├── args.yaml
-│   │   │   └── weights
+│   │   │   └── args.yaml
 │   │   ├── rubiks_faces_seg2
 │   │   │   ├── BoxF1_curve.png
 │   │   │   ├── BoxPR_curve.png
@@ -290,9 +289,6 @@
 ├── src
 │   ├── ColorDetector.cpp
 │   ├── analyse
-│   │   ├── __pycache__
-│   │   │   ├── check_cube_structure.cpython-313.pyc
-│   │   │   └── visu_cube.cpython-313.pyc
 │   │   ├── analyse_erreurs.py
 │   │   ├── analyse_kociemba.cpp
 │   │   ├── analyse_kociemba_v2.cpp
@@ -322,11 +318,8 @@
     ├── __init__.py
     ├── __pycache__
     │   ├── __init__.cpython-312.pyc
-    │   ├── __init__.cpython-313.pyc
-    │   ├── affichage_cube.cpython-313.pyc
-    │   ├── config_loader.cpython-312.pyc
-    │   └── config_loader.cpython-313.pyc
+    │   └── config_loader.cpython-312.pyc
     ├── affichage_cube.py
     └── config_loader.py
 
-38 directories, 292 files
+36 directories, 287 files
