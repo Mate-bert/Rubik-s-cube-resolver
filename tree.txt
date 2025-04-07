@@ -247,6 +247,7 @@
 │       └── TwstFlip.ptb
 ├── include
 │   ├── ColorDetector.hpp
+│   ├── check_structure.hpp
 │   ├── config.hpp
 │   ├── face_rectifieur_auto.hpp
 │   ├── kociemba
@@ -266,6 +267,7 @@
 ├── makefile
 ├── obj
 │   ├── ColorDetector.o
+│   ├── check_structure.o
 │   ├── config.o
 │   ├── face_rectifieur_auto.o
 │   ├── kociemba
@@ -295,6 +297,7 @@
 │   │   ├── check_cube_structure.py
 │   │   ├── edition_cube_interactif.py
 │   │   └── visu_cube.py
+│   ├── check_structure.cpp
 │   ├── config.cpp
 │   ├── face_rectifieur_auto.cpp
 │   ├── face_rectifieur_manuel.cpp
@@ -322,4 +325,4 @@
     ├── affichage_cube.py
     └── config_loader.py
 
-36 directories, 287 files
+36 directories, 290 files
