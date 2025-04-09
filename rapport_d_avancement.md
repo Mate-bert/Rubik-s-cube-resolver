@@ -59,3 +59,45 @@ Finaliser l’intégration de l’algorithme de résolution de Rubik's Cube (Koc
 
 📌 Une étape cruciale de franchie : l’algorithme de résolution et la traduction binaire sont maintenant **entièrement intégrés** et **fonctionnels** au sein du pipeline C++.  
 Prochain objectif : exploiter ce fichier `output_encoded.txt` pour animer le cube ou piloter les moteurs.
+
+---
+
+## 🧩 Date : 7 avril 2025
+
+---
+
+## 🎯 Objectif du jour
+
+Renforcer la robustesse de la vérification structurelle de la chaîne Kociemba et affiner l’encodage binaire pour le pilotage de l’exécution matérielle.
+
+---
+
+## ✅ Réalisations
+
+### 1. Amélioration de `check_structure.cpp`
+- Ajout de la **gestion automatique des lettres manquantes** dans la chaîne Kociemba générée (`kociemba_test.txt`).
+- Le programme identifie les lettres manquantes et corrige intelligemment :
+  - S’il manque 1 ou 2 lettres identiques → remplacement direct des `?`
+  - S’il manque plusieurs lettres différentes → test de toutes les combinaisons possibles jusqu’à en trouver une valide.
+- Intégration complète dans `main.cpp` **avant** l’étape de résolution.
+- Affichage clair : `✅ Structure du cube vérifiée et corrigée si besoin.`
+
+### 2. Intégration propre dans le pipeline principal
+- Ajout du bloc de vérification structurelle après la détection des couleurs (`étape 3`) et avant la résolution (`étape 4`).
+- En cas d’échec de correction structurelle, le programme affiche : `❌ Structure invalide, correction impossible.` et interrompt proprement la suite.
+
+### 3. Révision du README et documentation du dossier `src/`
+- Clarification de la structure du dossier `src/`, `src/analyse/`, `src/kociemba/`
+- Fusion avec une version alternative pour fournir une **description hiérarchique complète et annotée** du projet.
+- Ajout d’une section `USAGE` à venir dans le `README.md`.
+
+### 4. Suivi et versionnement
+- Revue des `settings.json`, `tasks.json` et `c_cpp_properties.json` dans `.vscode/` pour garantir une expérience fluide sous VSCode avec `MinGW`.
+
+---
+
+## 🔄 Prochaines étapes
+
+- Ajouter la gestion de cas ambigu où plusieurs combinaisons structurelles seraient valides.
+- Permettre à l'utilisateur de **choisir une correction** ou d'accepter automatiquement la première valide.
+- Intégrer un mode `--check-only` pour tester uniquement la structure d’un fichier sans exécuter le pipeline.

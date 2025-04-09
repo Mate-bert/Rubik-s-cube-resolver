@@ -81,8 +81,7 @@
 │   ├── predicted_3face_2.jpg
 │   ├── runs
 │   │   ├── rubiks_faces_seg
-│   │   │   ├── args.yaml
-│   │   │   └── weights
+│   │   │   └── args.yaml
 │   │   ├── rubiks_faces_seg2
 │   │   │   ├── BoxF1_curve.png
 │   │   │   ├── BoxPR_curve.png
@@ -248,6 +247,7 @@
 │       └── TwstFlip.ptb
 ├── include
 │   ├── ColorDetector.hpp
+│   ├── check_structure.hpp
 │   ├── config.hpp
 │   ├── face_rectifieur_auto.hpp
 │   ├── kociemba
@@ -267,6 +267,7 @@
 ├── makefile
 ├── obj
 │   ├── ColorDetector.o
+│   ├── check_structure.o
 │   ├── config.o
 │   ├── face_rectifieur_auto.o
 │   ├── kociemba
@@ -290,15 +291,13 @@
 ├── src
 │   ├── ColorDetector.cpp
 │   ├── analyse
-│   │   ├── __pycache__
-│   │   │   ├── check_cube_structure.cpython-313.pyc
-│   │   │   └── visu_cube.cpython-313.pyc
 │   │   ├── analyse_erreurs.py
 │   │   ├── analyse_kociemba.cpp
 │   │   ├── analyse_kociemba_v2.cpp
 │   │   ├── check_cube_structure.py
 │   │   ├── edition_cube_interactif.py
 │   │   └── visu_cube.py
+│   ├── check_structure.cpp
 │   ├── config.cpp
 │   ├── face_rectifieur_auto.cpp
 │   ├── face_rectifieur_manuel.cpp
@@ -322,11 +321,8 @@
     ├── __init__.py
     ├── __pycache__
     │   ├── __init__.cpython-312.pyc
-    │   ├── __init__.cpython-313.pyc
-    │   ├── affichage_cube.cpython-313.pyc
-    │   ├── config_loader.cpython-312.pyc
-    │   └── config_loader.cpython-313.pyc
+    │   └── config_loader.cpython-312.pyc
     ├── affichage_cube.py
     └── config_loader.py
 
-38 directories, 292 files
+36 directories, 290 files

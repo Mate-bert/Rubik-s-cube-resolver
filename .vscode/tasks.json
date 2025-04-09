@@ -1,15 +1,23 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-      {
-        "label": "build-main",
-        "type": "shell",
-        "command": "make build-main",
-        "group": {
-          "kind": "build",
-          "isDefault": true
-        },
-        "problemMatcher": []
-      }
-    ]
-  }  
+  // Version du fichier tasks.json
+  "version": "2.0.0",
+  "tasks": [
+    {
+      // Étiquette de la tâche (nom affiché dans l'interface)
+      "label": "build-main",
+      // Type de tâche (ici, une commande shell)
+      "type": "shell",
+      // Commande à exécuter
+      "command": "make build-main",
+      // Groupe auquel appartient la tâche
+      "group": {
+        // Type de groupe (ici, une tâche de build)
+        "kind": "build",
+        // Définit cette tâche comme la tâche par défaut du groupe
+        "isDefault": true
+      },
+      // Liste des matchers de problèmes (vide ici)
+      "problemMatcher": []
+    }
+  ]
+}

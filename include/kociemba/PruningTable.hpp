@@ -10,20 +10,15 @@
 #define PruningTable_hpp
 
 //
-// Constructs a pruning table from a pair of move mapping
-// tables.  The pruning table contains an entry corresponding
-// to each possible pairing of entries from the two tables.
-// Thus the number of pruning table entries is the product of
-// the number of entries of the two move mapping tables.  A
-// breadth first search is performed until the table is filled.
-// Each table entry contains the number of moves away from
-// the cube home configuration that is required to reach that
-// particular configuration.  Since a breadth first search is
-// performed, the distances are minimal and therefore they
-// constitute an admissible heuristic.  When an admissible
-// heuristic is used to prune a heuristic search such as
-// IDA*, the search is guaranteed to find an optimal (i.e.
-// least number of moves possible) solution.
+// Construit une table de pruning (élagage) à partir d'une paire de tables de mouvements.
+// La table de pruning contient une entrée correspondant à chaque paire possible d'entrées
+// des deux tables de mouvements. Le nombre d'entrées dans la table de pruning est donc
+// le produit du nombre d'entrées des deux tables de mouvements. Une recherche en largeur
+// est effectuée jusqu'à ce que la table soit remplie. Chaque entrée de la table contient
+// le nombre minimal de mouvements nécessaires pour atteindre une configuration particulière
+// à partir de la configuration initiale du cube. Ces distances minimales constituent une
+// heuristique admissible, ce qui garantit qu'une recherche comme IDA* trouve une solution
+// optimale (le nombre minimal de mouvements possible).
 //
 
 #include <fstream>
@@ -34,66 +29,62 @@ using namespace std;
 
 class PruningTable {
 public:
-    // Constructor - Must provide a pair of move mapping tables
-    //   and the associated ordinal corresponding to the cube's
-    //   "home" configuration.  The home ordinals correspond to
-    //   the root node of the search.
+    // Constructeur - Nécessite une paire de tables de mouvements et les ordinals
+    // associés correspondant à la configuration "initiale" du cube.
+    // Les ordinals initiaux correspondent au nœud racine de la recherche.
     PruningTable(MoveTable& moveTable1, MoveTable& moveTable2, int homeOrdinal1, int homeOrdinal2);
     
     ~PruningTable();
     
-    // Initialize the pruning table by either generating it
-    //   or loading it from an existing file
+    // Initialise la table de pruning en la générant ou en la chargeant depuis un fichier existant
     void Initialize(char* fileName);
     
-    // Convert a pruning table index to the associated pair
-    //   of move mapping table indices
+    // Convertit un index de la table de pruning en une paire d'indices des tables de mouvements
     void PruningTableIndexToMoveTableIndices(int index, int &ordinal1, int &ordinal2);
     
-    // Convert a pair of move mapping table indices to the
-    //   associated pruning table index
+    // Convertit une paire d'indices des tables de mouvements en un index de la table de pruning
     int MoveTableIndicesToPruningTableIndex(int ordinal1, int ordinal2);
     
-    // Get a pruning table value corresponding to the specified index
+    // Récupère une valeur de la table de pruning correspondant à l'index spécifié
     unsigned int GetValue(int index);
     
-    // Set a pruning table value at the specified index
+    // Définit une valeur dans la table de pruning à l'index spécifié
     void SetValue(int index, unsigned int value);
     
-    // Obtain the size of the table (number of logical entries)
+    // Obtient la taille de la table (nombre d'entrées logiques)
     int SizeOf(void) { return TableSize; }
     
-    // Dump table contents
+    // Affiche le contenu de la table
     void Dump(void);
     
 private:
-    enum { Empty = 0x0f };	// Empty table entry
+    enum { Empty = 0x0f };	// Valeur représentant une entrée vide dans la table
     
-    // Generate the table using breath first search
+    // Génère la table en utilisant une recherche en largeur
     void Generate(void);
-    // Save the table to a file
+    // Sauvegarde la table dans un fichier
     void Save(char* fileName);
-    // Load the table from a file
+    // Charge la table depuis un fichier
     void Load(ifstream& infile);
     
-    // Copies of important variables
-    MoveTable& MoveTable1;
-    MoveTable& MoveTable2;
-    int HomeOrdinal1;
-    int HomeOrdinal2;
-    int MoveTable1Size;
-    int MoveTable2Size;
+    // Copies des variables importantes
+    MoveTable& MoveTable1; // Référence à la première table de mouvements
+    MoveTable& MoveTable2; // Référence à la deuxième table de mouvements
+    int HomeOrdinal1;      // Ordinal initial pour la première table
+    int HomeOrdinal2;      // Ordinal initial pour la deuxième table
+    int MoveTable1Size;    // Taille de la première table de mouvements
+    int MoveTable2Size;    // Taille de la deuxième table de mouvements
     
-    // Number of entries in the pruning table
+    // Nombre d'entrées dans la table de pruning
     int TableSize;
-    // Actual size, in bytes, allocated for the table
+    // Taille réelle, en octets, allouée pour la table
     int AllocationSize;
-    // The table pointer
+    // Pointeur vers la table
     unsigned char* Table;
     
-    // Tables for dealing with nybble packing/unpacking
-    static unsigned int OffsetToEntryMask[2];
-    static unsigned int OffsetToShiftCount[2];
+    // Tables pour gérer le packing/unpacking des nybbles (demi-octets)
+    static unsigned int OffsetToEntryMask[2];    // Masques pour extraire les nybbles
+    static unsigned int OffsetToShiftCount[2];  // Décalages pour accéder aux nybbles
 };
 
 #endif /* PruningTable_hpp */
