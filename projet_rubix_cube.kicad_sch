@@ -4238,13 +4238,12 @@
 				)
 			)
 		)
-		(property "Value" "~"
+		(property "Value" "47uF"
 			(at 152.781 35.56 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_Elec_6.3x7.7"
