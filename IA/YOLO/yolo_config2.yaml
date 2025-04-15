@@ -1,4 +1,4 @@
-path: C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/IA/dataset
+path: C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/IA/YOLO/dataset
 train: train/images
 val: valid/images
 

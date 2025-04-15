@@ -1,4 +1,4 @@
-path: C:/Users/HP/Documents/cours_inge_3D/Rubik-s-cube-resolver/IA/dataset
+path: C:/Users/HP/Documents/cours_inge_3D/Rubik-s-cube-resolver/IA/YOLO/dataset
 train: train/images
 val: valid/images
 
