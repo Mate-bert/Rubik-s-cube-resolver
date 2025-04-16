@@ -10,7 +10,8 @@
         "${workspaceFolder}/include/kociemba", // Dossier pour les fichiers liés à kociemba
         "${workspaceFolder}/src", // Dossier source principal
         "${workspaceFolder}/src/kociemba", // Dossier source pour kociemba
-        "C:/opencv/install/include" // Dossier include pour OpenCV
+        "C:/opencv/install/include", // Dossier include pour OpenCV
+        "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/googletest-1.16.0/googletest/include/gtest/"
       ],
 
       // Définitions de macros (vide ici)
