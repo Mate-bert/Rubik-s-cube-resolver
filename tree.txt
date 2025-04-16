@@ -1,291 +1,327 @@
 .
 ├── IA
 │   ├── Mask R-CNN
-│   └── YOLO
-│       ├── dataset
-│       │   ├── train
-│       │   │   ├── images
-│       │   │   │   ├── 10_jpg.rf.4cf9336208bbe0800be09d68085f7cb1.jpg
-│       │   │   │   ├── 11_jpg.rf.635a242d1288115978243077d605a858.jpg
-│       │   │   │   ├── 12_jpg.rf.36bbab851ea2dd30dcdbf5e71be62c3c.jpg
-│       │   │   │   ├── 13_jpg.rf.1d5b73ef6b513e2c481c1a1dba41ee28.jpg
-│       │   │   │   ├── 14_jpg.rf.38d0a9cf0283d3975fcd1cb186ec78b6.jpg
-│       │   │   │   ├── 15_jpg.rf.6ce3c8937b244eebe60db80d17ad1a8d.jpg
-│       │   │   │   ├── 18_jpg.rf.675314cd1eb25fe6643269480c66ec9e.jpg
-│       │   │   │   ├── 19_jpg.rf.0faf11338c6e7db0acfad942a11387c2.jpg
-│       │   │   │   ├── 1_jpg.rf.8ffc2dd263f9ccc3054624a3cb84c63f.jpg
-│       │   │   │   ├── 20250328_135033_jpg.rf.5e291cdc9532b95df74fbb6109695088.jpg
-│       │   │   │   ├── 20250328_135057_jpg.rf.2adcace28f3280741ad0bafe8e7d6a08.jpg
-│       │   │   │   ├── 20_jpg.rf.d6f08e419aba5fbdb164063e50dd065b.jpg
-│       │   │   │   ├── 21_jpg.rf.f0738783043618ab09da994600d1f832.jpg
-│       │   │   │   ├── 22_jpg.rf.0f5747e9c0116ae3ca7a8f4517731d40.jpg
-│       │   │   │   ├── 23_jpg.rf.608d93c227b32b6e6a2994e2862605ca.jpg
-│       │   │   │   ├── 24_jpg.rf.1dda6b8590fcab3b45ca8c407e26d02e.jpg
-│       │   │   │   ├── 25_jpg.rf.d58148dea1f1d383bdf9c3e45b0a507f.jpg
-│       │   │   │   ├── 26_jpg.rf.9d56fd2be7955afeb7e094302a2182f6.jpg
-│       │   │   │   ├── 29_jpg.rf.6ea1d97f6d5b885d45ef3d5c651a9892.jpg
-│       │   │   │   ├── 2_jpg.rf.3efbbcd9612e1fb6016cab1757c7b211.jpg
-│       │   │   │   ├── 3_jpg.rf.eb2cff656fb7a06ca06ca3702681245c.jpg
-│       │   │   │   ├── 3face_1_jpg.rf.8cb67514ab63346cbabbaf0c6fe00760.jpg
-│       │   │   │   ├── 4_jpg.rf.fb3bd2993ae2d1e104b411a500f01aa0.jpg
-│       │   │   │   ├── 6_jpg.rf.94075a8d5e3eb3ac1d7f71c873618439.jpg
-│       │   │   │   ├── 7_jpg.rf.a9e164d415a0d17c975ebe478c7b37d9.jpg
-│       │   │   │   ├── 9_jpg.rf.5da4e1371538102f94dd5a4ed5a8aef6.jpg
-│       │   │   │   ├── cube_face_10_jpg.rf.6aa68936611177e9111bc10e48436cc8.jpg
-│       │   │   │   ├── cube_face_11_jpg.rf.845fb8111c53915e0388e11c02078f61.jpg
-│       │   │   │   ├── cube_face_12_jpg.rf.04a07d23e8e912209dd9705c1c0b9fbe.jpg
-│       │   │   │   ├── cube_face_13_jpg.rf.6129e47c3e01bd9defd8155677d78c20.jpg
-│       │   │   │   ├── cube_face_14_jpg.rf.9ff29eb92d6242121597bf5689ebbd3b.jpg
-│       │   │   │   ├── cube_face_16_jpg.rf.51c3ef75def4b17e73f0d9149d1e4548.jpg
-│       │   │   │   ├── cube_face_17_jpg.rf.c5dda3dfea26975b8d090220b99d8d22.jpg
-│       │   │   │   ├── cube_face_18_jpg.rf.ead419e3043918ae7bfdb03562a70fa8.jpg
-│       │   │   │   ├── cube_face_19_jpg.rf.9a84a69af189f9c73f89c838dde2aab8.jpg
-│       │   │   │   ├── cube_face_1_jpg.rf.9c8b0263bce3d4d03ad0626812472bd0.jpg
-│       │   │   │   ├── cube_face_1_jpg.rf.df4464e3f14801852a7759157767f1c8.jpg
-│       │   │   │   ├── cube_face_21_jpg.rf.0059ab0f9db494783657b7c47f7fe190.jpg
-│       │   │   │   ├── cube_face_23_jpg.rf.837c2a34fd398b33e6fcd2679cda34af.jpg
-│       │   │   │   ├── cube_face_25_jpg.rf.0cc0f8ed16d4997253cc4075fee0c545.jpg
-│       │   │   │   ├── cube_face_27_jpg.rf.8dfb39570ac94c73c47f5babac8a2800.jpg
-│       │   │   │   ├── cube_face_28_jpg.rf.b278e104c218ee7dda3040f924536a70.jpg
-│       │   │   │   ├── cube_face_29_jpg.rf.4a516c0e1456697665305255a36ffc13.jpg
-│       │   │   │   ├── cube_face_2_jpg.rf.334c3208b16c56c0c518eb096aae137b.jpg
-│       │   │   │   ├── cube_face_30_jpg.rf.c3e505f8471ee8ad622a8335ac228c05.jpg
-│       │   │   │   ├── cube_face_31_jpg.rf.cfa4a43853548b074aa2c5873d61c8ba.jpg
-│       │   │   │   ├── cube_face_32_jpg.rf.dd8dbe6d6111b5d6aff313b454b76eef.jpg
-│       │   │   │   ├── cube_face_33_jpg.rf.fda5160cdf5f583b4e4c7f5806697d2c.jpg
-│       │   │   │   ├── cube_face_34_jpg.rf.b2abed7a6a7a2bf94a9c66aa0edebcdd.jpg
-│       │   │   │   ├── cube_face_35_jpg.rf.3922a4034c705ab4cc66186e1154dc66.jpg
-│       │   │   │   ├── cube_face_36_jpg.rf.035a52f84fb56ae1fc6ca190c45ceca3.jpg
-│       │   │   │   ├── cube_face_37_jpg.rf.44b1e13bd15886c8cdfe7dcbecf7afd4.jpg
-│       │   │   │   ├── cube_face_38_jpg.rf.b699ce0dad8cc74f0faa2ed8feb36e93.jpg
-│       │   │   │   ├── cube_face_39_jpg.rf.7b813a3f2188f5fb88977d16e9217c56.jpg
-│       │   │   │   ├── cube_face_3_jpg.rf.767afc8a89995501add4ac90a0c89b59.jpg
-│       │   │   │   ├── cube_face_40_jpg.rf.7cd045a02a7464f8a4be8b630f5880c9.jpg
-│       │   │   │   ├── cube_face_41_jpg.rf.339853c20f5b4080ddfe493e25b8fcb0.jpg
-│       │   │   │   ├── cube_face_42_jpg.rf.a139344ce2125f7cd4b97dba8f8aca50.jpg
-│       │   │   │   ├── cube_face_43_jpg.rf.9f7f149be5f9c37ea98a31b897031a62.jpg
-│       │   │   │   ├── cube_face_45_jpg.rf.7ccca69815220b1c348eab59d11d1f42.jpg
-│       │   │   │   ├── cube_face_46_jpg.rf.1a23c674184c1c9a7178e9f7e97a7a87.jpg
-│       │   │   │   ├── cube_face_48_jpg.rf.1b0991ecc71fea9c0eae897dcb1457fe.jpg
-│       │   │   │   ├── cube_face_49_jpg.rf.a1e313efe8f2563b1cd27b09772ed6eb.jpg
-│       │   │   │   ├── cube_face_4_jpg.rf.24427cc783af466ca10cc71de7e97533.jpg
-│       │   │   │   ├── cube_face_4_jpg.rf.ce93f608ef2ed1a042bf2c76666a08a2.jpg
-│       │   │   │   ├── cube_face_50_jpg.rf.f3e9e0d1808b45f97e97eac03b96169a.jpg
-│       │   │   │   ├── cube_face_52_jpg.rf.87958c6c703ac6a256c7be49828d97ef.jpg
-│       │   │   │   ├── cube_face_53_jpg.rf.bf0d45a6dc481683e4a575742e4699cb.jpg
-│       │   │   │   ├── cube_face_54_jpg.rf.ed2bb3b035f19d9f6eaf300ee33c7bc1.jpg
-│       │   │   │   ├── cube_face_6_jpg.rf.61483994a2487298598764be201c94c4.jpg
-│       │   │   │   ├── cube_face_7_jpg.rf.b622e560d92baa4b14c8f695b2fafa3c.jpg
-│       │   │   │   └── cube_face_9_jpg.rf.85c9fb3f88b82e2cf75ccfcc09baf2f0.jpg
-│       │   │   ├── labels
-│       │   │   │   ├── 10_jpg.rf.4cf9336208bbe0800be09d68085f7cb1.txt
-│       │   │   │   ├── 11_jpg.rf.635a242d1288115978243077d605a858.txt
-│       │   │   │   ├── 12_jpg.rf.36bbab851ea2dd30dcdbf5e71be62c3c.txt
-│       │   │   │   ├── 13_jpg.rf.1d5b73ef6b513e2c481c1a1dba41ee28.txt
-│       │   │   │   ├── 14_jpg.rf.38d0a9cf0283d3975fcd1cb186ec78b6.txt
-│       │   │   │   ├── 15_jpg.rf.6ce3c8937b244eebe60db80d17ad1a8d.txt
-│       │   │   │   ├── 18_jpg.rf.675314cd1eb25fe6643269480c66ec9e.txt
-│       │   │   │   ├── 19_jpg.rf.0faf11338c6e7db0acfad942a11387c2.txt
-│       │   │   │   ├── 1_jpg.rf.8ffc2dd263f9ccc3054624a3cb84c63f.txt
-│       │   │   │   ├── 20250328_135033_jpg.rf.5e291cdc9532b95df74fbb6109695088.txt
-│       │   │   │   ├── 20250328_135057_jpg.rf.2adcace28f3280741ad0bafe8e7d6a08.txt
-│       │   │   │   ├── 20_jpg.rf.d6f08e419aba5fbdb164063e50dd065b.txt
-│       │   │   │   ├── 21_jpg.rf.f0738783043618ab09da994600d1f832.txt
-│       │   │   │   ├── 22_jpg.rf.0f5747e9c0116ae3ca7a8f4517731d40.txt
-│       │   │   │   ├── 23_jpg.rf.608d93c227b32b6e6a2994e2862605ca.txt
-│       │   │   │   ├── 24_jpg.rf.1dda6b8590fcab3b45ca8c407e26d02e.txt
-│       │   │   │   ├── 25_jpg.rf.d58148dea1f1d383bdf9c3e45b0a507f.txt
-│       │   │   │   ├── 26_jpg.rf.9d56fd2be7955afeb7e094302a2182f6.txt
-│       │   │   │   ├── 29_jpg.rf.6ea1d97f6d5b885d45ef3d5c651a9892.txt
-│       │   │   │   ├── 2_jpg.rf.3efbbcd9612e1fb6016cab1757c7b211.txt
-│       │   │   │   ├── 3_jpg.rf.eb2cff656fb7a06ca06ca3702681245c.txt
-│       │   │   │   ├── 3face_1_jpg.rf.8cb67514ab63346cbabbaf0c6fe00760.txt
-│       │   │   │   ├── 4_jpg.rf.fb3bd2993ae2d1e104b411a500f01aa0.txt
-│       │   │   │   ├── 6_jpg.rf.94075a8d5e3eb3ac1d7f71c873618439.txt
-│       │   │   │   ├── 7_jpg.rf.a9e164d415a0d17c975ebe478c7b37d9.txt
-│       │   │   │   ├── 9_jpg.rf.5da4e1371538102f94dd5a4ed5a8aef6.txt
-│       │   │   │   ├── cube_face_10_jpg.rf.6aa68936611177e9111bc10e48436cc8.txt
-│       │   │   │   ├── cube_face_11_jpg.rf.845fb8111c53915e0388e11c02078f61.txt
-│       │   │   │   ├── cube_face_12_jpg.rf.04a07d23e8e912209dd9705c1c0b9fbe.txt
-│       │   │   │   ├── cube_face_13_jpg.rf.6129e47c3e01bd9defd8155677d78c20.txt
-│       │   │   │   ├── cube_face_14_jpg.rf.9ff29eb92d6242121597bf5689ebbd3b.txt
-│       │   │   │   ├── cube_face_16_jpg.rf.51c3ef75def4b17e73f0d9149d1e4548.txt
-│       │   │   │   ├── cube_face_17_jpg.rf.c5dda3dfea26975b8d090220b99d8d22.txt
-│       │   │   │   ├── cube_face_18_jpg.rf.ead419e3043918ae7bfdb03562a70fa8.txt
-│       │   │   │   ├── cube_face_19_jpg.rf.9a84a69af189f9c73f89c838dde2aab8.txt
-│       │   │   │   ├── cube_face_1_jpg.rf.9c8b0263bce3d4d03ad0626812472bd0.txt
-│       │   │   │   ├── cube_face_1_jpg.rf.df4464e3f14801852a7759157767f1c8.txt
-│       │   │   │   ├── cube_face_21_jpg.rf.0059ab0f9db494783657b7c47f7fe190.txt
-│       │   │   │   ├── cube_face_23_jpg.rf.837c2a34fd398b33e6fcd2679cda34af.txt
-│       │   │   │   ├── cube_face_25_jpg.rf.0cc0f8ed16d4997253cc4075fee0c545.txt
-│       │   │   │   ├── cube_face_27_jpg.rf.8dfb39570ac94c73c47f5babac8a2800.txt
-│       │   │   │   ├── cube_face_28_jpg.rf.b278e104c218ee7dda3040f924536a70.txt
-│       │   │   │   ├── cube_face_29_jpg.rf.4a516c0e1456697665305255a36ffc13.txt
-│       │   │   │   ├── cube_face_2_jpg.rf.334c3208b16c56c0c518eb096aae137b.txt
-│       │   │   │   ├── cube_face_30_jpg.rf.c3e505f8471ee8ad622a8335ac228c05.txt
-│       │   │   │   ├── cube_face_31_jpg.rf.cfa4a43853548b074aa2c5873d61c8ba.txt
-│       │   │   │   ├── cube_face_32_jpg.rf.dd8dbe6d6111b5d6aff313b454b76eef.txt
-│       │   │   │   ├── cube_face_33_jpg.rf.fda5160cdf5f583b4e4c7f5806697d2c.txt
-│       │   │   │   ├── cube_face_34_jpg.rf.b2abed7a6a7a2bf94a9c66aa0edebcdd.txt
-│       │   │   │   ├── cube_face_35_jpg.rf.3922a4034c705ab4cc66186e1154dc66.txt
-│       │   │   │   ├── cube_face_36_jpg.rf.035a52f84fb56ae1fc6ca190c45ceca3.txt
-│       │   │   │   ├── cube_face_37_jpg.rf.44b1e13bd15886c8cdfe7dcbecf7afd4.txt
-│       │   │   │   ├── cube_face_38_jpg.rf.b699ce0dad8cc74f0faa2ed8feb36e93.txt
-│       │   │   │   ├── cube_face_39_jpg.rf.7b813a3f2188f5fb88977d16e9217c56.txt
-│       │   │   │   ├── cube_face_3_jpg.rf.767afc8a89995501add4ac90a0c89b59.txt
-│       │   │   │   ├── cube_face_40_jpg.rf.7cd045a02a7464f8a4be8b630f5880c9.txt
-│       │   │   │   ├── cube_face_41_jpg.rf.339853c20f5b4080ddfe493e25b8fcb0.txt
-│       │   │   │   ├── cube_face_42_jpg.rf.a139344ce2125f7cd4b97dba8f8aca50.txt
-│       │   │   │   ├── cube_face_43_jpg.rf.9f7f149be5f9c37ea98a31b897031a62.txt
-│       │   │   │   ├── cube_face_45_jpg.rf.7ccca69815220b1c348eab59d11d1f42.txt
-│       │   │   │   ├── cube_face_46_jpg.rf.1a23c674184c1c9a7178e9f7e97a7a87.txt
-│       │   │   │   ├── cube_face_48_jpg.rf.1b0991ecc71fea9c0eae897dcb1457fe.txt
-│       │   │   │   ├── cube_face_49_jpg.rf.a1e313efe8f2563b1cd27b09772ed6eb.txt
-│       │   │   │   ├── cube_face_4_jpg.rf.24427cc783af466ca10cc71de7e97533.txt
-│       │   │   │   ├── cube_face_4_jpg.rf.ce93f608ef2ed1a042bf2c76666a08a2.txt
-│       │   │   │   ├── cube_face_50_jpg.rf.f3e9e0d1808b45f97e97eac03b96169a.txt
-│       │   │   │   ├── cube_face_52_jpg.rf.87958c6c703ac6a256c7be49828d97ef.txt
-│       │   │   │   ├── cube_face_53_jpg.rf.bf0d45a6dc481683e4a575742e4699cb.txt
-│       │   │   │   ├── cube_face_54_jpg.rf.ed2bb3b035f19d9f6eaf300ee33c7bc1.txt
-│       │   │   │   ├── cube_face_6_jpg.rf.61483994a2487298598764be201c94c4.txt
-│       │   │   │   ├── cube_face_7_jpg.rf.b622e560d92baa4b14c8f695b2fafa3c.txt
-│       │   │   │   └── cube_face_9_jpg.rf.85c9fb3f88b82e2cf75ccfcc09baf2f0.txt
-│       │   │   └── labels.cache
-│       │   └── valid
-│       │       ├── images
-│       │       │   ├── 16_jpg.rf.0f4e67ef1c57047b5b594800132be306.jpg
-│       │       │   ├── 17_jpg.rf.c637030a2f90d574b4b2bfb195e523df.jpg
-│       │       │   ├── 27_jpg.rf.f55f2d7077b0fc87586d4222b2d528bf.jpg
-│       │       │   ├── 28_jpg.rf.f52f0e9cef50a0fc459d94026b98fb98.jpg
-│       │       │   ├── 30_jpg.rf.d3b4bdd50356a906b98f7b4506187ed9.jpg
-│       │       │   ├── 3face_2_jpg.rf.003d8ec5835803e1f9f41cc111fd3c3a.jpg
-│       │       │   ├── 8_jpg.rf.1bcc0bff30d5ea19af0042080c568a4b.jpg
-│       │       │   ├── cube_face_15_jpg.rf.82340d3860b0369e672560a87ad9b3ac.jpg
-│       │       │   ├── cube_face_20_jpg.rf.00722e5c18b4bedc31860eb7702e3262.jpg
-│       │       │   ├── cube_face_22_jpg.rf.0d6cc4c9ccff79f39db859b0a541db81.jpg
-│       │       │   ├── cube_face_24_jpg.rf.2a35f1c1c4a76fc4d621985fce099e13.jpg
-│       │       │   ├── cube_face_26_jpg.rf.c47e88ae4bea1d3ed571228bbedbb09c.jpg
-│       │       │   ├── cube_face_2_jpg.rf.e0352fffa99a8e256522e1c3cf8dad32.jpg
-│       │       │   ├── cube_face_3_jpg.rf.179bb8b48e282da0626f01dc550a7bff.jpg
-│       │       │   ├── cube_face_44_jpg.rf.93d173bb3c0f04a7f43d758efd0c7b8a.jpg
-│       │       │   ├── cube_face_47_jpg.rf.b721063a850f420ba688f50d1d96d1ac.jpg
-│       │       │   ├── cube_face_51_jpg.rf.6ef99575e3328dc2cd18f8a6dfdaf4cf.jpg
-│       │       │   ├── cube_face_5_jpg.rf.0fb19455bfd855f55792bdd637837dea.jpg
-│       │       │   └── cube_face_8_jpg.rf.ab5e1649fa800bed7b973ba496cbb913.jpg
-│       │       ├── labels
-│       │       │   ├── 16_jpg.rf.0f4e67ef1c57047b5b594800132be306.txt
-│       │       │   ├── 17_jpg.rf.c637030a2f90d574b4b2bfb195e523df.txt
-│       │       │   ├── 27_jpg.rf.f55f2d7077b0fc87586d4222b2d528bf.txt
-│       │       │   ├── 28_jpg.rf.f52f0e9cef50a0fc459d94026b98fb98.txt
-│       │       │   ├── 30_jpg.rf.d3b4bdd50356a906b98f7b4506187ed9.txt
-│       │       │   ├── 3face_2_jpg.rf.003d8ec5835803e1f9f41cc111fd3c3a.txt
-│       │       │   ├── 8_jpg.rf.1bcc0bff30d5ea19af0042080c568a4b.txt
-│       │       │   ├── cube_face_15_jpg.rf.82340d3860b0369e672560a87ad9b3ac.txt
-│       │       │   ├── cube_face_20_jpg.rf.00722e5c18b4bedc31860eb7702e3262.txt
-│       │       │   ├── cube_face_22_jpg.rf.0d6cc4c9ccff79f39db859b0a541db81.txt
-│       │       │   ├── cube_face_24_jpg.rf.2a35f1c1c4a76fc4d621985fce099e13.txt
-│       │       │   ├── cube_face_26_jpg.rf.c47e88ae4bea1d3ed571228bbedbb09c.txt
-│       │       │   ├── cube_face_2_jpg.rf.e0352fffa99a8e256522e1c3cf8dad32.txt
-│       │       │   ├── cube_face_3_jpg.rf.179bb8b48e282da0626f01dc550a7bff.txt
-│       │       │   ├── cube_face_44_jpg.rf.93d173bb3c0f04a7f43d758efd0c7b8a.txt
-│       │       │   ├── cube_face_47_jpg.rf.b721063a850f420ba688f50d1d96d1ac.txt
-│       │       │   ├── cube_face_51_jpg.rf.6ef99575e3328dc2cd18f8a6dfdaf4cf.txt
-│       │       │   ├── cube_face_5_jpg.rf.0fb19455bfd855f55792bdd637837dea.txt
-│       │       │   └── cube_face_8_jpg.rf.ab5e1649fa800bed7b973ba496cbb913.txt
-│       │       └── labels.cache
-│       ├── download_dataset.ipynb
-│       ├── notebook_demo.ipynb
-│       ├── predicted.jpg
-│       ├── predicted_3face_2.jpg
-│       ├── runs
-│       │   ├── rubiks_faces_seg
-│       │   │   └── args.yaml
-│       │   ├── rubiks_faces_seg2
-│       │   │   ├── BoxF1_curve.png
-│       │   │   ├── BoxPR_curve.png
-│       │   │   ├── BoxP_curve.png
-│       │   │   ├── BoxR_curve.png
-│       │   │   ├── MaskF1_curve.png
-│       │   │   ├── MaskPR_curve.png
-│       │   │   ├── MaskP_curve.png
-│       │   │   ├── MaskR_curve.png
-│       │   │   ├── args.yaml
-│       │   │   ├── confusion_matrix.png
-│       │   │   ├── confusion_matrix_normalized.png
-│       │   │   ├── labels.jpg
-│       │   │   ├── labels_correlogram.jpg
-│       │   │   ├── results.csv
-│       │   │   ├── results.png
-│       │   │   ├── train_batch0.jpg
-│       │   │   ├── train_batch1.jpg
-│       │   │   ├── train_batch2.jpg
-│       │   │   ├── train_batch280.jpg
-│       │   │   ├── train_batch281.jpg
-│       │   │   ├── train_batch282.jpg
-│       │   │   ├── val_batch0_labels.jpg
-│       │   │   ├── val_batch0_pred.jpg
-│       │   │   └── weights
-│       │   │       ├── best.pt
-│       │   │       └── last.pt
-│       │   ├── rubiks_faces_seg3
-│       │   │   ├── BoxF1_curve.png
-│       │   │   ├── BoxPR_curve.png
-│       │   │   ├── BoxP_curve.png
-│       │   │   ├── BoxR_curve.png
-│       │   │   ├── MaskF1_curve.png
-│       │   │   ├── MaskPR_curve.png
-│       │   │   ├── MaskP_curve.png
-│       │   │   ├── MaskR_curve.png
-│       │   │   ├── args.yaml
-│       │   │   ├── confusion_matrix.png
-│       │   │   ├── confusion_matrix_normalized.png
-│       │   │   ├── events.out.tfevents.1743412768.L-RIT-O-SI0117.22776.1
-│       │   │   ├── labels.jpg
-│       │   │   ├── labels_correlogram.jpg
-│       │   │   ├── results.csv
-│       │   │   ├── results.png
-│       │   │   ├── train_batch0.jpg
-│       │   │   ├── train_batch1.jpg
-│       │   │   ├── train_batch2.jpg
-│       │   │   ├── val_batch0_labels.jpg
-│       │   │   ├── val_batch0_pred.jpg
-│       │   │   └── weights
-│       │   │       ├── best.pt
-│       │   │       └── last.pt
-│       │   └── rubiks_faces_seg4
-│       │       ├── BoxF1_curve.png
-│       │       ├── BoxPR_curve.png
-│       │       ├── BoxP_curve.png
-│       │       ├── BoxR_curve.png
-│       │       ├── MaskF1_curve.png
-│       │       ├── MaskPR_curve.png
-│       │       ├── MaskP_curve.png
-│       │       ├── MaskR_curve.png
-│       │       ├── args.yaml
-│       │       ├── confusion_matrix.png
-│       │       ├── confusion_matrix_normalized.png
-│       │       ├── events.out.tfevents.1744709692.L-RIT-O-SI0117.24404.1
-│       │       ├── labels.jpg
-│       │       ├── labels_correlogram.jpg
-│       │       ├── results.csv
-│       │       ├── results.png
-│       │       ├── train_batch0.jpg
-│       │       ├── train_batch1.jpg
-│       │       ├── train_batch2.jpg
-│       │       ├── train_batch450.jpg
-│       │       ├── train_batch451.jpg
-│       │       ├── train_batch452.jpg
-│       │       ├── val_batch0_labels.jpg
-│       │       ├── val_batch0_pred.jpg
-│       │       └── weights
-│       │           ├── best.pt
-│       │           └── last.pt
-│       ├── train.ipynb
-│       ├── train.py
-│       ├── yolo11n-seg.pt
-│       ├── yolo_config.yaml
-│       ├── yolo_config2.yaml
-│       └── yolov8n-seg.pt
+│   │   ├── annotations
+│   │   │   ├── annotations.json
+│   │   │   └── annotations.xml
+│   │   ├── images
+│   │   │   ├── cube_face_1.jpg
+│   │   │   ├── cube_face_10.jpg
+│   │   │   ├── cube_face_11.jpg
+│   │   │   ├── cube_face_12.jpg
+│   │   │   ├── cube_face_13.jpg
+│   │   │   ├── cube_face_14.jpg
+│   │   │   ├── cube_face_15.jpg
+│   │   │   ├── cube_face_16.jpg
+│   │   │   ├── cube_face_17.jpg
+│   │   │   ├── cube_face_18.jpg
+│   │   │   ├── cube_face_19.jpg
+│   │   │   ├── cube_face_2.jpg
+│   │   │   ├── cube_face_20.jpg
+│   │   │   ├── cube_face_21.jpg
+│   │   │   ├── cube_face_22.jpg
+│   │   │   ├── cube_face_23.jpg
+│   │   │   ├── cube_face_24.jpg
+│   │   │   ├── cube_face_25.jpg
+│   │   │   ├── cube_face_26.jpg
+│   │   │   ├── cube_face_27.jpg
+│   │   │   ├── cube_face_28.jpg
+│   │   │   ├── cube_face_29.jpg
+│   │   │   ├── cube_face_3.jpg
+│   │   │   ├── cube_face_30.jpg
+│   │   │   ├── cube_face_31.jpg
+│   │   │   ├── cube_face_32.jpg
+│   │   │   ├── cube_face_33.jpg
+│   │   │   ├── cube_face_34.jpg
+│   │   │   ├── cube_face_35.jpg
+│   │   │   ├── cube_face_36.jpg
+│   │   │   ├── cube_face_37.jpg
+│   │   │   ├── cube_face_38.jpg
+│   │   │   ├── cube_face_39.jpg
+│   │   │   ├── cube_face_4.jpg
+│   │   │   ├── cube_face_40.jpg
+│   │   │   ├── cube_face_41.jpg
+│   │   │   ├── cube_face_42.jpg
+│   │   │   ├── cube_face_43.jpg
+│   │   │   ├── cube_face_44.jpg
+│   │   │   ├── cube_face_45.jpg
+│   │   │   ├── cube_face_46.jpg
+│   │   │   ├── cube_face_47.jpg
+│   │   │   ├── cube_face_48.jpg
+│   │   │   ├── cube_face_49.jpg
+│   │   │   ├── cube_face_5.jpg
+│   │   │   ├── cube_face_50.jpg
+│   │   │   ├── cube_face_51.jpg
+│   │   │   ├── cube_face_52.jpg
+│   │   │   ├── cube_face_53.jpg
+│   │   │   ├── cube_face_54.jpg
+│   │   │   ├── cube_face_6.jpg
+│   │   │   ├── cube_face_7.jpg
+│   │   │   ├── cube_face_8.jpg
+│   │   │   └── cube_face_9.jpg
+│   │   ├── train.ipynb
+│   │   └── xml-to-json.py
+│   ├── YOLO
+│   │   ├── dataset
+│   │   │   ├── train
+│   │   │   │   ├── images
+│   │   │   │   │   ├── cube_face_10_jpg.rf.0358db13f61f9e3e0bf55b00816c5776.jpg
+│   │   │   │   │   ├── cube_face_12_jpg.rf.b9284af8302c498da7c3294a28de33b4.jpg
+│   │   │   │   │   ├── cube_face_13_jpg.rf.59edaaf3a7071b598973254ee7a5622b.jpg
+│   │   │   │   │   ├── cube_face_14_jpg.rf.416cc199c94353b7d107636bf2bde095.jpg
+│   │   │   │   │   ├── cube_face_15_jpg.rf.bbcf885459ee3318474a4d4b4d30cc0b.jpg
+│   │   │   │   │   ├── cube_face_16_jpg.rf.02b91c7ba7bf901fc312e3b1409f9fdf.jpg
+│   │   │   │   │   ├── cube_face_17_jpg.rf.dff5b2bf5ea088fa4ad2e5e7573cd053.jpg
+│   │   │   │   │   ├── cube_face_18_jpg.rf.6c6aa23e660f40814dde165da2c808c6.jpg
+│   │   │   │   │   ├── cube_face_19_jpg.rf.7e2e1c790d6ce45cb29d3e8d825b5827.jpg
+│   │   │   │   │   ├── cube_face_1_jpg.rf.d9558a3b8050db99939a5d456f069840.jpg
+│   │   │   │   │   ├── cube_face_20_jpg.rf.b8cb9f8c1d664d057431c70b74ad5e99.jpg
+│   │   │   │   │   ├── cube_face_22_jpg.rf.db8993536dfe3698e34f693c5f62b88a.jpg
+│   │   │   │   │   ├── cube_face_25_jpg.rf.5da5d4bc24165441b30cf11f7e7328e9.jpg
+│   │   │   │   │   ├── cube_face_26_jpg.rf.38d1b21765c0d8461f2cf6ae8555a58a.jpg
+│   │   │   │   │   ├── cube_face_27_jpg.rf.59073d9b3b6ea4759c2695c8bde2099b.jpg
+│   │   │   │   │   ├── cube_face_28_jpg.rf.6ab7869c5b90b5c1fc7589213f56aa08.jpg
+│   │   │   │   │   ├── cube_face_2_jpg.rf.6035c1eca1cce1fa15328545e96229f9.jpg
+│   │   │   │   │   ├── cube_face_30_jpg.rf.9b6643296d99e1505f6e3e2042706f81.jpg
+│   │   │   │   │   ├── cube_face_31_jpg.rf.a46e6eca3b8b0b896e0550d870250928.jpg
+│   │   │   │   │   ├── cube_face_32_jpg.rf.8d2ca6cd764d19179e8516811f5f384f.jpg
+│   │   │   │   │   ├── cube_face_35_jpg.rf.19bff7f50a59a238669613035046fbd4.jpg
+│   │   │   │   │   ├── cube_face_36_jpg.rf.070f8101c1f61c35144380d16516bc4f.jpg
+│   │   │   │   │   ├── cube_face_37_jpg.rf.528f4257aaab33ef7312feb89520cedf.jpg
+│   │   │   │   │   ├── cube_face_38_jpg.rf.31d77ce1140821b61166bd351b0242df.jpg
+│   │   │   │   │   ├── cube_face_39_jpg.rf.eeb36dd55372db1a55f070b7c0628758.jpg
+│   │   │   │   │   ├── cube_face_3_jpg.rf.1eeb60f78b1e7c3a2f494822bc6937f0.jpg
+│   │   │   │   │   ├── cube_face_40_jpg.rf.809d1a1f5be4f658e03a80a054e0c36f.jpg
+│   │   │   │   │   ├── cube_face_41_jpg.rf.c7dbde533fed56e1754b967de6c5f926.jpg
+│   │   │   │   │   ├── cube_face_42_jpg.rf.f736d6cabc48a9afb55e75a50c690ec0.jpg
+│   │   │   │   │   ├── cube_face_45_jpg.rf.c344f835ee516bfb2c0986b23a415dc3.jpg
+│   │   │   │   │   ├── cube_face_46_jpg.rf.3bc510b5842e39fb2c9f9d919033188c.jpg
+│   │   │   │   │   ├── cube_face_47_jpg.rf.7f5a3a67084cb11807f2dcf18ee2217b.jpg
+│   │   │   │   │   ├── cube_face_48_jpg.rf.b69c302c21491bf97f29b4534cbe9577.jpg
+│   │   │   │   │   ├── cube_face_49_jpg.rf.cf5a78656c0922877d53d69f72532cf2.jpg
+│   │   │   │   │   ├── cube_face_4_jpg.rf.44e324b14291ef6401bd573b5f609d6d.jpg
+│   │   │   │   │   ├── cube_face_50_jpg.rf.d88d03c67f2d021ef08a75dcb64c2502.jpg
+│   │   │   │   │   ├── cube_face_51_jpg.rf.56e7cfeafc8e923675f1afe14167cf40.jpg
+│   │   │   │   │   ├── cube_face_52_jpg.rf.aa62130de35a5c85c21280e46188a1db.jpg
+│   │   │   │   │   ├── cube_face_53_jpg.rf.441ae2559f1e501e3d577f444829b3cc.jpg
+│   │   │   │   │   ├── cube_face_54_jpg.rf.04b4b2fdfd3343a6950c34237cb6c7e0.jpg
+│   │   │   │   │   ├── cube_face_5_jpg.rf.93a92b2a92b3a547333bcefbb2c7190a.jpg
+│   │   │   │   │   ├── cube_face_7_jpg.rf.ae5105458b9263a1980857548927ddb6.jpg
+│   │   │   │   │   └── cube_face_8_jpg.rf.38bef8b138e6476a4de4956a835440fc.jpg
+│   │   │   │   ├── labels
+│   │   │   │   │   ├── cube_face_10_jpg.rf.0358db13f61f9e3e0bf55b00816c5776.txt
+│   │   │   │   │   ├── cube_face_12_jpg.rf.b9284af8302c498da7c3294a28de33b4.txt
+│   │   │   │   │   ├── cube_face_13_jpg.rf.59edaaf3a7071b598973254ee7a5622b.txt
+│   │   │   │   │   ├── cube_face_14_jpg.rf.416cc199c94353b7d107636bf2bde095.txt
+│   │   │   │   │   ├── cube_face_15_jpg.rf.bbcf885459ee3318474a4d4b4d30cc0b.txt
+│   │   │   │   │   ├── cube_face_16_jpg.rf.02b91c7ba7bf901fc312e3b1409f9fdf.txt
+│   │   │   │   │   ├── cube_face_17_jpg.rf.dff5b2bf5ea088fa4ad2e5e7573cd053.txt
+│   │   │   │   │   ├── cube_face_18_jpg.rf.6c6aa23e660f40814dde165da2c808c6.txt
+│   │   │   │   │   ├── cube_face_19_jpg.rf.7e2e1c790d6ce45cb29d3e8d825b5827.txt
+│   │   │   │   │   ├── cube_face_1_jpg.rf.d9558a3b8050db99939a5d456f069840.txt
+│   │   │   │   │   ├── cube_face_20_jpg.rf.b8cb9f8c1d664d057431c70b74ad5e99.txt
+│   │   │   │   │   ├── cube_face_22_jpg.rf.db8993536dfe3698e34f693c5f62b88a.txt
+│   │   │   │   │   ├── cube_face_25_jpg.rf.5da5d4bc24165441b30cf11f7e7328e9.txt
+│   │   │   │   │   ├── cube_face_26_jpg.rf.38d1b21765c0d8461f2cf6ae8555a58a.txt
+│   │   │   │   │   ├── cube_face_27_jpg.rf.59073d9b3b6ea4759c2695c8bde2099b.txt
+│   │   │   │   │   ├── cube_face_28_jpg.rf.6ab7869c5b90b5c1fc7589213f56aa08.txt
+│   │   │   │   │   ├── cube_face_2_jpg.rf.6035c1eca1cce1fa15328545e96229f9.txt
+│   │   │   │   │   ├── cube_face_30_jpg.rf.9b6643296d99e1505f6e3e2042706f81.txt
+│   │   │   │   │   ├── cube_face_31_jpg.rf.a46e6eca3b8b0b896e0550d870250928.txt
+│   │   │   │   │   ├── cube_face_32_jpg.rf.8d2ca6cd764d19179e8516811f5f384f.txt
+│   │   │   │   │   ├── cube_face_35_jpg.rf.19bff7f50a59a238669613035046fbd4.txt
+│   │   │   │   │   ├── cube_face_36_jpg.rf.070f8101c1f61c35144380d16516bc4f.txt
+│   │   │   │   │   ├── cube_face_37_jpg.rf.528f4257aaab33ef7312feb89520cedf.txt
+│   │   │   │   │   ├── cube_face_38_jpg.rf.31d77ce1140821b61166bd351b0242df.txt
+│   │   │   │   │   ├── cube_face_39_jpg.rf.eeb36dd55372db1a55f070b7c0628758.txt
+│   │   │   │   │   ├── cube_face_3_jpg.rf.1eeb60f78b1e7c3a2f494822bc6937f0.txt
+│   │   │   │   │   ├── cube_face_40_jpg.rf.809d1a1f5be4f658e03a80a054e0c36f.txt
+│   │   │   │   │   ├── cube_face_41_jpg.rf.c7dbde533fed56e1754b967de6c5f926.txt
+│   │   │   │   │   ├── cube_face_42_jpg.rf.f736d6cabc48a9afb55e75a50c690ec0.txt
+│   │   │   │   │   ├── cube_face_45_jpg.rf.c344f835ee516bfb2c0986b23a415dc3.txt
+│   │   │   │   │   ├── cube_face_46_jpg.rf.3bc510b5842e39fb2c9f9d919033188c.txt
+│   │   │   │   │   ├── cube_face_47_jpg.rf.7f5a3a67084cb11807f2dcf18ee2217b.txt
+│   │   │   │   │   ├── cube_face_48_jpg.rf.b69c302c21491bf97f29b4534cbe9577.txt
+│   │   │   │   │   ├── cube_face_49_jpg.rf.cf5a78656c0922877d53d69f72532cf2.txt
+│   │   │   │   │   ├── cube_face_4_jpg.rf.44e324b14291ef6401bd573b5f609d6d.txt
+│   │   │   │   │   ├── cube_face_50_jpg.rf.d88d03c67f2d021ef08a75dcb64c2502.txt
+│   │   │   │   │   ├── cube_face_51_jpg.rf.56e7cfeafc8e923675f1afe14167cf40.txt
+│   │   │   │   │   ├── cube_face_52_jpg.rf.aa62130de35a5c85c21280e46188a1db.txt
+│   │   │   │   │   ├── cube_face_53_jpg.rf.441ae2559f1e501e3d577f444829b3cc.txt
+│   │   │   │   │   ├── cube_face_54_jpg.rf.04b4b2fdfd3343a6950c34237cb6c7e0.txt
+│   │   │   │   │   ├── cube_face_5_jpg.rf.93a92b2a92b3a547333bcefbb2c7190a.txt
+│   │   │   │   │   ├── cube_face_7_jpg.rf.ae5105458b9263a1980857548927ddb6.txt
+│   │   │   │   │   └── cube_face_8_jpg.rf.38bef8b138e6476a4de4956a835440fc.txt
+│   │   │   │   └── labels.cache
+│   │   │   └── valid
+│   │   │       ├── images
+│   │   │       │   ├── cube_face_11_jpg.rf.1fc19253a9619777f17bc90f813f100e.jpg
+│   │   │       │   ├── cube_face_21_jpg.rf.e5a583a5973108ddb7e52d7620679c57.jpg
+│   │   │       │   ├── cube_face_23_jpg.rf.12bb7eab2c3eca9e9f3c5a834827d0ca.jpg
+│   │   │       │   ├── cube_face_24_jpg.rf.a4efae09107b945360614c01a2828042.jpg
+│   │   │       │   ├── cube_face_29_jpg.rf.59cc508c2529458d69d43a37fa8553ea.jpg
+│   │   │       │   ├── cube_face_33_jpg.rf.62d3b8872777af9bb44d06a3456ab0a8.jpg
+│   │   │       │   ├── cube_face_34_jpg.rf.19a9bb6e239270a5c86d0a78d4e92384.jpg
+│   │   │       │   ├── cube_face_43_jpg.rf.6497c89d2b61fad0ce06fbcdfe1011a7.jpg
+│   │   │       │   ├── cube_face_44_jpg.rf.a4bcb95ae8583abc403cde45556bf195.jpg
+│   │   │       │   ├── cube_face_6_jpg.rf.bb5cb53e846a54f1d984caa0fc125694.jpg
+│   │   │       │   └── cube_face_9_jpg.rf.3f14256204b8c475e14e89a6d7c17c28.jpg
+│   │   │       ├── labels
+│   │   │       │   ├── cube_face_11_jpg.rf.1fc19253a9619777f17bc90f813f100e.txt
+│   │   │       │   ├── cube_face_21_jpg.rf.e5a583a5973108ddb7e52d7620679c57.txt
+│   │   │       │   ├── cube_face_23_jpg.rf.12bb7eab2c3eca9e9f3c5a834827d0ca.txt
+│   │   │       │   ├── cube_face_24_jpg.rf.a4efae09107b945360614c01a2828042.txt
+│   │   │       │   ├── cube_face_29_jpg.rf.59cc508c2529458d69d43a37fa8553ea.txt
+│   │   │       │   ├── cube_face_33_jpg.rf.62d3b8872777af9bb44d06a3456ab0a8.txt
+│   │   │       │   ├── cube_face_34_jpg.rf.19a9bb6e239270a5c86d0a78d4e92384.txt
+│   │   │       │   ├── cube_face_43_jpg.rf.6497c89d2b61fad0ce06fbcdfe1011a7.txt
+│   │   │       │   ├── cube_face_44_jpg.rf.a4bcb95ae8583abc403cde45556bf195.txt
+│   │   │       │   ├── cube_face_6_jpg.rf.bb5cb53e846a54f1d984caa0fc125694.txt
+│   │   │       │   └── cube_face_9_jpg.rf.3f14256204b8c475e14e89a6d7c17c28.txt
+│   │   │       └── labels.cache
+│   │   ├── download_dataset.ipynb
+│   │   ├── notebook_demo.ipynb
+│   │   ├── predicted.jpg
+│   │   ├── predicted_3face_2.jpg
+│   │   ├── runs
+│   │   │   ├── rubiks_faces_seg
+│   │   │   │   └── args.yaml
+│   │   │   ├── rubiks_faces_seg2
+│   │   │   │   ├── BoxF1_curve.png
+│   │   │   │   ├── BoxPR_curve.png
+│   │   │   │   ├── BoxP_curve.png
+│   │   │   │   ├── BoxR_curve.png
+│   │   │   │   ├── MaskF1_curve.png
+│   │   │   │   ├── MaskPR_curve.png
+│   │   │   │   ├── MaskP_curve.png
+│   │   │   │   ├── MaskR_curve.png
+│   │   │   │   ├── args.yaml
+│   │   │   │   ├── confusion_matrix.png
+│   │   │   │   ├── confusion_matrix_normalized.png
+│   │   │   │   ├── labels.jpg
+│   │   │   │   ├── labels_correlogram.jpg
+│   │   │   │   ├── results.csv
+│   │   │   │   ├── results.png
+│   │   │   │   ├── train_batch0.jpg
+│   │   │   │   ├── train_batch1.jpg
+│   │   │   │   ├── train_batch2.jpg
+│   │   │   │   ├── train_batch280.jpg
+│   │   │   │   ├── train_batch281.jpg
+│   │   │   │   ├── train_batch282.jpg
+│   │   │   │   ├── val_batch0_labels.jpg
+│   │   │   │   ├── val_batch0_pred.jpg
+│   │   │   │   └── weights
+│   │   │   │       ├── best.pt
+│   │   │   │       └── last.pt
+│   │   │   ├── rubiks_faces_seg3
+│   │   │   │   ├── BoxF1_curve.png
+│   │   │   │   ├── BoxPR_curve.png
+│   │   │   │   ├── BoxP_curve.png
+│   │   │   │   ├── BoxR_curve.png
+│   │   │   │   ├── MaskF1_curve.png
+│   │   │   │   ├── MaskPR_curve.png
+│   │   │   │   ├── MaskP_curve.png
+│   │   │   │   ├── MaskR_curve.png
+│   │   │   │   ├── args.yaml
+│   │   │   │   ├── confusion_matrix.png
+│   │   │   │   ├── confusion_matrix_normalized.png
+│   │   │   │   ├── events.out.tfevents.1743412768.L-RIT-O-SI0117.22776.1
+│   │   │   │   ├── labels.jpg
+│   │   │   │   ├── labels_correlogram.jpg
+│   │   │   │   ├── results.csv
+│   │   │   │   ├── results.png
+│   │   │   │   ├── train_batch0.jpg
+│   │   │   │   ├── train_batch1.jpg
+│   │   │   │   ├── train_batch2.jpg
+│   │   │   │   ├── val_batch0_labels.jpg
+│   │   │   │   ├── val_batch0_pred.jpg
+│   │   │   │   └── weights
+│   │   │   │       ├── best.pt
+│   │   │   │       └── last.pt
+│   │   │   ├── rubiks_faces_seg4
+│   │   │   │   ├── BoxF1_curve.png
+│   │   │   │   ├── BoxPR_curve.png
+│   │   │   │   ├── BoxP_curve.png
+│   │   │   │   ├── BoxR_curve.png
+│   │   │   │   ├── MaskF1_curve.png
+│   │   │   │   ├── MaskPR_curve.png
+│   │   │   │   ├── MaskP_curve.png
+│   │   │   │   ├── MaskR_curve.png
+│   │   │   │   ├── args.yaml
+│   │   │   │   ├── confusion_matrix.png
+│   │   │   │   ├── confusion_matrix_normalized.png
+│   │   │   │   ├── events.out.tfevents.1744709692.L-RIT-O-SI0117.24404.1
+│   │   │   │   ├── labels.jpg
+│   │   │   │   ├── labels_correlogram.jpg
+│   │   │   │   ├── results.csv
+│   │   │   │   ├── results.png
+│   │   │   │   ├── train_batch0.jpg
+│   │   │   │   ├── train_batch1.jpg
+│   │   │   │   ├── train_batch2.jpg
+│   │   │   │   ├── train_batch450.jpg
+│   │   │   │   ├── train_batch451.jpg
+│   │   │   │   ├── train_batch452.jpg
+│   │   │   │   ├── val_batch0_labels.jpg
+│   │   │   │   ├── val_batch0_pred.jpg
+│   │   │   │   └── weights
+│   │   │   │       ├── best.pt
+│   │   │   │       └── last.pt
+│   │   │   ├── rubiks_faces_seg5
+│   │   │   │   ├── F1_curve.png
+│   │   │   │   ├── PR_curve.png
+│   │   │   │   ├── P_curve.png
+│   │   │   │   ├── R_curve.png
+│   │   │   │   ├── args.yaml
+│   │   │   │   ├── confusion_matrix.png
+│   │   │   │   ├── confusion_matrix_normalized.png
+│   │   │   │   ├── events.out.tfevents.1744794987.L-RIT-O-SI0117.10700.0
+│   │   │   │   ├── labels.jpg
+│   │   │   │   ├── labels_correlogram.jpg
+│   │   │   │   ├── results.csv
+│   │   │   │   ├── results.png
+│   │   │   │   ├── train_batch0.jpg
+│   │   │   │   ├── train_batch1.jpg
+│   │   │   │   ├── train_batch2.jpg
+│   │   │   │   ├── train_batch270.jpg
+│   │   │   │   ├── train_batch271.jpg
+│   │   │   │   ├── train_batch272.jpg
+│   │   │   │   ├── val_batch0_labels.jpg
+│   │   │   │   ├── val_batch0_pred.jpg
+│   │   │   │   └── weights
+│   │   │   │       ├── best.pt
+│   │   │   │       └── last.pt
+│   │   │   └── rubiks_faces_seg6
+│   │   │       ├── F1_curve.png
+│   │   │       ├── PR_curve.png
+│   │   │       ├── P_curve.png
+│   │   │       ├── R_curve.png
+│   │   │       ├── args.yaml
+│   │   │       ├── confusion_matrix.png
+│   │   │       ├── confusion_matrix_normalized.png
+│   │   │       ├── events.out.tfevents.1744802528.L-RIT-O-SI0117.10700.2
+│   │   │       ├── labels.jpg
+│   │   │       ├── labels_correlogram.jpg
+│   │   │       ├── results.csv
+│   │   │       ├── results.png
+│   │   │       ├── train_batch0.jpg
+│   │   │       ├── train_batch1.jpg
+│   │   │       ├── train_batch2.jpg
+│   │   │       ├── train_batch570.jpg
+│   │   │       ├── train_batch571.jpg
+│   │   │       ├── train_batch572.jpg
+│   │   │       ├── val_batch0_labels.jpg
+│   │   │       ├── val_batch0_pred.jpg
+│   │   │       └── weights
+│   │   │           ├── best.pt
+│   │   │           └── last.pt
+│   │   ├── train.ipynb
+│   │   ├── train.py
+│   │   ├── yolo11n-seg.pt
+│   │   ├── yolo11n.pt
+│   │   ├── yolo_config.yaml
+│   │   ├── yolo_config2.yaml
+│   │   └── yolov8n-seg.pt
+│   └── rapport_avancement_IA.md
 ├── README.md
 ├── TODO_perso.md
 ├── bin
@@ -380,7 +416,8 @@
 │   │       └── up_9.jpg
 │   ├── raw
 │   │   ├── 3face_1.jpg
-│   │   └── 3face_2.jpg
+│   │   ├── 3face_2.jpg
+│   │   └── 3face_3.jpg
 │   └── tables
 │       ├── Choice.mtb
 │       ├── CrnrPerm.mtb
@@ -476,4 +513,4 @@
     ├── affichage_cube.py
     └── config_loader.py
 
-40 directories, 437 files
+46 directories, 468 files
