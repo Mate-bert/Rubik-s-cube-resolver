@@ -289,6 +289,7 @@
 │   │   │   │   ├── val_batch0_labels.jpg
 │   │   │   │   ├── val_batch0_pred.jpg
 │   │   │   │   └── weights
+│   │   │   │       ├── best.onnx
 │   │   │   │       ├── best.pt
 │   │   │   │       └── last.pt
 │   │   │   └── rubiks_faces_seg6
@@ -335,7 +336,7 @@
 ├── build
 │   ├── CMakeCache.txt
 │   ├── CMakeFiles
-│   │   ├── 4.0.1
+│   │   ├── 3.31.5
 │   │   │   ├── CMakeCCompiler.cmake
 │   │   │   ├── CMakeCXXCompiler.cmake
 │   │   │   ├── CMakeDetermineCompilerABI_C.bin
@@ -352,16 +353,8 @@
 │   │   │       └── tmp
 │   │   ├── CMakeConfigureLog.yaml
 │   │   ├── CMakeDirectoryInformation.cmake
-│   │   ├── InstallScripts.json
 │   │   ├── Makefile.cmake
 │   │   ├── Makefile2
-│   │   ├── Progress
-│   │   │   ├── 10
-│   │   │   ├── 11
-│   │   │   ├── 2
-│   │   │   ├── 8
-│   │   │   ├── 9
-│   │   │   └── count.txt
 │   │   ├── TargetDirectories.txt
 │   │   ├── check_structure_test.dir
 │   │   │   ├── DependInfo.cmake
@@ -375,10 +368,29 @@
 │   │   │   ├── includes_CXX.rsp
 │   │   │   ├── link.txt
 │   │   │   ├── linkLibs.rsp
+│   │   │   ├── objects.a
 │   │   │   ├── objects1.rsp
 │   │   │   ├── progress.make
 │   │   │   └── src
+│   │   │       ├── check_structure.cpp.obj
 │   │   │       ├── check_structure.cpp.obj.d
+│   │   │       ├── kociemba
+│   │   │       │   ├── Combinatorics.cpp.obj
+│   │   │       │   ├── Combinatorics.cpp.obj.d
+│   │   │       │   ├── Cube.cpp.obj
+│   │   │       │   ├── Cube.cpp.obj.d
+│   │   │       │   ├── CubeParser.cpp.obj
+│   │   │       │   ├── CubeParser.cpp.obj.d
+│   │   │       │   ├── FaceletCube.cpp.obj
+│   │   │       │   ├── FaceletCube.cpp.obj.d
+│   │   │       │   ├── MoveTable.cpp.obj
+│   │   │       │   ├── MoveTable.cpp.obj.d
+│   │   │       │   ├── PruningTable.cpp.obj
+│   │   │       │   ├── PruningTable.cpp.obj.d
+│   │   │       │   ├── RubiksCube.cpp.obj
+│   │   │       │   ├── RubiksCube.cpp.obj.d
+│   │   │       │   ├── Vector.cpp.obj
+│   │   │       │   └── Vector.cpp.obj.d
 │   │   │       └── test
 │   │   │           ├── check_structure_test.cpp.obj
 │   │   │           └── check_structure_test.cpp.obj.d
@@ -387,7 +399,13 @@
 │   │   └── progress.marks
 │   ├── CTestTestfile.cmake
 │   ├── Makefile
+│   ├── Testing
+│   │   └── Temporary
+│   │       ├── CTestCostData.txt
+│   │       ├── LastTest.log
+│   │       └── LastTestsFailed.log
 │   ├── bin
+│   ├── check_structure_test.exe
 │   ├── cmake_install.cmake
 │   ├── googletest-1.16.0
 │   │   ├── CMakeFiles
@@ -404,6 +422,7 @@
 │   │   │   │   │   ├── build.make
 │   │   │   │   │   ├── cmake_clean.cmake
 │   │   │   │   │   ├── cmake_clean_target.cmake
+│   │   │   │   │   ├── compiler_depend.internal
 │   │   │   │   │   ├── compiler_depend.make
 │   │   │   │   │   ├── compiler_depend.ts
 │   │   │   │   │   ├── depend.make
@@ -412,11 +431,14 @@
 │   │   │   │   │   ├── link.txt
 │   │   │   │   │   ├── progress.make
 │   │   │   │   │   └── src
+│   │   │   │   │       ├── gmock-all.cc.obj
+│   │   │   │   │       └── gmock-all.cc.obj.d
 │   │   │   │   ├── gmock_main.dir
 │   │   │   │   │   ├── DependInfo.cmake
 │   │   │   │   │   ├── build.make
 │   │   │   │   │   ├── cmake_clean.cmake
 │   │   │   │   │   ├── cmake_clean_target.cmake
+│   │   │   │   │   ├── compiler_depend.internal
 │   │   │   │   │   ├── compiler_depend.make
 │   │   │   │   │   ├── compiler_depend.ts
 │   │   │   │   │   ├── depend.make
@@ -425,6 +447,8 @@
 │   │   │   │   │   ├── link.txt
 │   │   │   │   │   ├── progress.make
 │   │   │   │   │   └── src
+│   │   │   │   │       ├── gmock_main.cc.obj
+│   │   │   │   │       └── gmock_main.cc.obj.d
 │   │   │   │   └── progress.marks
 │   │   │   ├── CTestTestfile.cmake
 │   │   │   ├── Makefile
@@ -479,9 +503,12 @@
 │   │           ├── gmock_main.pc
 │   │           ├── gtest.pc
 │   │           └── gtest_main.pc
-│   └── lib
-│       ├── libgtest.a
-│       └── libgtest_main.a
+│   ├── lib
+│   │   ├── libgmock.a
+│   │   ├── libgmock_main.a
+│   │   ├── libgtest.a
+│   │   └── libgtest_main.a
+│   └── test_save_kociemba.txt
 ├── compile.txt
 ├── data
 │   ├── aide_mémoire
@@ -592,121 +619,6 @@
 │   ├── README.md
 │   ├── WORKSPACE
 │   ├── WORKSPACE.bzlmod
-│   ├── build
-│   │   ├── CMakeCache.txt
-│   │   ├── CMakeFiles
-│   │   │   ├── 3.30.2
-│   │   │   │   ├── CMakeCCompiler.cmake
-│   │   │   │   ├── CMakeCXXCompiler.cmake
-│   │   │   │   ├── CMakeDetermineCompilerABI_C.bin
-│   │   │   │   ├── CMakeDetermineCompilerABI_CXX.bin
-│   │   │   │   ├── CMakeRCCompiler.cmake
-│   │   │   │   ├── CMakeSystem.cmake
-│   │   │   │   ├── CompilerIdC
-│   │   │   │   │   ├── CMakeCCompilerId.c
-│   │   │   │   │   ├── a.exe
-│   │   │   │   │   └── tmp
-│   │   │   │   └── CompilerIdCXX
-│   │   │   │       ├── CMakeCXXCompilerId.cpp
-│   │   │   │       ├── a.exe
-│   │   │   │       └── tmp
-│   │   │   ├── CMakeConfigureLog.yaml
-│   │   │   ├── CMakeDirectoryInformation.cmake
-│   │   │   ├── Makefile.cmake
-│   │   │   ├── Makefile2
-│   │   │   ├── TargetDirectories.txt
-│   │   │   ├── cmake.check_cache
-│   │   │   ├── pkgRedirects
-│   │   │   └── progress.marks
-│   │   ├── CTestTestfile.cmake
-│   │   ├── Makefile
-│   │   ├── Testing
-│   │   │   ├── 20250416-1255
-│   │   │   │   └── Test.xml
-│   │   │   ├── TAG
-│   │   │   └── Temporary
-│   │   │       └── LastTest_20250416-1255.log
-│   │   ├── bin
-│   │   ├── cmake_install.cmake
-│   │   ├── compile_commands.json
-│   │   ├── googlemock
-│   │   │   ├── CMakeFiles
-│   │   │   │   ├── CMakeDirectoryInformation.cmake
-│   │   │   │   ├── gmock.dir
-│   │   │   │   │   ├── DependInfo.cmake
-│   │   │   │   │   ├── build.make
-│   │   │   │   │   ├── cmake_clean.cmake
-│   │   │   │   │   ├── cmake_clean_target.cmake
-│   │   │   │   │   ├── compiler_depend.make
-│   │   │   │   │   ├── compiler_depend.ts
-│   │   │   │   │   ├── depend.make
-│   │   │   │   │   ├── flags.make
-│   │   │   │   │   ├── includes_CXX.rsp
-│   │   │   │   │   ├── link.txt
-│   │   │   │   │   ├── progress.make
-│   │   │   │   │   └── src
-│   │   │   │   ├── gmock_main.dir
-│   │   │   │   │   ├── DependInfo.cmake
-│   │   │   │   │   ├── build.make
-│   │   │   │   │   ├── cmake_clean.cmake
-│   │   │   │   │   ├── cmake_clean_target.cmake
-│   │   │   │   │   ├── compiler_depend.make
-│   │   │   │   │   ├── compiler_depend.ts
-│   │   │   │   │   ├── depend.make
-│   │   │   │   │   ├── flags.make
-│   │   │   │   │   ├── includes_CXX.rsp
-│   │   │   │   │   ├── link.txt
-│   │   │   │   │   ├── progress.make
-│   │   │   │   │   └── src
-│   │   │   │   └── progress.marks
-│   │   │   ├── CTestTestfile.cmake
-│   │   │   ├── Makefile
-│   │   │   └── cmake_install.cmake
-│   │   ├── googletest
-│   │   │   ├── CMakeFiles
-│   │   │   │   ├── CMakeDirectoryInformation.cmake
-│   │   │   │   ├── Export
-│   │   │   │   │   └── 0c08b8e77dd885bfe55a19a9659d9fc1
-│   │   │   │   │       ├── GTestTargets-debug.cmake
-│   │   │   │   │       └── GTestTargets.cmake
-│   │   │   │   ├── gtest.dir
-│   │   │   │   │   ├── DependInfo.cmake
-│   │   │   │   │   ├── build.make
-│   │   │   │   │   ├── cmake_clean.cmake
-│   │   │   │   │   ├── cmake_clean_target.cmake
-│   │   │   │   │   ├── compiler_depend.make
-│   │   │   │   │   ├── compiler_depend.ts
-│   │   │   │   │   ├── depend.make
-│   │   │   │   │   ├── flags.make
-│   │   │   │   │   ├── includes_CXX.rsp
-│   │   │   │   │   ├── link.txt
-│   │   │   │   │   ├── progress.make
-│   │   │   │   │   └── src
-│   │   │   │   ├── gtest_main.dir
-│   │   │   │   │   ├── DependInfo.cmake
-│   │   │   │   │   ├── build.make
-│   │   │   │   │   ├── cmake_clean.cmake
-│   │   │   │   │   ├── cmake_clean_target.cmake
-│   │   │   │   │   ├── compiler_depend.make
-│   │   │   │   │   ├── compiler_depend.ts
-│   │   │   │   │   ├── depend.make
-│   │   │   │   │   ├── flags.make
-│   │   │   │   │   ├── includes_CXX.rsp
-│   │   │   │   │   ├── link.txt
-│   │   │   │   │   ├── progress.make
-│   │   │   │   │   └── src
-│   │   │   │   └── progress.marks
-│   │   │   ├── CTestTestfile.cmake
-│   │   │   ├── Makefile
-│   │   │   ├── cmake_install.cmake
-│   │   │   └── generated
-│   │   │       ├── GTestConfig.cmake
-│   │   │       ├── GTestConfigVersion.cmake
-│   │   │       ├── gmock.pc
-│   │   │       ├── gmock_main.pc
-│   │   │       ├── gtest.pc
-│   │   │       └── gtest_main.pc
-│   │   └── lib
 │   ├── ci
 │   │   ├── linux-presubmit.sh
 │   │   ├── macos-presubmit.sh
@@ -986,6 +898,7 @@
 │   ├── kociemba_solver.hpp
 │   ├── split_stickers.hpp
 │   └── traduction.hpp
+├── log.log
 ├── makefile
 ├── obj
 │   ├── ColorDetector.o
@@ -1013,6 +926,9 @@
 ├── src
 │   ├── ColorDetector.cpp
 │   ├── analyse
+│   │   ├── __pycache__
+│   │   │   ├── check_cube_structure.cpython-313.pyc
+│   │   │   └── visu_cube.cpython-313.pyc
 │   │   ├── analyse_erreurs.py
 │   │   ├── analyse_kociemba.cpp
 │   │   ├── analyse_kociemba_v2.cpp
@@ -1047,8 +963,11 @@
     ├── __init__.py
     ├── __pycache__
     │   ├── __init__.cpython-312.pyc
-    │   └── config_loader.cpython-312.pyc
+    │   ├── __init__.cpython-313.pyc
+    │   ├── affichage_cube.cpython-313.pyc
+    │   ├── config_loader.cpython-312.pyc
+    │   └── config_loader.cpython-313.pyc
     ├── affichage_cube.py
     └── config_loader.py
 
-134 directories, 918 files
+109 directories, 862 files

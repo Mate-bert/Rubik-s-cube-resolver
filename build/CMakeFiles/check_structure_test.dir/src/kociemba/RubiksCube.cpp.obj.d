@@ -1,7 +1,7 @@
 CMakeFiles/check_structure_test.dir/src/kociemba/RubiksCube.cpp.obj: \
- C:\Users\gnsakawakatamba\Documents\Perso\ecole\Rubik-s-cube-resolver\src\kociemba\RubiksCube.cpp \
- C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/include/kociemba/RubiksCube.hpp \
- C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/include/kociemba/Cube.hpp \
+ C:\Users\HP\Documents\cours_inge_3D\Rubik-s-cube-resolver\src\kociemba\RubiksCube.cpp \
+ C:/Users/HP/Documents/cours_inge_3D/Rubik-s-cube-resolver/include/kociemba/RubiksCube.hpp \
+ C:/Users/HP/Documents/cours_inge_3D/Rubik-s-cube-resolver/include/kociemba/Cube.hpp \
  C:/msys64/mingw64/include/c++/14.2.0/string \
  C:/msys64/mingw64/include/c++/14.2.0/bits/requires_hosted.h \
  C:/msys64/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++config.h \
@@ -20,7 +20,6 @@ CMakeFiles/check_structure_test.dir/src/kociemba/RubiksCube.cpp.obj: \
  C:/msys64/mingw64/include/sdks/_mingw_ddk.h \
  C:/msys64/mingw64/include/corecrt_stdio_config.h \
  C:/msys64/mingw64/include/corecrt_wstdlib.h \
- C:/msys64/mingw64/include/corecrt_wctype.h \
  C:/msys64/mingw64/include/_mingw_off_t.h \
  C:/msys64/mingw64/include/_mingw_stat64.h \
  C:/msys64/mingw64/include/swprintf.inl \
@@ -90,4 +89,4 @@ CMakeFiles/check_structure_test.dir/src/kociemba/RubiksCube.cpp.obj: \
  C:/msys64/mingw64/include/c++/14.2.0/bits/functional_hash.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/hash_bytes.h \
  C:/msys64/mingw64/include/c++/14.2.0/bits/basic_string.tcc \
- C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/include/kociemba/Combinatorics.hpp
+ C:/Users/HP/Documents/cours_inge_3D/Rubik-s-cube-resolver/include/kociemba/Combinatorics.hpp

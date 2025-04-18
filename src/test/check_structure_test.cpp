@@ -8,12 +8,12 @@
 TEST(CheckStructureTest, ReadKociembaLines) {
     std::string testFilePath = "../../data/output/kociemba.txt";
     std::vector<std::string> expectedLines = {
-        "\"U:UUUUUUUUU\"",
-        "\"R:RRRRRRRRR\"",
-        "\"F:FFFFFFFFF\"",
-        "\"D:DDDDDDDDD\"",
-        "\"L:LLLLLLLLL\"",
-        "\"B:BBBBBBBBB\""
+        "U:UUUUUUUUU",
+        "R:RRRRRRRRR",
+        "F:FFFFFFFFF",
+        "D:DDDDDDDDD",
+        "L:LLLLLLLLL",
+        "B:BBBBBBBBB"
     };
 
     auto lines = readKociembaLines(testFilePath);
