@@ -52,7 +52,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-std=gnu++14"
+					"fragment" : "-g -std=gnu++14"
 				}
 			],
 			"includes" : 
@@ -104,11 +104,11 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "gtest_main::@32676c035c83f8456fe1"
+			"id" : "gtest::@32676c035c83f8456fe1"
 		},
 		{
 			"backtrace" : 2,
-			"id" : "gtest::@32676c035c83f8456fe1"
+			"id" : "gtest_main::@32676c035c83f8456fe1"
 		}
 	],
 	"id" : "check_structure_test::@6890427a1f51a3e7e1df",
@@ -116,6 +116,10 @@
 	{
 		"commandFragments" : 
 		[
+			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
 			{
 				"backtrace" : 2,
 				"fragment" : "lib\\libgtest.a",

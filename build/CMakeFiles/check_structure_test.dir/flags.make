@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = @CMakeFiles/check_structure_test.dir/includes_CXX.rsp
 
-CXX_FLAGS = -std=gnu++14
+CXX_FLAGS = -g -std=gnu++14
 

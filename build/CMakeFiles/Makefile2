@@ -150,8 +150,8 @@ googletest-1.16.0/googletest/clean: googletest-1.16.0/googletest/CMakeFiles/gtes
 # Target rules for target CMakeFiles/check_structure_test.dir
 
 # All Build rule for target.
-CMakeFiles/check_structure_test.dir/all: googletest-1.16.0/googletest/CMakeFiles/gtest_main.dir/all
 CMakeFiles/check_structure_test.dir/all: googletest-1.16.0/googletest/CMakeFiles/gtest.dir/all
+CMakeFiles/check_structure_test.dir/all: googletest-1.16.0/googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\check_structure_test.dir\build.make CMakeFiles/check_structure_test.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\check_structure_test.dir\build.make CMakeFiles/check_structure_test.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\gnsakawakatamba\Documents\Perso\ecole\Rubik-s-cube-resolver\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target check_structure_test"

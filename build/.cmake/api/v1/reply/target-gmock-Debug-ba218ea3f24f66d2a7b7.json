@@ -96,7 +96,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-std=c++14"
+					"fragment" : "-g -std=c++14"
 				},
 				{
 					"fragment" : "-Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers"
