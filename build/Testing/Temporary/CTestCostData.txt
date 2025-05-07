@@ -1,3 +1,0 @@
-CheckStructureTest 0 0
----
-CheckStructureTest
