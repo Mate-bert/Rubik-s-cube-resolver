@@ -1,0 +1,48 @@
+# Taille de l'image utilisée pour le traitement
+image_size: 640
+
+# Temps limite (en secondes) pour résoudre le cube
+solver_timeout: 5
+
+paths:
+  # Répertoire contenant les données brutes
+  raw_dir: data/raw/
+  
+  # Fichier contenant les coordonnées des faces du cube
+  coords_file: data/config/faces_coords.txt
+  
+  # Répertoire pour les images rectifiées des faces du cube
+  rectified_dir: data/output/face_decouper/
+  
+  # Répertoire pour les images des stickers extraits
+  stickers_dir: data/output/stickers/
+  
+  # Fichier texte pour l'entrée du solveur Kociemba
+  kociemba_txt: data/output/kociemba.txt
+  
+  # Fichier de test pour le solveur Kociemba
+  kociemba_test: data/output/kociemba_test.txt
+  
+  # Fichier de référence pour vérifier les résultats du solveur Kociemba
+  kociemba_ref: data/groundtruth/kociemba_verif.txt
+  
+  # Fichier JSON contenant les erreurs d'analyse
+  error_json: data/output/analyse/erreurs.json
+  
+  # Image représentant l'histogramme des erreurs
+  error_img: data/output/analyse/histo_erreurs.png
+  
+  # Image de visualisation du cube
+  visu_cube: data/output/analyse/visu_cube.png
+  
+  # Fichier contenant l'état manuel du cube (ground truth)
+  cube_manual: data/groundtruth/etat_cube.txt
+  
+  # Répertoire contenant les tables nécessaires au solveur
+  solver_tables_dir: data/tables/
+  
+  # Fichier de sortie contenant la solution du cube
+  solver_output: data/output/resolution.txt
+  
+  # Fichier de sortie contenant la solution encodée
+  solver_encoded_output: data/output/output_encoded.txt

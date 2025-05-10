@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20250423-1134-Experimental"
+	Name="(empty)"
+	Generator="ctest-4.0.1"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Windows"
+	Hostname="L-RIT-O-SI0117"
+	OSRelease=" Professional"
+	OSVersion=" (Build 26100)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString=""
+	VendorID="Unknown Manufacturer"
+	FamilyID="0"
+	ModelID="0"
+	ModelName=""
+	ProcessorCacheSize="0"
+	NumberOfLogicalCPU="12"
+	NumberOfPhysicalCPU="6"
+	TotalVirtualMemory="27785"
+	TotalPhysicalMemory="16072"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="1997"
+	>
+	<Testing>
+		<StartDateTime>Apr 25 09:35 Europe de l[NON-UTF-8-BYTE-0x92]Ouest (heure d[NON-UTF-8-BYTE-0x92][NON-UTF-8-BYTE-0xE9]t[NON-UTF-8-BYTE-0xE9])</StartDateTime>
+		<StartTestTime>1745566553</StartTestTime>
+		<TestList/>
+		<EndDateTime>Apr 25 09:35 Europe de l[NON-UTF-8-BYTE-0x92]Ouest (heure d[NON-UTF-8-BYTE-0x92][NON-UTF-8-BYTE-0xE9]t[NON-UTF-8-BYTE-0xE9])</EndDateTime>
+		<EndTestTime>1745566553</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

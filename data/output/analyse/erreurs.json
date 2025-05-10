@@ -1,0 +1,122 @@
+[
+  {
+    "face": "F",
+    "position": 4,
+    "actual": "B",
+    "expected": "F",
+    "actual_color": "orange",
+    "expected_color": "red"
+  },
+  {
+    "face": "F",
+    "position": 9,
+    "actual": "R",
+    "expected": "F",
+    "actual_color": "green",
+    "expected_color": "red"
+  },
+  {
+    "face": "D",
+    "position": 3,
+    "actual": "?",
+    "expected": "F",
+    "actual_color": "",
+    "expected_color": "red"
+  },
+  {
+    "face": "D",
+    "position": 4,
+    "actual": "?",
+    "expected": "L",
+    "actual_color": "",
+    "expected_color": "blue"
+  },
+  {
+    "face": "D",
+    "position": 6,
+    "actual": "?",
+    "expected": "D",
+    "actual_color": "",
+    "expected_color": "white"
+  },
+  {
+    "face": "D",
+    "position": 7,
+    "actual": "D",
+    "expected": "R",
+    "actual_color": "white",
+    "expected_color": "green"
+  },
+  {
+    "face": "D",
+    "position": 8,
+    "actual": "F",
+    "expected": "B",
+    "actual_color": "red",
+    "expected_color": "orange"
+  },
+  {
+    "face": "D",
+    "position": 9,
+    "actual": "F",
+    "expected": "B",
+    "actual_color": "red",
+    "expected_color": "orange"
+  },
+  {
+    "face": "L",
+    "position": 4,
+    "actual": "?",
+    "expected": "D",
+    "actual_color": "",
+    "expected_color": "white"
+  },
+  {
+    "face": "B",
+    "position": 2,
+    "actual": "?",
+    "expected": "D",
+    "actual_color": "",
+    "expected_color": "white"
+  },
+  {
+    "face": "B",
+    "position": 4,
+    "actual": "?",
+    "expected": "F",
+    "actual_color": "",
+    "expected_color": "red"
+  },
+  {
+    "face": "B",
+    "position": 6,
+    "actual": "?",
+    "expected": "L",
+    "actual_color": "",
+    "expected_color": "blue"
+  },
+  {
+    "face": "B",
+    "position": 7,
+    "actual": "F",
+    "expected": "B",
+    "actual_color": "red",
+    "expected_color": "orange"
+  },
+  {
+    "face": "B",
+    "position": 8,
+    "actual": "F",
+    "expected": "B",
+    "actual_color": "red",
+    "expected_color": "orange"
+  },
+  {
+    "face": "B",
+    "position": 9,
+    "actual": "?",
+    "expected": "D",
+    "actual_color": "",
+    "expected_color": "white"
+  }
+]

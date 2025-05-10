@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        ".fantomasignore": "ignore",
+        "fstream": "cpp",
+        "map": "cpp",
+        "iostream": "cpp"
+    },
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "c:\\Users\\gnsakawakatamba\\Documents\\Perso\\ecole\\Rubik-s-cube-resolver\\bin",
+            "binaryPath": "c:\\Users\\gnsakawakatamba\\Documents\\Perso\\ecole\\Rubik-s-cube-resolver\\bin\\main.exe",
+            "binaryArgs": []
+        }
+    ]
+}
