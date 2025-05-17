@@ -3,7 +3,8 @@
         ".fantomasignore": "ignore",
         "fstream": "cpp",
         "map": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "ostream": "cpp"
     },
     "makefile.launchConfigurations": [
         {

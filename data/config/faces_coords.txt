@@ -1,6 +1,6 @@
-3face_1.jpg, face_rectified_1.jpg: 338 199, 441 244, 348 314, 247 253
-3face_1.jpg, face_rectified_2.jpg: 246 256, 349 312, 350 413, 263 349
-3face_1.jpg, face_rectified_3.jpg: 347 316, 442 246, 428 342, 353 411
-3face_2.jpg, face_rectified_4.jpg: 331 424, 244 360, 221 246, 322 311
-3face_2.jpg, face_rectified_5.jpg: 425 348, 333 425, 325 312, 432 237
-3face_2.jpg, face_rectified_6.jpg: 324 308, 223 245, 324 192, 428 236
+3face_1.jpg, face_rectified_1.jpg: 338 197, 439 246, 348 314, 247 250
+3face_1.jpg, face_rectified_2.jpg: 247 250, 348 314, 351 412, 265 348
+3face_1.jpg, face_rectified_3.jpg: 348 314, 439 246, 425 341, 351 412
+3face_2.jpg, face_rectified_4.jpg: 417 395, 316 331, 307 214, 395 283
+3face_2.jpg, face_rectified_5.jpg: 316 331, 209 403, 219 289, 307 214
+3face_2.jpg, face_rectified_6.jpg: 417 395, 311 445, 209 403, 316 331

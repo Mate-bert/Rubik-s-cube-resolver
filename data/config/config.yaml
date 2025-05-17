@@ -46,3 +46,5 @@ paths:
   
   # Fichier de sortie contenant la solution encodée
   solver_encoded_output: data/output/output_encoded.txt
+
+  yolo_model: data/models/yolo/best.onnx
