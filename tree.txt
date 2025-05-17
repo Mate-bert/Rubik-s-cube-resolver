@@ -429,7 +429,6 @@
 │   │   │       ├── val_batch0_labels.jpg
 │   │   │       ├── val_batch0_pred.jpg
 │   │   │       └── weights
-│   │   │           ├── best.onnx
 │   │   │           ├── best.pt
 │   │   │           └── last.pt
 │   │   ├── train.ipynb
@@ -441,7 +440,6 @@
 │   │   └── yolov8n-seg.pt
 │   └── rapport_avancement_IA.md
 ├── README.md
-├── TODO_perso.md
 ├── bin
 │   ├── analyse_kociemba.exe
 │   ├── analyse_kociemba_v2.exe
@@ -630,7 +628,6 @@
 │   │   ├── libgtest.a
 │   │   └── libgtest_main.a
 │   └── test_save_kociemba.txt
-├── compile.txt
 ├── data
 │   ├── aide_mémoire
 │   │   ├── detect_test.txt
@@ -642,6 +639,9 @@
 │   ├── groundtruth
 │   │   ├── etat_cube.txt
 │   │   └── kociemba_verif.txt
+│   ├── models
+│   │   └── yolo
+│   │       └── best.onnx
 │   ├── output
 │   │   ├── analyse
 │   │   │   ├── erreurs.json
@@ -730,6 +730,10 @@
 │       ├── Twist.mtb
 │       ├── TwstChce.ptb
 │       └── TwstFlip.ptb
+├── docs
+│   ├── TODO_perso.md
+│   ├── explication_detect_with_yolo_onnx.md
+│   └── rapport_d_avancement.md
 ├── googletest-1.16.0
 │   ├── BUILD.bazel
 │   ├── CMakeLists.txt
@@ -1038,8 +1042,8 @@
 │   ├── kociemba_solver.o
 │   ├── main.o
 │   ├── split_stickers.o
+│   ├── test_yolo.o
 │   └── traduction.o
-├── rapport_d_avancement.md
 ├── scripts
 │   ├── git_push.sh
 │   └── run.sh
@@ -1059,6 +1063,7 @@
 │   ├── config.cpp
 │   ├── detect_faces.cpp
 │   ├── detect_faces.txt
+│   ├── detect_with_yolo_onnx.py
 │   ├── face_rectifieur_auto.cpp
 │   ├── face_rectifieur_manuel.cpp
 │   ├── gui
@@ -1091,4 +1096,4 @@
     ├── affichage_cube.py
     └── config_loader.py
 
-119 directories, 973 files
+122 directories, 975 files
