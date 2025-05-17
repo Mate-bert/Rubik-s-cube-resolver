@@ -252,6 +252,14 @@ def process_image(image_path, model_path, class_file):
 
 
 def main():
+    from pathlib import Path
+
+    # 🧹 Réinitialiser faces_coords.txt
+    output_path = Path("data/config/faces_coords.txt")
+    if output_path.exists():
+        output_path.write_text("", encoding="utf-8")
+        print(f"🧹 Fichier réinitialisé : {output_path}")
+
     model_path = "data/models/yolo/best.onnx"
     class_file = "IA/YOLO/yolo_config.yaml"
 
