@@ -1,0 +1,165 @@
+.
+├── bin
+│   └── main.exe
+├── data
+│   ├── aide_mémoire
+│   │   ├── detect_test.txt
+│   │   └── faces.txt
+│   ├── config
+│   │   ├── config.yaml
+│   │   ├── faces_coords.txt
+│   │   └── faces_coords_v1.txt
+│   ├── groundtruth
+│   │   ├── etat_cube.txt
+│   │   └── kociemba_verif.txt
+│   ├── output
+│   │   ├── analyse
+│   │   │   ├── erreurs.json
+│   │   │   ├── histo_erreurs.png
+│   │   │   ├── res.txt
+│   │   │   └── visu_cube.png
+│   │   ├── face_decouper
+│   │   │   ├── face_rectified_1.jpg
+│   │   │   ├── face_rectified_2.jpg
+│   │   │   ├── face_rectified_3.jpg
+│   │   │   ├── face_rectified_4.jpg
+│   │   │   ├── face_rectified_5.jpg
+│   │   │   └── face_rectified_6.jpg
+│   │   ├── kociemba.txt
+│   │   ├── kociemba_test.txt
+│   │   ├── output_encoded.txt
+│   │   ├── resolution.txt
+│   │   └── stickers
+│   │       ├── back_1.jpg
+│   │       ├── back_2.jpg
+│   │       ├── back_3.jpg
+│   │       ├── back_4.jpg
+│   │       ├── back_5.jpg
+│   │       ├── back_6.jpg
+│   │       ├── back_7.jpg
+│   │       ├── back_8.jpg
+│   │       ├── back_9.jpg
+│   │       ├── down_1.jpg
+│   │       ├── down_2.jpg
+│   │       ├── down_3.jpg
+│   │       ├── down_4.jpg
+│   │       ├── down_5.jpg
+│   │       ├── down_6.jpg
+│   │       ├── down_7.jpg
+│   │       ├── down_8.jpg
+│   │       ├── down_9.jpg
+│   │       ├── front_1.jpg
+│   │       ├── front_2.jpg
+│   │       ├── front_3.jpg
+│   │       ├── front_4.jpg
+│   │       ├── front_5.jpg
+│   │       ├── front_6.jpg
+│   │       ├── front_7.jpg
+│   │       ├── front_8.jpg
+│   │       ├── front_9.jpg
+│   │       ├── left_1.jpg
+│   │       ├── left_2.jpg
+│   │       ├── left_3.jpg
+│   │       ├── left_4.jpg
+│   │       ├── left_5.jpg
+│   │       ├── left_6.jpg
+│   │       ├── left_7.jpg
+│   │       ├── left_8.jpg
+│   │       ├── left_9.jpg
+│   │       ├── right_1.jpg
+│   │       ├── right_2.jpg
+│   │       ├── right_3.jpg
+│   │       ├── right_4.jpg
+│   │       ├── right_5.jpg
+│   │       ├── right_6.jpg
+│   │       ├── right_7.jpg
+│   │       ├── right_8.jpg
+│   │       ├── right_9.jpg
+│   │       ├── up_1.jpg
+│   │       ├── up_2.jpg
+│   │       ├── up_3.jpg
+│   │       ├── up_4.jpg
+│   │       ├── up_5.jpg
+│   │       ├── up_6.jpg
+│   │       ├── up_7.jpg
+│   │       ├── up_8.jpg
+│   │       └── up_9.jpg
+│   ├── raw
+│   │   ├── 3face_1.jpg
+│   │   ├── 3face_2.jpg
+│   │   └── 3face_3.jpg
+│   └── tables
+│       ├── Choice.mtb
+│       ├── CrnrPerm.mtb
+│       ├── CrnrSlic.ptb
+│       ├── EdgePerm.mtb
+│       ├── EdgeSlic.ptb
+│       ├── Flip.mtb
+│       ├── FlipChce.ptb
+│       ├── SlicPerm.mtb
+│       ├── Twist.mtb
+│       ├── TwstChce.ptb
+│       └── TwstFlip.ptb
+├── include
+│   ├── ColorDetector.hpp
+│   ├── check_structure.hpp
+│   ├── config.hpp
+│   ├── face_rectifieur_auto.hpp
+│   ├── kociemba
+│   │   ├── Combinatorics.hpp
+│   │   ├── Cube.hpp
+│   │   ├── CubeParser.hpp
+│   │   ├── FaceletCube.hpp
+│   │   ├── KociMoveTables.hpp
+│   │   ├── MoveTable.hpp
+│   │   ├── PruningTable.hpp
+│   │   ├── RubiksCube.hpp
+│   │   ├── Solver.hpp
+│   │   └── Vector.hpp
+│   ├── kociemba_solver.hpp
+│   ├── split_stickers.hpp
+│   └── traduction.hpp
+├── makefile
+├── obj
+│   ├── ColorDetector.o
+│   ├── check_structure.o
+│   ├── config.o
+│   ├── face_rectifieur_auto.o
+│   ├── kociemba
+│   │   ├── Combinatorics.o
+│   │   ├── Cube.o
+│   │   ├── CubeParser.o
+│   │   ├── FaceletCube.o
+│   │   ├── MoveTable.o
+│   │   ├── PruningTable.o
+│   │   ├── RubiksCube.o
+│   │   ├── Solver.o
+│   │   └── Vector.o
+│   ├── kociemba_solver.o
+│   ├── main.o
+│   ├── split_stickers.o
+│   └── traduction.o
+├── src
+│   ├── ColorDetector.cpp
+│   ├── check_structure.cpp
+│   ├── config.cpp
+│   ├── face_rectifieur_auto.cpp
+│   ├── ihm
+│   ├── kociemba
+│   │   ├── Combinatorics.cpp
+│   │   ├── Cube.cpp
+│   │   ├── CubeParser.cpp
+│   │   ├── FaceletCube.cpp
+│   │   ├── MoveTable.cpp
+│   │   ├── PruningTable.cpp
+│   │   ├── RubiksCube.cpp
+│   │   ├── Solver.cpp
+│   │   ├── Vector.cpp
+│   │   └── main.cpp
+│   ├── kociemba_solver.cpp
+│   ├── main.cpp
+│   ├── split_stickers.cpp
+│   └── traduction.cpp
+└── tree.txt
+
+19 directories, 144 files
