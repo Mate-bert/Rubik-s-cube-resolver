@@ -450,11 +450,6 @@
 ├── build
 │   ├── CMakeCache.txt
 │   ├── CMakeFiles
-│   │   ├── 3.31.5
-│   │   │   ├── CompilerIdC
-│   │   │   │   └── tmp
-│   │   │   └── CompilerIdCXX
-│   │   │       └── tmp
 │   │   ├── 4.0.1
 │   │   │   ├── CMakeCCompiler.cmake
 │   │   │   ├── CMakeCXXCompiler.cmake
@@ -464,13 +459,14 @@
 │   │   │   ├── CMakeSystem.cmake
 │   │   │   ├── CompilerIdC
 │   │   │   │   ├── CMakeCCompilerId.c
-│   │   │   │   └── a.exe
+│   │   │   │   ├── a.exe
+│   │   │   │   └── tmp
 │   │   │   └── CompilerIdCXX
 │   │   │       ├── CMakeCXXCompilerId.cpp
-│   │   │       └── a.exe
+│   │   │       ├── a.exe
+│   │   │       └── tmp
 │   │   ├── CMakeConfigureLog.yaml
 │   │   ├── CMakeDirectoryInformation.cmake
-│   │   ├── CMakeScratch
 │   │   ├── InstallScripts.json
 │   │   ├── Makefile.cmake
 │   │   ├── Makefile2
@@ -744,6 +740,121 @@
 │   ├── README.md
 │   ├── WORKSPACE
 │   ├── WORKSPACE.bzlmod
+│   ├── build
+│   │   ├── CMakeCache.txt
+│   │   ├── CMakeFiles
+│   │   │   ├── 3.30.2
+│   │   │   │   ├── CMakeCCompiler.cmake
+│   │   │   │   ├── CMakeCXXCompiler.cmake
+│   │   │   │   ├── CMakeDetermineCompilerABI_C.bin
+│   │   │   │   ├── CMakeDetermineCompilerABI_CXX.bin
+│   │   │   │   ├── CMakeRCCompiler.cmake
+│   │   │   │   ├── CMakeSystem.cmake
+│   │   │   │   ├── CompilerIdC
+│   │   │   │   │   ├── CMakeCCompilerId.c
+│   │   │   │   │   ├── a.exe
+│   │   │   │   │   └── tmp
+│   │   │   │   └── CompilerIdCXX
+│   │   │   │       ├── CMakeCXXCompilerId.cpp
+│   │   │   │       ├── a.exe
+│   │   │   │       └── tmp
+│   │   │   ├── CMakeConfigureLog.yaml
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── Makefile.cmake
+│   │   │   ├── Makefile2
+│   │   │   ├── TargetDirectories.txt
+│   │   │   ├── cmake.check_cache
+│   │   │   ├── pkgRedirects
+│   │   │   └── progress.marks
+│   │   ├── CTestTestfile.cmake
+│   │   ├── Makefile
+│   │   ├── Testing
+│   │   │   ├── 20250416-1255
+│   │   │   │   └── Test.xml
+│   │   │   ├── TAG
+│   │   │   └── Temporary
+│   │   │       └── LastTest_20250416-1255.log
+│   │   ├── bin
+│   │   ├── cmake_install.cmake
+│   │   ├── compile_commands.json
+│   │   ├── googlemock
+│   │   │   ├── CMakeFiles
+│   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   ├── gmock.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── cmake_clean_target.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   ├── link.txt
+│   │   │   │   │   ├── progress.make
+│   │   │   │   │   └── src
+│   │   │   │   ├── gmock_main.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── cmake_clean_target.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   ├── link.txt
+│   │   │   │   │   ├── progress.make
+│   │   │   │   │   └── src
+│   │   │   │   └── progress.marks
+│   │   │   ├── CTestTestfile.cmake
+│   │   │   ├── Makefile
+│   │   │   └── cmake_install.cmake
+│   │   ├── googletest
+│   │   │   ├── CMakeFiles
+│   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   ├── Export
+│   │   │   │   │   └── 0c08b8e77dd885bfe55a19a9659d9fc1
+│   │   │   │   │       ├── GTestTargets-debug.cmake
+│   │   │   │   │       └── GTestTargets.cmake
+│   │   │   │   ├── gtest.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── cmake_clean_target.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   ├── link.txt
+│   │   │   │   │   ├── progress.make
+│   │   │   │   │   └── src
+│   │   │   │   ├── gtest_main.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── cmake_clean_target.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── includes_CXX.rsp
+│   │   │   │   │   ├── link.txt
+│   │   │   │   │   ├── progress.make
+│   │   │   │   │   └── src
+│   │   │   │   └── progress.marks
+│   │   │   ├── CTestTestfile.cmake
+│   │   │   ├── Makefile
+│   │   │   ├── cmake_install.cmake
+│   │   │   └── generated
+│   │   │       ├── GTestConfig.cmake
+│   │   │       ├── GTestConfigVersion.cmake
+│   │   │       ├── gmock.pc
+│   │   │       ├── gmock_main.pc
+│   │   │       ├── gtest.pc
+│   │   │       └── gtest_main.pc
+│   │   └── lib
 │   ├── ci
 │   │   ├── linux-presubmit.sh
 │   │   ├── macos-presubmit.sh
@@ -1050,15 +1161,14 @@
 ├── src
 │   ├── ColorDetector.cpp
 │   ├── analyse
-│   │   ├── __pycache__
-│   │   │   ├── check_cube_structure.cpython-313.pyc
-│   │   │   └── visu_cube.cpython-313.pyc
 │   │   ├── analyse_erreurs.py
 │   │   ├── analyse_kociemba.cpp
 │   │   ├── analyse_kociemba_v2.cpp
 │   │   ├── check_cube_structure.py
 │   │   ├── edition_cube_interactif.py
 │   │   └── visu_cube.py
+│   ├── animate_solution.py
+│   ├── animate_solution_3d.py
 │   ├── check_structure.cpp
 │   ├── config.cpp
 │   ├── detect_faces.cpp
@@ -1066,7 +1176,6 @@
 │   ├── detect_with_yolo_onnx.py
 │   ├── face_rectifieur_auto.cpp
 │   ├── face_rectifieur_manuel.cpp
-│   ├── gui
 │   ├── kociemba
 │   │   ├── Combinatorics.cpp
 │   │   ├── Cube.cpp
@@ -1089,11 +1198,9 @@
     ├── __init__.py
     ├── __pycache__
     │   ├── __init__.cpython-312.pyc
-    │   ├── __init__.cpython-313.pyc
-    │   ├── affichage_cube.cpython-313.pyc
-    │   ├── config_loader.cpython-312.pyc
-    │   └── config_loader.cpython-313.pyc
+    │   ├── affichage_cube.cpython-312.pyc
+    │   └── config_loader.cpython-312.pyc
     ├── affichage_cube.py
     └── config_loader.py
 
-122 directories, 975 files
+144 directories, 1060 files
