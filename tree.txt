@@ -1059,6 +1059,8 @@
 │   │   ├── check_cube_structure.py
 │   │   ├── edition_cube_interactif.py
 │   │   └── visu_cube.py
+│   ├── animate_solution.py
+│   ├── animate_solution_3d.py
 │   ├── check_structure.cpp
 │   ├── config.cpp
 │   ├── detect_faces.cpp
@@ -1096,4 +1098,4 @@
     ├── affichage_cube.py
     └── config_loader.py
 
-122 directories, 975 files
+122 directories, 977 files
