@@ -18,8 +18,8 @@
 
 #include "xparameters_ps.h"
 
-#define STDIN_BASEADDRESS 0xF8800000
-#define STDOUT_BASEADDRESS 0xF8800000
+#define STDIN_BASEADDRESS 0xE0001000
+#define STDOUT_BASEADDRESS 0xE0001000
 
 /******************************************************************/
 
@@ -280,21 +280,25 @@
 
 /******************************************************************/
 
-/* Definitions for driver USBPS */
-#define XPAR_XUSBPS_NUM_INSTANCES 1
+/* Definitions for driver UARTPS */
+#define XPAR_XUARTPS_NUM_INSTANCES 1
 
-/* Definitions for peripheral PS7_USB_0 */
-#define XPAR_PS7_USB_0_DEVICE_ID 0
-#define XPAR_PS7_USB_0_BASEADDR 0xE0002000
-#define XPAR_PS7_USB_0_HIGHADDR 0xE0002FFF
+/* Definitions for peripheral PS7_UART_1 */
+#define XPAR_PS7_UART_1_DEVICE_ID 0
+#define XPAR_PS7_UART_1_BASEADDR 0xE0001000
+#define XPAR_PS7_UART_1_HIGHADDR 0xE0001FFF
+#define XPAR_PS7_UART_1_UART_CLK_FREQ_HZ 100000000
+#define XPAR_PS7_UART_1_HAS_MODEM 0
 
 
 /******************************************************************/
 
-/* Canonical definitions for peripheral PS7_USB_0 */
-#define XPAR_XUSBPS_0_DEVICE_ID XPAR_PS7_USB_0_DEVICE_ID
-#define XPAR_XUSBPS_0_BASEADDR 0xE0002000
-#define XPAR_XUSBPS_0_HIGHADDR 0xE0002FFF
+/* Canonical definitions for peripheral PS7_UART_1 */
+#define XPAR_XUARTPS_0_DEVICE_ID XPAR_PS7_UART_1_DEVICE_ID
+#define XPAR_XUARTPS_0_BASEADDR 0xE0001000
+#define XPAR_XUARTPS_0_HIGHADDR 0xE0001FFF
+#define XPAR_XUARTPS_0_UART_CLK_FREQ_HZ 100000000
+#define XPAR_XUARTPS_0_HAS_MODEM 0
 
 
 /******************************************************************/

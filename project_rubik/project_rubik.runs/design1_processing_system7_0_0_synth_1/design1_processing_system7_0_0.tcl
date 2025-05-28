@@ -17,6 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param chipscope.maxJobs 3
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 create_project -in_memory -part xc7z010clg400-1
@@ -29,7 +30,10 @@ set_property webtalk.parent_dir C:/workspace/rubik/project_rubik/project_rubik.c
 set_property parent.project_path C:/workspace/rubik/project_rubik/project_rubik.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
-set_property target_language Verilog [current_project]
+set_property target_language VHDL [current_project]
+set_property board_part digilentinc.com:zybo-z7-10:part0:1.2 [current_project]
+set_property ip_repo_paths c:/workspace/rubik/ip_repo/IP_Memory_reader_1.0 [current_project]
+update_ip_catalog
 set_property ip_output_repo c:/workspace/rubik/project_rubik/project_rubik.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_ip -quiet C:/workspace/rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_processing_system7_0_0/design1_processing_system7_0_0.xci

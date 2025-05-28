@@ -61,7 +61,7 @@ leds <= s_phase;
                 s_cpt <= (others => '0');
             else
                 if start = '1' then
-                    if s_cpt = x"000FFFFF" then
+                    if s_cpt = x"0007FFFF" then --x"000FFFFF" = 1.6A , x"000AFFFF" = 1.3A --x"0007FFFF = 1.1A
                         s_cpt <= (others => '0');
                         cpt_go <= '1';
                     else
@@ -193,10 +193,10 @@ leds <= s_phase;
                         if start = '1' then
                             if restart = '1' then 
                                 if sens = '0' then
-                                    s_state <= PH1;
+                                    s_state <= PH4;
                                     s_phase <= "0101";
                                 else
-                                    s_state <= PH4;
+                                    s_state <= PH1;
                                     s_phase <= "1001";
                                 end if;
                             else

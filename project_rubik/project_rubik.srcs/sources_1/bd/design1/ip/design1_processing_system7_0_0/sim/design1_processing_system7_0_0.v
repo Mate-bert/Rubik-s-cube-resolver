@@ -56,9 +56,6 @@
 `timescale 1ns/1ps
 
 module design1_processing_system7_0_0 (
-USB0_PORT_INDCTL, 
-USB0_VBUS_PWRSELECT, 
-USB0_VBUS_PWRFAULT, 
 M_AXI_GP0_ARVALID, 
 M_AXI_GP0_AWVALID, 
 M_AXI_GP0_BREADY, 
@@ -122,9 +119,6 @@ PS_SRSTB,
 PS_CLK, 
 PS_PORB 
 );
-output [1 : 0] USB0_PORT_INDCTL;
-output USB0_VBUS_PWRSELECT;
-input USB0_VBUS_PWRFAULT;
 output M_AXI_GP0_ARVALID;
 output M_AXI_GP0_AWVALID;
 output M_AXI_GP0_BREADY;

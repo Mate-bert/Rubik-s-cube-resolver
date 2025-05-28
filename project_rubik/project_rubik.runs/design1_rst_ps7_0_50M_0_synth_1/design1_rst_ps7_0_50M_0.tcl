@@ -17,6 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param chipscope.maxJobs 3
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 create_project -in_memory -part xc7z010clg400-1
@@ -25,17 +26,20 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir {C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.cache/wt} [current_project]
-set_property parent.project_path {C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.xpr} [current_project]
+set_property webtalk.parent_dir C:/workspace/rubik/project_rubik/project_rubik.cache/wt [current_project]
+set_property parent.project_path C:/workspace/rubik/project_rubik/project_rubik.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
-set_property target_language Verilog [current_project]
-set_property ip_output_repo {c:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.cache/ip} [current_project]
+set_property target_language VHDL [current_project]
+set_property board_part digilentinc.com:zybo-z7-10:part0:1.2 [current_project]
+set_property ip_repo_paths c:/workspace/rubik/ip_repo/IP_Memory_reader_1.0 [current_project]
+update_ip_catalog
+set_property ip_output_repo c:/workspace/rubik/project_rubik/project_rubik.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_ip -quiet {{C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0.xci}}
-set_property used_in_implementation false [get_files -all {{c:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_board.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_ooc.xdc}}]
+read_ip -quiet C:/workspace/rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0.xci
+set_property used_in_implementation false [get_files -all c:/workspace/rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/workspace/rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0.xdc]
+set_property used_in_implementation false [get_files -all c:/workspace/rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -49,7 +53,7 @@ read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
-set cached_ip [config_ip_cache -export -no_bom  -dir {C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.runs/design1_rst_ps7_0_50M_0_synth_1} -new_name design1_rst_ps7_0_50M_0 -ip [get_ips design1_rst_ps7_0_50M_0]]
+set cached_ip [config_ip_cache -export -no_bom  -dir C:/workspace/rubik/project_rubik/project_rubik.runs/design1_rst_ps7_0_50M_0_synth_1 -new_name design1_rst_ps7_0_50M_0 -ip [get_ips design1_rst_ps7_0_50M_0]]
 
 if { $cached_ip eq {} } {
 close [open __synthesis_is_running__ w]
@@ -90,32 +94,32 @@ write_checkpoint -force -noxdef design1_rst_ps7_0_50M_0.dcp
 create_report "design1_rst_ps7_0_50M_0_synth_1_synth_report_utilization_0" "report_utilization -file design1_rst_ps7_0_50M_0_utilization_synth.rpt -pb design1_rst_ps7_0_50M_0_utilization_synth.pb"
 
 if { [catch {
-  file copy -force {C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.runs/design1_rst_ps7_0_50M_0_synth_1/design1_rst_ps7_0_50M_0.dcp} {C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0.dcp}
+  file copy -force C:/workspace/rubik/project_rubik/project_rubik.runs/design1_rst_ps7_0_50M_0_synth_1/design1_rst_ps7_0_50M_0.dcp C:/workspace/rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub {C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_stub.v}
+  write_verilog -force -mode synth_stub C:/workspace/rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub {C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_stub.vhdl}
+  write_vhdl -force -mode synth_stub C:/workspace/rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim {C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_sim_netlist.v}
+  write_verilog -force -mode funcsim C:/workspace/rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim {C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_sim_netlist.vhdl}
+  write_vhdl -force -mode funcsim C:/workspace/rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -125,47 +129,47 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force {C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.runs/design1_rst_ps7_0_50M_0_synth_1/design1_rst_ps7_0_50M_0.dcp} {C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0.dcp}
+  file copy -force C:/workspace/rubik/project_rubik/project_rubik.runs/design1_rst_ps7_0_50M_0_synth_1/design1_rst_ps7_0_50M_0.dcp C:/workspace/rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force {C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.runs/design1_rst_ps7_0_50M_0_synth_1/design1_rst_ps7_0_50M_0_stub.v} {C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_stub.v}
+  file rename -force C:/workspace/rubik/project_rubik/project_rubik.runs/design1_rst_ps7_0_50M_0_synth_1/design1_rst_ps7_0_50M_0_stub.v C:/workspace/rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force {C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.runs/design1_rst_ps7_0_50M_0_synth_1/design1_rst_ps7_0_50M_0_stub.vhdl} {C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_stub.vhdl}
+  file rename -force C:/workspace/rubik/project_rubik/project_rubik.runs/design1_rst_ps7_0_50M_0_synth_1/design1_rst_ps7_0_50M_0_stub.vhdl C:/workspace/rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force {C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.runs/design1_rst_ps7_0_50M_0_synth_1/design1_rst_ps7_0_50M_0_sim_netlist.v} {C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_sim_netlist.v}
+  file rename -force C:/workspace/rubik/project_rubik/project_rubik.runs/design1_rst_ps7_0_50M_0_synth_1/design1_rst_ps7_0_50M_0_sim_netlist.v C:/workspace/rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force {C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.runs/design1_rst_ps7_0_50M_0_synth_1/design1_rst_ps7_0_50M_0_sim_netlist.vhdl} {C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_sim_netlist.vhdl}
+  file rename -force C:/workspace/rubik/project_rubik/project_rubik.runs/design1_rst_ps7_0_50M_0_synth_1/design1_rst_ps7_0_50M_0_sim_netlist.vhdl C:/workspace/rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 }; # end if cached_ip 
 
-if {[file isdir {C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.ip_user_files/ip/design1_rst_ps7_0_50M_0}]} {
+if {[file isdir C:/workspace/rubik/project_rubik/project_rubik.ip_user_files/ip/design1_rst_ps7_0_50M_0]} {
   catch { 
-    file copy -force {{C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_stub.v}} {C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.ip_user_files/ip/design1_rst_ps7_0_50M_0}
+    file copy -force C:/workspace/rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_stub.v C:/workspace/rubik/project_rubik/project_rubik.ip_user_files/ip/design1_rst_ps7_0_50M_0
   }
 }
 
-if {[file isdir {C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.ip_user_files/ip/design1_rst_ps7_0_50M_0}]} {
+if {[file isdir C:/workspace/rubik/project_rubik/project_rubik.ip_user_files/ip/design1_rst_ps7_0_50M_0]} {
   catch { 
-    file copy -force {{C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_stub.vhdl}} {C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.ip_user_files/ip/design1_rst_ps7_0_50M_0}
+    file copy -force C:/workspace/rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_stub.vhdl C:/workspace/rubik/project_rubik/project_rubik.ip_user_files/ip/design1_rst_ps7_0_50M_0
   }
 }
 file delete __synthesis_is_running__

@@ -1,0 +1,212 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+!s11e vcom 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/workspace/rubik/C/VHDL
+T_opt
+!s110 1747579072
+VMiVhO?3lBNVM[LXdON1Ge3
+04 6 3 work top_tb rtl 1
+=1-84a938f3acb5-6829f0bf-310-140c
+!s124 OEM10U4 
+o-quiet -auto_acc_if_foreign -work work +acc
+tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+Ememory_reader
+Z2 w1747572566
+Z3 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z4 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z5 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z6 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 13
+R1
+Z9 8..\VHDL\memory_reader.vhd
+Z10 F..\VHDL\memory_reader.vhd
+l0
+L7 1
+V?fJmfd1E<Qh`;WM8_ddd_2
+!s100 ;J_>LaoKo[CfG^=2Ph;_?3
+Z11 OL;C;2021.2;73
+32
+Z12 !s110 1747579057
+!i10b 1
+Z13 !s108 1747579057.000000
+Z14 !s90 ..\VHDL\memory_reader.vhd|
+Z15 !s107 ..\VHDL\memory_reader.vhd|
+!i113 0
+Z16 tExplicit 1 CvgOpt 0
+Artl_memory_reader
+R3
+R4
+R5
+R6
+R7
+R8
+DEx4 work 13 memory_reader 0 22 ?fJmfd1E<Qh`;WM8_ddd_2
+!i122 13
+l36
+L30 68
+V<VeZzAz2Ehg7:45jc9kb;1
+!s100 ?jmlSd2Y9]fPT4KX122NU2
+R11
+32
+R12
+!i10b 1
+R13
+R14
+R15
+!i113 0
+R16
+Erubik_resolver
+Z17 w1747578992
+R3
+R4
+R5
+R6
+R7
+R8
+!i122 12
+R1
+Z18 8..\VHDL\rubik_resolve.vhd
+Z19 F..\VHDL\rubik_resolve.vhd
+l0
+L7 1
+Vo]@k0EkRYODCTM6@=ff?>3
+!s100 6lkB<MP]FFfkAJhhkP0XW3
+R11
+32
+R12
+!i10b 1
+R13
+Z20 !s90 ..\VHDL\rubik_resolve.vhd|
+Z21 !s107 ..\VHDL\rubik_resolve.vhd|
+!i113 0
+R16
+Artl_rubik
+R3
+R4
+R5
+R6
+R7
+R8
+DEx4 work 14 rubik_resolver 0 22 o]@k0EkRYODCTM6@=ff?>3
+!i122 12
+l37
+L25 444
+Va>H]zjYd;XjhelKe5jN@E3
+!s100 =<IB?zgKl]7iRQA>A=F?V3
+R11
+32
+R12
+!i10b 1
+R13
+R20
+R21
+!i113 0
+R16
+Etop
+Z22 w1747578555
+R3
+R4
+R5
+R6
+R7
+R8
+!i122 14
+R1
+Z23 8..\VHDL\top.vhd
+Z24 F..\VHDL\top.vhd
+l0
+L7 1
+VVdGgmbXb9V@d=Io6Sj;ec1
+!s100 0KaT;zZkRO1V^O6]8C3X?3
+R11
+32
+Z25 !s110 1747579058
+!i10b 1
+Z26 !s108 1747579058.000000
+Z27 !s90 ..\VHDL\top.vhd|
+Z28 !s107 ..\VHDL\top.vhd|
+!i113 0
+R16
+Artl
+R3
+R4
+R5
+R6
+R7
+R8
+DEx4 work 3 top 0 22 VdGgmbXb9V@d=Io6Sj;ec1
+!i122 14
+l79
+L23 92
+VR1==58VcVg_BI]3WFXGog0
+!s100 feU7olA19oZzXbPUnUi@g0
+R11
+32
+R25
+!i10b 1
+R26
+R27
+R28
+!i113 0
+R16
+Etop_tb
+Z29 w1747578759
+R3
+R4
+R5
+R6
+R7
+R8
+!i122 15
+R1
+Z30 8..\VHDL\top_tb.vhd
+Z31 F..\VHDL\top_tb.vhd
+l0
+L7 1
+V8eE?9lCP8mPjBeD_JC4:L0
+!s100 ;z[3GZoW6XhC0@<WSRLLn0
+R11
+32
+R25
+!i10b 1
+R26
+Z32 !s90 ..\VHDL\top_tb.vhd|
+Z33 !s107 ..\VHDL\top_tb.vhd|
+!i113 0
+R16
+Artl
+R3
+R4
+R5
+R6
+R7
+R8
+DEx4 work 6 top_tb 0 22 8eE?9lCP8mPjBeD_JC4:L0
+!i122 15
+l40
+L10 68
+V?Y?EN^O[:hGI5LD?1MP4j1
+!s100 f3Vz7AgM;N?ed;;_8nUI71
+R11
+32
+R25
+!i10b 1
+R26
+R32
+R33
+!i113 0
+R16

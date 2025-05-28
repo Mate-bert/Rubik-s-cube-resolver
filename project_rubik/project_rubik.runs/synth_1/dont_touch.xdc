@@ -27,4 +27,7 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design1_axi_smc
 # IP: bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design1_rst_ps7_0_50M_0 || ORIG_REF_NAME==design1_rst_ps7_0_50M_0} -quiet] -quiet
 
+# IP: bd/design1/ip/design1_no_rebound_0_0/design1_no_rebound_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design1_no_rebound_0_0 || ORIG_REF_NAME==design1_no_rebound_0_0} -quiet] -quiet
+
 # XDC: bd/design1/design1_ooc.xdc

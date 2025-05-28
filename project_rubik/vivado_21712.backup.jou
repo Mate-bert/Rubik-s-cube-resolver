@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Apr  4 00:17:40 2025
+# Process ID: 21712
+# Current directory: C:/workspace/rubik/project_rubik
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9968 C:\workspace\rubik\project_rubik\project_rubik.xpr
+# Log file: C:/workspace/rubik/project_rubik/vivado.log
+# Journal file: C:/workspace/rubik/project_rubik\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/workspace/rubik/project_rubik/project_rubik.xpr
+open_bd_design {C:/workspace/rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/design1.bd}
+update_compile_order -fileset sources_1

@@ -1,0 +1,1 @@
+vcom ..\c\td.vhd

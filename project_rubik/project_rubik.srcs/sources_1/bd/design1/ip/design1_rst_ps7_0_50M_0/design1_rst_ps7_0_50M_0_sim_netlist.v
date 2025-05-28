@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-// Date        : Sat Mar 29 13:20:43 2025
+// Date        : Sun May 18 17:38:16 2025
 // Host        : LAPTOP-N4P3CLBG running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim {C:/Users/mateo/OneDrive -
-//               ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_sim_netlist.v}
+// Command     : write_verilog -force -mode funcsim
+//               C:/workspace/rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/ip/design1_rst_ps7_0_50M_0/design1_rst_ps7_0_50M_0_sim_netlist.v
 // Design      : design1_rst_ps7_0_50M_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.

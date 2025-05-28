@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/mateo/OneDrive - ozixe/Bureau/Cours/projet_rubik/projet_rubik/project_rubik/project_rubik.runs/design1_rst_ps7_0_50M_0_synth_1'
+HD_PWD='C:/workspace/rubik/project_rubik/project_rubik.runs/design1_rst_ps7_0_50M_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

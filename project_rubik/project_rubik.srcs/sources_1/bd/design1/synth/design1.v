@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-//Date        : Thu Apr  3 08:48:59 2025
+//Date        : Sun May 18 17:09:28 2025
 //Host        : LAPTOP-N4P3CLBG running 64-bit major release  (build 9200)
 //Command     : generate_target design1.bd
 //Design      : design1
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=7,numReposBlks=7,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=2,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_bram_cntlr_cnt=2,da_clkrst_cnt=3,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=8,numReposBlks=8,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_bram_cntlr_cnt=2,da_clkrst_cnt=6,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design1.hwdef" *) 
 module design1
    (DDR_addr,
     DDR_ba,
@@ -97,7 +97,7 @@ module design1
   wire [3:0]axi_smc_M00_AXI_WSTRB;
   wire axi_smc_M00_AXI_WVALID;
   wire [31:0]blk_mem_gen_0_doutb;
-  wire i_go_0_1;
+  wire go_1;
   wire [31:0]memory_reader_0_bram_addr;
   wire memory_reader_0_bram_clk;
   wire [31:0]memory_reader_0_bram_dout;
@@ -106,6 +106,7 @@ module design1
   wire [3:0]memory_reader_0_bram_we;
   wire [3:0]memory_reader_0_o_cmd;
   wire memory_reader_0_o_new;
+  wire no_rebound_0_o_done;
   wire [14:0]processing_system7_0_DDR_ADDR;
   wire [2:0]processing_system7_0_DDR_BA;
   wire processing_system7_0_DDR_CAS_N;
@@ -168,10 +169,10 @@ module design1
   wire [3:0]processing_system7_0_M_AXI_GP0_WSTRB;
   wire processing_system7_0_M_AXI_GP0_WVALID;
   wire [0:0]rst_ps7_0_50M_peripheral_aresetn;
-  wire rubik_resolver_0_o_done_temp;
+  wire rubik_resolver_0_o_done;
   wire [3:0]rubik_resolver_0_o_leds;
 
-  assign i_go_0_1 = go;
+  assign go_1 = go;
   assign o_leds[3:0] = rubik_resolver_0_o_leds;
   (* BMM_INFO_ADDRESS_SPACE = "byte  0x40000000 32 > design1 blk_mem_gen_0" *) 
   (* KEEP_HIERARCHY = "yes" *) 
@@ -312,11 +313,16 @@ module design1
         .bram_rst(memory_reader_0_bram_rst),
         .bram_we(memory_reader_0_bram_we),
         .i_clk(processing_system7_0_FCLK_CLK0),
-        .i_done(rubik_resolver_0_o_done_temp),
-        .i_go(i_go_0_1),
+        .i_done(rubik_resolver_0_o_done),
+        .i_go(no_rebound_0_o_done),
         .i_rst(rst_ps7_0_50M_peripheral_aresetn),
         .o_cmd(memory_reader_0_o_cmd),
         .o_new(memory_reader_0_o_new));
+  design1_no_rebound_0_0 no_rebound_0
+       (.i_clk(processing_system7_0_FCLK_CLK0),
+        .i_done(go_1),
+        .i_rst(rst_ps7_0_50M_peripheral_aresetn),
+        .o_done(no_rebound_0_o_done));
   (* BMM_INFO_PROCESSOR = "arm > design1 axi_bram_ctrl_0" *) 
   (* KEEP_HIERARCHY = "yes" *) 
   design1_processing_system7_0_0 processing_system7_0
@@ -381,8 +387,7 @@ module design1
         .M_AXI_GP0_WVALID(processing_system7_0_M_AXI_GP0_WVALID),
         .PS_CLK(FIXED_IO_ps_clk),
         .PS_PORB(FIXED_IO_ps_porb),
-        .PS_SRSTB(FIXED_IO_ps_srstb),
-        .USB0_VBUS_PWRFAULT(1'b0));
+        .PS_SRSTB(FIXED_IO_ps_srstb));
   design1_rst_ps7_0_50M_0 rst_ps7_0_50M
        (.aux_reset_in(1'b1),
         .dcm_locked(1'b1),
@@ -395,6 +400,6 @@ module design1
         .i_cmd(memory_reader_0_o_cmd),
         .i_new(memory_reader_0_o_new),
         .i_rst(rst_ps7_0_50M_peripheral_aresetn),
-        .o_done_temp(rubik_resolver_0_o_done_temp),
+        .o_done(rubik_resolver_0_o_done),
         .o_leds(rubik_resolver_0_o_leds));
 endmodule

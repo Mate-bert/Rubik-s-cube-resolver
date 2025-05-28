@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Fri Apr  4 10:44:34 2025
-# Process ID: 22480
+# Start of session at: Thu Apr 10 15:09:46 2025
+# Process ID: 23200
 # Current directory: C:/workspace/rubik/moteur_2phases/moteur_2phases.runs/impl_1
 # Command line: vivado.exe -log controle_moteur.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source controle_moteur.tcl -notrace
 # Log file: C:/workspace/rubik/moteur_2phases/moteur_2phases.runs/impl_1/controle_moteur.vdi

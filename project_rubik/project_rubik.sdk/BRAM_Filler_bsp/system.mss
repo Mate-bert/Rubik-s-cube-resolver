@@ -6,8 +6,8 @@ BEGIN OS
  PARAMETER OS_NAME = standalone
  PARAMETER OS_VER = 7.0
  PARAMETER PROC_INSTANCE = ps7_cortexa9_0
- PARAMETER stdin = ps7_coresight_comp_0
- PARAMETER stdout = ps7_coresight_comp_0
+ PARAMETER stdin = ps7_uart_1
+ PARAMETER stdout = ps7_uart_1
 END
 
 
@@ -181,9 +181,9 @@ BEGIN DRIVER
 END
 
 BEGIN DRIVER
- PARAMETER DRIVER_NAME = usbps
- PARAMETER DRIVER_VER = 2.4
- PARAMETER HW_INSTANCE = ps7_usb_0
+ PARAMETER DRIVER_NAME = uartps
+ PARAMETER DRIVER_VER = 3.7
+ PARAMETER HW_INSTANCE = ps7_uart_1
 END
 
 

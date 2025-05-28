@@ -17,6 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param chipscope.maxJobs 3
 create_project -in_memory -part xc7z010clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -28,6 +29,7 @@ set_property parent.project_path C:/workspace/rubik/project_rubik/project_rubik.
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
+set_property board_part digilentinc.com:zybo-z7-10:part0:1.2 [current_project]
 set_property ip_output_repo c:/workspace/rubik/project_rubik/project_rubik.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib C:/workspace/rubik/project_rubik/project_rubik.srcs/sources_1/bd/design1/hdl/design1_wrapper.v

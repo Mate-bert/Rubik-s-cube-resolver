@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Fri Apr  4 10:45:09 2025
+| Date             : Thu Apr 10 15:10:29 2025
 | Host             : LAPTOP-N4P3CLBG running 64-bit major release  (build 9200)
 | Command          : report_power -file controle_moteur_power_routed.rpt -pb controle_moteur_power_summary_routed.pb -rpx controle_moteur_power_routed.rpx
 | Design           : controle_moteur
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.101        |
+| Total On-Chip Power (W)  | 0.102        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.008        |
+| Dynamic (W)              | 0.009        |
 | Device Static (W)        | 0.093        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 83.8         |
@@ -62,7 +62,7 @@ Table of Contents
 | Signals        |    <0.001 |       84 |       --- |             --- |
 | I/O            |     0.007 |       13 |       100 |           13.00 |
 | Static Power   |     0.093 |          |           |                 |
-| Total          |     0.101 |          |           |                 |
+| Total          |     0.102 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -148,7 +148,7 @@ Table of Contents
 +-----------------+-----------+
 | Name            | Power (W) |
 +-----------------+-----------+
-| controle_moteur |     0.008 |
+| controle_moteur |     0.009 |
 +-----------------+-----------+
 
 
