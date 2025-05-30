@@ -1,25 +1,34 @@
 #!/bin/bash
 
-# Affiche un message indiquant le début de la compilation
-echo "🔧 Compilation..."
-
-# Compile le fichier analyse_kociemba.cpp avec g++ et génère un exécutable dans le dossier bin
-# Inclut également le fichier config.cpp et les fichiers d'en-tête du dossier include
-g++ -o bin/analyse_kociemba src/analyse/analyse_kociemba.cpp src/config.cpp -Iinclude
-
-# Vérifie si la compilation a réussi (code de retour 0)
-if [ $? -eq 0 ]; then
-    # Si la compilation a réussi, affiche un message et exécute le programme
-    # Redirige la sortie standard et d'erreur vers un fichier de résultats
-    echo "🚀 Exécution..."
-    ./bin/analyse_kociemba.exe 2>&1 | tee data/output/analyse/res.txt
-else
-    # Si la compilation a échoué, affiche un message d'erreur
-    echo "❌ Compilation échouée"
+# Vérifier si les fichiers existent
+if [ ! -f "./bin/main_zynq" ]; then
+    echo "❌ Erreur: ./bin/main_zynq n'existe pas"
+    exit 1
 fi
 
-# Affiche un message indiquant la fin du script
-echo "✅ Fin du script — consultez les résultats dans data/output/res.txt"
+if [ ! -f "./bin/mem_test" ]; then
+    echo "❌ Erreur: ./bin/mem_test n'existe pas"
+    exit 1
+fi
 
-# Pause le script en attendant que l'utilisateur appuie sur Entrée
-read -p "⏸️ Appuyez sur Entrée pour quitter..."
+# Exécuter main_zynq
+echo "🚀 Exécution de ./bin/main_zynq..."
+./bin/main_zynq
+
+# Vérifier si main_zynq s'est bien terminé
+if [ $? -ne 0 ]; then
+    echo "❌ Erreur lors de l'execution de main_zynq"
+    exit 1
+fi
+
+# Exécuter mem_test
+echo "🚀 Execution de ./bin/mem_test..."
+./bin/mem_test
+
+# Vérifier si mem_test s'est bien terminé
+if [ $? -ne 0 ]; then
+    echo "❌ Erreur lors de l'execution de mem_test"
+    exit 1
+fi
+
+echo "✅ Tests termines avec succes"
