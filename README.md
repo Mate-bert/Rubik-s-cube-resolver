@@ -1,4 +1,3 @@
-
 # Rubik's Cube Resolver 🧩
 
 Projet de traitement d'image et de résolution de Rubik's Cube en C++ avec OpenCV.
@@ -10,13 +9,13 @@ Projet de traitement d'image et de résolution de Rubik's Cube en C++ avec OpenC
 ```
 rubiks-cube-resolver/
 │
-├── .vscode/                     # Configuration de l’environnement de développement sous VSCode
+├── .vscode/                     # Configuration de l'environnement de développement sous VSCode
 │   ├── settings.json            # Chemins personnalisés, formatage, terminal
-│   ├── c_cpp_properties.json    # Chemins d’inclusion pour MinGW
+│   ├── c_cpp_properties.json    # Chemins d'inclusion pour MinGW
 │   └── tasks.json               # Tâches de build (make, exécution…)
 │
 ├── src/                         # Code source principal du projet
-│   ├── main.cpp                 # Point d’entrée du programme
+│   ├── main.cpp                 # Point d'entrée du programme
 │   ├── config.cpp               # Chargement de la configuration depuis le fichier YAML
 │   ├── ColorDetector.cpp        # Détection des couleurs dominantes sur chaque sticker
 │   ├── face_rectifieur_*.cpp    # Rectification des images de faces (auto ou manuel)
@@ -25,12 +24,12 @@ rubiks-cube-resolver/
 │   ├── check_structure.cpp      # Vérification et correction automatique de la structure du cube
 │   └── kociemba_solver.cpp      # Résolution avec la lib Kociemba (bibliothèque tierce C++)
 │
-├── src/analyse/                 # Scripts d’analyse (Python et C++)
+├── src/analyse/                 # Scripts d'analyse (Python et C++)
 │   ├── analyse_kociemba*.cpp    # Comparaison de chaînes Kociemba
 │   ├── analyse_erreurs.py       # Statistiques sur les erreurs de détection/correction
 │   ├── check_cube_structure.py  # Ancienne version de validation de structure (Python)
-│   ├── edition_cube_interactif.py # Modification manuelle d’un cube depuis l’interface
-│   └── visu_cube.py             # Visualisation graphique d’un cube à partir de sa chaîne
+│   ├── edition_cube_interactif.py # Modification manuelle d'un cube depuis l'interface
+│   └── visu_cube.py             # Visualisation graphique d'un cube à partir de sa chaîne
 │
 ├── src/kociemba/                # Bibliothèque tierce C++ (https://github.com/blitzingeagle/rubiks3-solve)
 │   ├── *.cpp                    # Fichiers sources de la résolution
@@ -101,7 +100,7 @@ make run-analyse2
   /mingw64/bin/gcc
   ```
 - OpenCV doit être compilé avec **le même compilateur `g++`** que celui utilisé pour ton projet.
-- Ne pas oublier d’**ajouter `msys2` et `git` dans les variables d’environnement système** (PATH).
+- Ne pas oublier d'**ajouter `msys2` et `git` dans les variables d'environnement système** (PATH).
 
 ---
 
@@ -117,7 +116,7 @@ Ce programme effectue les étapes suivantes :
 3. Détection des couleurs dominantes
 4. Génération d'une chaîne Kociemba
 5. Vérification automatique de la structure du cube (et correction)
-6. Résolution via l’algorithme Kociemba
+6. Résolution via l'algorithme Kociemba
 7. Encodage binaire des mouvements
 8. Sauvegarde des résultats (`resolution.txt`, `output_encoded.txt`, etc.)
 
@@ -148,3 +147,74 @@ Ce programme effectue les étapes suivantes :
 ## 📚 Crédits
 
 - [blitzingeagle/rubiks3-solve](https://github.com/blitzingeagle/rubiks3-solve) pour l'implémentation du solveur Kociemba en C++.
+
+---
+
+## 🛠️ Installation des dépendances
+
+### Installation de MSYS2
+1. Téléchargez MSYS2 depuis [le site officiel](https://www.msys2.org/)
+2. Installez-le dans le dossier par défaut (`C:\msys64`)
+3. Ouvrez MSYS2 MinGW64 et mettez à jour les paquets :
+```bash
+pacman -Syu
+```
+
+### Installation des outils de développement
+```bash
+pacman -S mingw-w64-x86_64-toolchain
+pacman -S git
+pacman -S make
+```
+
+### Installation d'OpenCV
+```bash
+# Cloner OpenCV
+git clone https://github.com/opencv/opencv.git
+cd opencv
+mkdir build && cd build
+
+# Configuration avec CMake
+cmake -G "MSYS Makefiles" \
+    -DCMAKE_BUILD_TYPE=RELEASE \
+    -DCMAKE_INSTALL_PREFIX=/mingw64 \
+    -DBUILD_SHARED_LIBS=ON \
+    -DBUILD_TESTS=OFF \
+    -DBUILD_PERF_TESTS=OFF \
+    -DBUILD_EXAMPLES=OFF \
+    ..
+
+# Compilation et installation
+make -j4
+make install
+```
+
+---
+
+## 🔍 Dépannage
+
+### Problèmes courants
+
+1. **Erreur de compilation OpenCV**
+   - Vérifiez que vous utilisez le même compilateur que celui de MSYS2
+   - Assurez-vous que les variables d'environnement sont correctement configurées
+
+2. **Erreur d'exécution**
+   - Vérifiez que tous les DLLs nécessaires sont dans le PATH
+   - Exécutez le programme depuis Git Bash plutôt que MSYS2
+
+3. **Problèmes de détection de couleurs**
+   - Vérifiez l'éclairage de la pièce
+   - Ajustez les paramètres dans `config.yaml`
+
+---
+
+## 👥 Contribution
+
+Les contributions sont les bienvenues ! Voici comment contribuer :
+
+1. Fork le projet
+2. Créez une branche pour votre fonctionnalité (`git checkout -b feature/AmazingFeature`)
+3. Committez vos changements (`git commit -m 'Add some AmazingFeature'`)
+4. Push vers la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrez une Pull Request
