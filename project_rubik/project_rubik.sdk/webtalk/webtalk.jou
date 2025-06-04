@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# 
+# Start of session at: Sun Mar 30 13:32:58 2025
+# Process ID: 1404
+# Current directory: C:/workspace/rubik/project_rubik/project_rubik.sdk/webtalk
+# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
+# Log file: C:/workspace/rubik/project_rubik/project_rubik.sdk/webtalk/webtalk.log
+# Journal file: C:/workspace/rubik/project_rubik/project_rubik.sdk/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

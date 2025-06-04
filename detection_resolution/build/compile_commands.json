@@ -1,0 +1,86 @@
+[
+{
+  "directory": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/check_structure_test.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\check_structure_test.dir\\src\\test\\check_structure_test.cpp.obj -c C:\\Users\\gnsakawakatamba\\Documents\\Perso\\ecole\\Rubik-s-cube-resolver\\src\\test\\check_structure_test.cpp",
+  "file": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/src/test/check_structure_test.cpp",
+  "output": "CMakeFiles/check_structure_test.dir/src/test/check_structure_test.cpp.obj"
+},
+{
+  "directory": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/check_structure_test.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\check_structure_test.dir\\src\\check_structure.cpp.obj -c C:\\Users\\gnsakawakatamba\\Documents\\Perso\\ecole\\Rubik-s-cube-resolver\\src\\check_structure.cpp",
+  "file": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/src/check_structure.cpp",
+  "output": "CMakeFiles/check_structure_test.dir/src/check_structure.cpp.obj"
+},
+{
+  "directory": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/check_structure_test.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\check_structure_test.dir\\src\\kociemba\\Combinatorics.cpp.obj -c C:\\Users\\gnsakawakatamba\\Documents\\Perso\\ecole\\Rubik-s-cube-resolver\\src\\kociemba\\Combinatorics.cpp",
+  "file": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/src/kociemba/Combinatorics.cpp",
+  "output": "CMakeFiles/check_structure_test.dir/src/kociemba/Combinatorics.cpp.obj"
+},
+{
+  "directory": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/check_structure_test.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\check_structure_test.dir\\src\\kociemba\\MoveTable.cpp.obj -c C:\\Users\\gnsakawakatamba\\Documents\\Perso\\ecole\\Rubik-s-cube-resolver\\src\\kociemba\\MoveTable.cpp",
+  "file": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/src/kociemba/MoveTable.cpp",
+  "output": "CMakeFiles/check_structure_test.dir/src/kociemba/MoveTable.cpp.obj"
+},
+{
+  "directory": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/check_structure_test.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\check_structure_test.dir\\src\\kociemba\\PruningTable.cpp.obj -c C:\\Users\\gnsakawakatamba\\Documents\\Perso\\ecole\\Rubik-s-cube-resolver\\src\\kociemba\\PruningTable.cpp",
+  "file": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/src/kociemba/PruningTable.cpp",
+  "output": "CMakeFiles/check_structure_test.dir/src/kociemba/PruningTable.cpp.obj"
+},
+{
+  "directory": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/check_structure_test.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\check_structure_test.dir\\src\\kociemba\\Vector.cpp.obj -c C:\\Users\\gnsakawakatamba\\Documents\\Perso\\ecole\\Rubik-s-cube-resolver\\src\\kociemba\\Vector.cpp",
+  "file": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/src/kociemba/Vector.cpp",
+  "output": "CMakeFiles/check_structure_test.dir/src/kociemba/Vector.cpp.obj"
+},
+{
+  "directory": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/check_structure_test.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\check_structure_test.dir\\src\\kociemba\\Cube.cpp.obj -c C:\\Users\\gnsakawakatamba\\Documents\\Perso\\ecole\\Rubik-s-cube-resolver\\src\\kociemba\\Cube.cpp",
+  "file": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/src/kociemba/Cube.cpp",
+  "output": "CMakeFiles/check_structure_test.dir/src/kociemba/Cube.cpp.obj"
+},
+{
+  "directory": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/check_structure_test.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\check_structure_test.dir\\src\\kociemba\\RubiksCube.cpp.obj -c C:\\Users\\gnsakawakatamba\\Documents\\Perso\\ecole\\Rubik-s-cube-resolver\\src\\kociemba\\RubiksCube.cpp",
+  "file": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/src/kociemba/RubiksCube.cpp",
+  "output": "CMakeFiles/check_structure_test.dir/src/kociemba/RubiksCube.cpp.obj"
+},
+{
+  "directory": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/check_structure_test.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\check_structure_test.dir\\src\\kociemba\\FaceletCube.cpp.obj -c C:\\Users\\gnsakawakatamba\\Documents\\Perso\\ecole\\Rubik-s-cube-resolver\\src\\kociemba\\FaceletCube.cpp",
+  "file": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/src/kociemba/FaceletCube.cpp",
+  "output": "CMakeFiles/check_structure_test.dir/src/kociemba/FaceletCube.cpp.obj"
+},
+{
+  "directory": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/check_structure_test.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\check_structure_test.dir\\src\\kociemba\\CubeParser.cpp.obj -c C:\\Users\\gnsakawakatamba\\Documents\\Perso\\ecole\\Rubik-s-cube-resolver\\src\\kociemba\\CubeParser.cpp",
+  "file": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/src/kociemba/CubeParser.cpp",
+  "output": "CMakeFiles/check_structure_test.dir/src/kociemba/CubeParser.cpp.obj"
+},
+{
+  "directory": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/build/googletest-1.16.0/googlemock",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/gmock.dir/includes_CXX.rsp -g -std=c++14 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles\\gmock.dir\\src\\gmock-all.cc.obj -c C:\\Users\\gnsakawakatamba\\Documents\\Perso\\ecole\\Rubik-s-cube-resolver\\googletest-1.16.0\\googlemock\\src\\gmock-all.cc",
+  "file": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/googletest-1.16.0/googlemock/src/gmock-all.cc",
+  "output": "googletest-1.16.0/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj"
+},
+{
+  "directory": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/build/googletest-1.16.0/googlemock",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/gmock_main.dir/includes_CXX.rsp -g -std=c++14 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles\\gmock_main.dir\\src\\gmock_main.cc.obj -c C:\\Users\\gnsakawakatamba\\Documents\\Perso\\ecole\\Rubik-s-cube-resolver\\googletest-1.16.0\\googlemock\\src\\gmock_main.cc",
+  "file": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/googletest-1.16.0/googlemock/src/gmock_main.cc",
+  "output": "googletest-1.16.0/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj"
+},
+{
+  "directory": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/build/googletest-1.16.0/googletest",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/gtest.dir/includes_CXX.rsp -g -std=c++14 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles\\gtest.dir\\src\\gtest-all.cc.obj -c C:\\Users\\gnsakawakatamba\\Documents\\Perso\\ecole\\Rubik-s-cube-resolver\\googletest-1.16.0\\googletest\\src\\gtest-all.cc",
+  "file": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/googletest-1.16.0/googletest/src/gtest-all.cc",
+  "output": "googletest-1.16.0/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj"
+},
+{
+  "directory": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/build/googletest-1.16.0/googletest",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/gtest_main.dir/includes_CXX.rsp -g -std=c++14 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles\\gtest_main.dir\\src\\gtest_main.cc.obj -c C:\\Users\\gnsakawakatamba\\Documents\\Perso\\ecole\\Rubik-s-cube-resolver\\googletest-1.16.0\\googletest\\src\\gtest_main.cc",
+  "file": "C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/googletest-1.16.0/googletest/src/gtest_main.cc",
+  "output": "googletest-1.16.0/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj"
+}
+]

@@ -1,0 +1,6 @@
+"U:UUUDUUUUU",
+"R:????R???U",
+"F:FFFFFFFFF",
+"D:DDDDDDDDD",
+"L:?DDLLD?LL",
+"B:BBBBBBBBB"

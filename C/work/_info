@@ -1,0 +1,35 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/workspace/rubik/C
+Eaccu
+w1747311582
+DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 1
+R0
+8..\c\td.vhd
+F..\c\td.vhd
+l0
+L7 1
+Vd:g;ZWF1AIj<K^:CB4h@i2
+!s100 Oe9fUmVYibHV9mXNZoSj=3
+OL;C;2021.2;73
+32
+!s110 1747311584
+!i10b 1
+!s108 1747311583.000000
+!s90 ..\c\td.vhd|
+!s107 ..\c\td.vhd|
+!i113 0
+tExplicit 1 CvgOpt 0

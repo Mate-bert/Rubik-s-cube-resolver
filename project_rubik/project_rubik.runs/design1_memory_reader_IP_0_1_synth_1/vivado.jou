@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun May 18 18:29:02 2025
+# Process ID: 15792
+# Current directory: C:/workspace/rubik/project_rubik/project_rubik.runs/design1_memory_reader_IP_0_1_synth_1
+# Command line: vivado.exe -log design1_memory_reader_IP_0_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design1_memory_reader_IP_0_1.tcl
+# Log file: C:/workspace/rubik/project_rubik/project_rubik.runs/design1_memory_reader_IP_0_1_synth_1/design1_memory_reader_IP_0_1.vds
+# Journal file: C:/workspace/rubik/project_rubik/project_rubik.runs/design1_memory_reader_IP_0_1_synth_1\vivado.jou
+#-----------------------------------------------------------
+source design1_memory_reader_IP_0_1.tcl -notrace

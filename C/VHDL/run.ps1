@@ -1,0 +1,1 @@
+vsim -t 1ps -do wave.do -voptargs=+acc top_tb
