@@ -1,0 +1,6 @@
+path: C:/Users/gnsakawakatamba/Documents/Perso/ecole/Rubik-s-cube-resolver/IA/YOLO/dataset
+train: train/images
+val: valid/images
+
+nc: 7
+names: ['1', '2', '3', '4', '5', '6', 'centre']
