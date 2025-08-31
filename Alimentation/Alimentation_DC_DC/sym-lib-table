@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Rubix_Cube")(type "KiCad")(uri "/Users/quentinhebert/Documents/ENSEA/Rubik-s-cube-resolver/Rubix_Cube.kicad_sym")(options "")(descr ""))
+)
